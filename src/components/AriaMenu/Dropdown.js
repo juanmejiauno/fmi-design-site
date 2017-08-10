@@ -34,6 +34,10 @@ class Dropdown extends React.Component {
     };
   }
 
+  getSubMenuItemsLastIndex() {
+    return this.submenuItems.length - 1;
+  }
+
   closeSubmenu(delay = 50) {
     clearTimeout(this.timeoutID);
     this.timeoutID = setTimeout(() => {
@@ -47,7 +51,7 @@ class Dropdown extends React.Component {
 
   focusNextItem() {
     const { activeItem } = this.state;
-    const lastIndex = this.submenuItems.length - 1;
+    const lastIndex = this.getSubMenuItemsLastIndex();
     const current = this.submenuItems.indexOf(activeItem);
     const next = (current === -1 || current === lastIndex) ? 0 : current + 1;
     this.submenuItems[next].focus();
@@ -55,7 +59,7 @@ class Dropdown extends React.Component {
 
   focusPrevItem() {
     const { activeItem } = this.state;
-    const lastIndex = this.submenuItems.length - 1;
+    const lastIndex = this.getSubMenuItemsLastIndex();
     const current = this.submenuItems.indexOf(activeItem);
     const next = (current === 0) ? lastIndex : current - 1;
     this.submenuItems[next].focus();

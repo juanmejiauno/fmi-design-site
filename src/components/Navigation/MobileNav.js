@@ -1,17 +1,17 @@
 import React from 'react';
 import AriaModal from 'react-aria-modal';
-import LoginButton from 'components/LoginButton';
-import UserLinks from 'components/Navigation/UserLinks';
+//import LoginButton from 'components/LoginButton';
+//import UserLinks from 'components/Navigation/UserLinks';
 import Link from 'components/Link';
 import autobind from 'lib/autobind';
 
-const DASHBOARD_LINK = process.env.dashboardLink;
+//const DASHBOARD_LINK = process.env.dashboardLink;
 
-function userButton() {
+/* function userButton() {
   return (
     <a className="mobile-nav__apps-link" href={DASHBOARD_LINK}>Apps</a>
   );
-}
+} */
 
 function renderMenuitem(item) {
   const prop = item.internal ? 'to' : 'href';
@@ -27,11 +27,10 @@ function renderMenuitem(item) {
   );
 }
 
-function renderSection(section, i) {
-  const modifier = i === 0 ? 'top' : 'bottom';
+function renderSection(section) {
   return (
-    <div key={section.heading} className={`mobile-nav__menu-subsection mobile-nav__menu-subsection--${modifier}`}>
-      <p className="mobile-nav__section-subheading">{section.heading}</p>
+    <div key={section.heading} className="mobile-nav__menu-subsection mobile-nav__menu-subsection--bottom">
+      {/* <p className="mobile-nav__section-subheading">{section.heading}</p> */}
       <ul className="mobile-nav__section-list">
         { section.items.map(renderMenuitem) }
       </ul>
@@ -89,7 +88,7 @@ class MobileNav extends React.Component {
     return (
       <div className="mobile-nav">
         <div className="mobile-navbar">
-          <LoginButton>{ userButton }</LoginButton>
+          {/* <LoginButton>{ userButton }</LoginButton> */}
           <button onClick={this.openMenu} className="mobile-nav__menu-button">Menu</button>
         </div>
 
@@ -112,7 +111,7 @@ class MobileNav extends React.Component {
 
             <div className="mobile-nav__content">
               <ul className="mobile-nav__menu-items">
-                <UserLinks onLogout={this.closeMenu} />
+                {/* <UserLinks onLogout={this.closeMenu} /> */}
                 { this.props.content.map(renderMenuitem) }
               </ul>
             </div>
