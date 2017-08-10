@@ -1,32 +1,40 @@
-[{
+[
+  {
     "text": "Strategy",
     "internal": true,
-    "submenu": [{
-      "heading": "Get Started",
-      "items": [{
-          "text": "Design Principles",
-          "internal": true,
-          "href": "/strategy/design-principles"
-        },
-        {
-          "text": "Customer Insights",
-          "internal": true,
-          "href": "/strategy/customer-insights"
-        },
-        {
-          "text": "Brand Architecture",
-          "internal": true,
-          "href": "/strategy/brand-architecture"
-        }
-      ]
-    }]
+    "href": "#",
+    "submenu": [
+      {
+        "heading": "Get Started",
+        "items": [
+          {
+            "text": "Design Principles",
+            "internal": true,
+            "href": "/strategy/design-principles"
+          },
+          {
+            "text": "Customer Insights",
+            "internal": true,
+            "href": "/strategy/customer-insights"
+          },
+          {
+            "text": "Brand Architecture",
+            "internal": true,
+            "href": "/strategy/brand-architecture"
+          }
+        ]
+      }
+    ]
   },
   {
     "text": "Guidance",
     "internal": true,
-    "submenu": [{
+    "href": "#",
+    "submenu": [
+      {
         "heading": "Get Started",
-        "items": [{
+        "items": [
+          {
             "text": "Research Practices",
             "internal": true,
             "href": "/guidance/research-practices"
@@ -97,11 +105,18 @@
             "href": "/guidance/voice-and-tone"
           }
         ]
-      },
+      }
+    ]
+  },
+  {
+    "text": "Assets",
+    "internal": true,
+    "href": "#",
+    "submenu": [
       {
-        "heading": "Assets",
-        "internal": true,
-        "items": [{
+        "heading": "Get Started",
+        "items": [
+          {
             "text": "Components",
             "internal": true,
             "href": "/assets/components"

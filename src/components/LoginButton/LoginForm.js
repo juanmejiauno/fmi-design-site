@@ -1,5 +1,5 @@
-import { sendLoginEvent } from 'lib/analytics';
 import React, { Component, PropTypes } from 'react';
+import { sendLoginEvent } from 'lib/analytics';
 import { get } from 'lodash';
 
 import autobind from 'lib/autobind';
@@ -9,15 +9,6 @@ const DASHBOARD_LINK = process.env.dashboardLink;
 const SIGNUP_LINK = process.env.signupLink;
 const FORGOT_PASSWORD_LINK = process.env.forgotPasswordLink;
 
-/**
-* form for the login
-* only used to display form elements, errors
-* login logic is in LoginUI
-*
-* @public
-*
-* @extends {Component}
-*/
 class LoginForm extends Component {
   constructor() {
     super(...arguments);
@@ -31,7 +22,9 @@ class LoginForm extends Component {
   }
 
   componentDidMount() {
-    document.querySelector('#login-email').focus();
+    document
+      .querySelector('#login-email')
+      .focus();
   }
 
   /**
@@ -50,13 +43,16 @@ class LoginForm extends Component {
       password: this.state.password,
     };
 
-    this.context.session.login(creds)
-    .then((success) => {
-      if (success) {
-        sendLoginEvent();
-        window.location = DASHBOARD_LINK;
-      }
-    });
+    this
+      .context
+      .session
+      .login(creds)
+      .then((success) => {
+        if (success) {
+          sendLoginEvent();
+          window.location = DASHBOARD_LINK;
+        }
+      });
   }
 
   updatePassword(evt) {
@@ -68,11 +64,8 @@ class LoginForm extends Component {
   }
 
   isDisabled() {
-    const {
-      email,
-      password,
-    } = this.state;
-    return !((email && email.length) && (password && password.length));
+    const { email, password } = this.state;
+    return !(email && email.length && (password && password.length));
   }
 
   render() {
@@ -81,24 +74,28 @@ class LoginForm extends Component {
     const loginProgress = get(this, 'context.session.loginProgress');
     const showProgress = !['LOGGED_OUT', 'ERROR'].includes(loginProgress);
 
-    return showProgress ? (
-      <LoginProgressMessage loginProgress={loginProgress} />
-    ) : (
-      <div className="login-dialog__content">
-        <form className="login-dialog__pad login-dialog__login-form" onSubmit={this.attemptLogin}>
-
+    return showProgress
+      ? <LoginProgressMessage loginProgress={loginProgress} />
+      : <div className="login-dialog__content">
+        <form
+          className="login-dialog__pad login-dialog__login-form"
+          onSubmit={this.attemptLogin}
+        >
           <h2 className="login-dialog__head">Welcome Back</h2>
           <h3 className="login-dialog__subhead">Sign into your account.</h3>
 
           <div className="login-dialog__fields">
-
-            {generalError &&
-              <p className="login-dialog__general-error">{generalError}</p>
-            }
+            {generalError && <p className="login-dialog__general-error">
+              {generalError}
+            </p>}
 
             <div className="login-dialog__field-set">
-
-              <label className="login-dialog__label login-dialog__label--email label" htmlFor="login-email">Email address</label>
+              <label
+                className="login-dialog__label login-dialog__label--email label"
+                htmlFor="login-email"
+              >
+                Email address
+              </label>
               <input
                 type="email"
                 name="login-email"
@@ -111,9 +108,13 @@ class LoginForm extends Component {
               />
             </div>
 
-
             <div className="login-dialog__field-set">
-              <label className="login-dialog__label login-dialog__label--password label" htmlFor="login-password">Password</label>
+              <label
+                className="login-dialog__label login-dialog__label--password label"
+                htmlFor="login-password"
+              >
+                Password
+              </label>
               <input
                 type="password"
                 name="login-password"
@@ -125,23 +126,32 @@ class LoginForm extends Component {
               />
             </div>
 
-            <p className="login-dialog__forgot"><a className="login-dialog__forgot-link" href={FORGOT_PASSWORD_LINK}>Forgot password?</a></p>
+            <p className="login-dialog__forgot">
+              <a className="login-dialog__forgot-link" href={FORGOT_PASSWORD_LINK}>
+                Forgot password?
+              </a>
+            </p>
           </div>
-
           <p className="login-dialog__login-p"><button className="button login-dialog__login-button" type="submit" disabled={this.isDisabled()}>Log In</button></p>
-
         </form>
 
         <div className="login-dialog__pad login-dialog__sign-up-prompt">
           <div>
-            <h3 className="login-dialog__sign-up-head">Don’t Have an Account?</h3>
-            <p><em>You can sign up online</em></p>
+            <h3 className="login-dialog__sign-up-head">
+              Don’t Have an Account?
+            </h3>
+            <p>
+              <em>You can sign up online</em>
+            </p>
           </div>
 
-          <p><a className="login-dialog__sign-up-link" href={SIGNUP_LINK}>Sign up</a></p>
+          <p>
+            <a className="login-dialog__sign-up-link" href={SIGNUP_LINK}>
+              Sign up
+            </a>
+          </p>
         </div>
-      </div>
-    );
+      </div>;
   }
 }
 
