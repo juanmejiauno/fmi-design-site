@@ -12,10 +12,10 @@ $nav-pad-desktop-xxl: 38px;
 
 .navbar__menubar {
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  justify-content: space-between;
   padding: 0;
-  margin: 0;
+  margin: 0 auto auto 25%;
+  width: 65%;
 }
 
 .navbar__menubar > li {
