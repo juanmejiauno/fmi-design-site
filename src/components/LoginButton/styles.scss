@@ -1,0 +1,241 @@
+.login-dialog {
+  top: 40px !important;
+  position: relative;
+  width: calc(100% - 40px);
+  background-color: $color-slate--dark;
+}
+
+.login-dialog__content {
+  position: relative;
+}
+
+.login-dialog__pad {
+  padding: 35px 25px;
+}
+
+
+.login-dialog__close-btn {
+  @include close-button;
+  z-index: $z-index-3;
+}
+
+.login-dialog__head {
+  @include font($font-sectra, 28px, 400, italic, 1.375);
+  margin: 0;
+  color: $color-green;
+  text-align: center;
+}
+
+.login-dialog__subhead {
+  @include font($font-sectra, 15px, 400, normal, 1.375);
+  color: $color-gray--d;
+  text-align: center;
+  margin: 0 0 40px;
+}
+
+.login-dialog__fields {
+  margin: 0 0 20px;
+}
+
+.login-dialog__label {
+  color: $color-gray--d;
+  margin-bottom: 8px;
+}
+
+
+.login-dialog__field-set {
+  margin: 0 0 20px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+
+.login-dialog__input {
+  width: 100%;
+  display: block;
+  background: $color-slate !important;
+  color: $color-gray--d !important;
+  border-color: transparent !important;
+
+  &:focus {
+    color: $color-white !important;
+  }
+
+  .input-has-error & {
+    @include error-inputs;
+  }
+}
+
+.login-dialog__login-p {
+  text-align: center;
+}
+
+.login-dialog__login-button {
+  @include button-standard;
+  display: inline-block;
+  color: $color-white;
+  background: $color-green;
+
+  &:hover {
+    background-color: $color-green--dark;
+  }
+
+  &:disabled {
+    color: rgba($color-white, 0.4);
+    background: rgba($color-black, 0.2);
+
+    &:hover {
+      background: rgba($color-black, 0.2);
+    }
+  }
+}
+
+// errors
+
+.login-dialog__general-error {
+  @include font($font-gotham-ss, 13px, 400);
+  color: $color-orange;
+  padding: 0 20px;
+  text-align: center;
+  margin: 0 0 25px;
+}
+
+.login-dialog__error {
+  @include error-text;
+  padding: 0 0 15px;
+}
+
+// Spinner
+.login-dialog__spinner {
+  display: block;
+  margin: 80px auto;
+  @include size(88px);
+}
+
+// Forgot, sign-up
+
+.login-dialog__forgot {
+  @include font($font-gotham-ss, 12px, 400);
+  margin: 0 0 10px;
+  text-align: right;
+}
+
+.login-dialog__forgot-link {
+  color: $color-gray--d;
+  border: 0;
+
+  &:hover {
+    color: $color-white;
+  }
+}
+
+// Sign up
+
+.login-dialog__sign-up-prompt {
+  background-color: $color-slate--dark2;
+  color: $color-gray--d;
+  @include font($font-sectra, 15px, 400, normal, 1.375);
+  text-align: center;
+  margin: 0;
+
+  p {
+    margin: 0;
+  }
+}
+
+.login-dialog__sign-up-head {
+  color: $color-green;
+  @include font($font-sectra, 24px, 400, italic, $lh: 1);
+  padding: 0;
+  margin: 0 0 3px;
+}
+
+.login-dialog__sign-up-link {
+  border: 0;
+  margin: 15px 0 0;
+  min-width: 120px;
+  text-align: center;
+  color: $color-peach;
+  font-weight: 600;
+  @include button-standard($mini: true);
+  background-color: $color-blue--dark;
+  display: inline-block;
+
+  &:hover {
+    background-color: $color-blue;
+    color: $color-white;
+  }
+}
+
+// Breakpoints
+
+@include mq($bp--phablet) {
+  .login-dialog {
+    width: 380px;
+  }
+
+  .login-dialog__pad {
+    padding: 40px;
+  }
+
+  .login-dialog__sign-up-prompt {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .login-dialog__sign-up-link {
+    margin-top: 0;
+  }
+
+  .login-dialog__head {
+    font-size: 36px;
+  }
+
+  .login-dialog__fields {
+    margin-bottom: 30px;
+  }
+
+  .login-dialog__forgot {
+    margin-bottom: 0;
+  }
+} // mq
+
+
+
+@include mq($bp--tablet-xl) {
+  .login-dialog {
+    width: 550px;
+    top: 0 !important;
+  }
+
+  .login-dialog__pad {
+    &.login-dialog__login-form {
+      padding: 50px;
+    }
+
+    &.login-dialog__sign-up-prompt {
+      padding: 35px 50px;
+    }
+  }
+
+  .login-dialog__close-btn {
+    top: -30px;
+  }
+
+  .login-dialog__fields {
+    margin-bottom: 40px;
+  }
+
+
+
+  .login-dialog__head {
+    font-size: 50px;
+  }
+
+  .login-dialog__general-error {
+    font-size: 15px;
+  }
+} // mq

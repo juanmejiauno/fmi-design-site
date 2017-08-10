@@ -1,0 +1,75 @@
+
+.card-stats__list {
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.card-stats__item {
+  text-align: center;
+  margin: 0;
+  padding: 30px 0;
+  border-bottom: solid 1px $color-gray--d;
+
+  &:last-of-type {
+    border: 0;
+  }
+}
+
+.card-stats__number {
+  white-space: nowrap; // non line breaks in the numbers
+  color: $color-green--dark;
+  @include font($font-gotham-ss, 28px, 300, $ls: 0.3, $lh: 1);
+  margin: 0 0 5px;
+}
+
+.card-stats__noun {
+  @include font($font-sectra, 14px, 400, italic, $lh: 1.2);
+  color: $color-slate;
+  margin: 0;
+}
+
+
+// Breakpoints -------
+
+@include mq($bp--tablet) {
+  .card-stats__list {
+    display: flex;
+    justify-content: center;
+  }
+
+  .card-stats__item {
+    flex: 1 1 0; // force equal widths
+    margin: 0;
+    padding: 20px 25px;
+    border-bottom: 0;
+    border-right: 1px solid $color-gray--d;
+
+    &:last-of-type {
+      border-right: 0;
+    }
+  }
+
+  .card-stats__number {
+    font-size: 32px;
+    font-weight: 200;
+  }
+} // mq
+
+@include mq($bp--tablet-xl) {
+  .card-stats__number {
+    font-size: 42px;
+  }
+} // mq
+
+@include mq($bp--desktop) {
+  .card-stats__item {
+    padding: 25px 40px;
+  }
+
+  .card-stats__number {
+    @include smooth;
+    font-size: 45px;
+    margin-bottom: 7px;
+  }
+} // mq

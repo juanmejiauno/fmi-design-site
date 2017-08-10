@@ -1,0 +1,233 @@
+// Error fields
+
+@mixin error-inputs {
+  border-color: $color-orange !important;
+}
+
+// Error messages
+
+@mixin error-text {
+  color: $color-orange--dark;
+  @include font($font-gotham-ss, 12px, 500, $lh: 1.375);
+}
+
+@mixin button-standard($mini: false) {
+  display: block;
+  @include font($font-gotham-ss, 13px, 600, $lh: 1, $caps: true, $ls: 1px);
+  color: $color-white;
+  background-color: $color-fire;
+  transition: background-color $timing-standard, color $timing-standard;
+
+  @if $mini {
+    font-size: 10.5px;
+    padding: 14px 25px;
+  }
+
+  @else {
+    font-size: 13px;
+    padding: 18px 45px;
+  }
+
+  &:hover {
+    background-color: $color-fire--dark;
+  }
+}
+
+// Placeholders styles
+
+@mixin placeholder-styles() {
+  ::-webkit-input-placeholder {
+    @content;
+  }
+
+  :-moz-placeholder { // Firefox 18
+    @content;
+  }
+
+  ::-moz-placeholder {  // Firefox 19+
+    @content;
+  }
+
+  // IE
+  :-ms-input-placeholder {
+    @content;
+  }
+
+  // IE Edge
+  ::-ms-input-placeholder {
+    @content;
+  }
+}
+
+@include placeholder-styles {
+  color: $color-gray--a;
+}
+
+
+// spacing between groups generally controlled by fieldset
+fieldset {
+  margin: 0 0 20px !important;
+  padding: 0;
+}
+
+// texty inputs
+input:not([type=submit]):not([type=file]),
+select,
+textarea {
+  background: transparent;
+  appearance: none;
+  margin: 0 0 8px;
+  padding: 12px;
+  background-color: $color-white;
+  color: $color-slate--light;
+  border-radius: 0;
+  transition: all $timing-short linear;
+  @include font($font-gotham-ss, 16px, 400, $lh: 1.375);
+  border: 1px solid $color-gray--d;
+  max-width: 100%;
+
+  &.input--error,
+  &.input--error:focus {
+    @include error-inputs;
+  }
+
+  &:focus {
+    border-color: $color-gray--d;
+    color: $color-slate;
+  }
+
+  @include mq($bp--tablet) {
+    padding: 13px 18px;
+  }
+}
+
+textarea {
+  min-width: 210px;
+  min-height: 120px;
+
+  @include mq($bp--tablet) {
+    min-width: 310px;
+  }
+}
+
+
+// selects
+select {
+  min-width: 200px;
+  padding-right: 45px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: $color-white svg-load('../img/select-arrow.svg') no-repeat right 50%;
+}
+
+// Hide IE's select down-arrow, because we've added our own
+select::-ms-expand {
+  display: none;
+}
+
+// Hubpspot selectors and overrides
+
+.actions {
+  margin-top: 15px;
+}
+
+.form-columns-1,
+.form-columns-2 {
+  .input,
+  input,
+  textarea {
+    width: 100% !important;
+    margin-right: 0 !important;
+  }
+}
+
+.hs-form-field {
+  margin-bottom: 15px !important;
+}
+
+// Error Messages
+.error-messages {
+  @include error-text;
+  padding: 0 0 15px;
+}
+
+.hs-error-msgs {
+  list-style: none;
+  margin: 15px 0;
+  padding: 0;
+
+  li {
+    @include error-text;
+    margin: 0 0 3px;
+  }
+}
+
+.submitted-message {
+  @include font($font-gotham-ss, 14px, 500);
+  color: $color-slate;
+  margin: 0 0 3px;
+}
+
+
+@mixin label {
+  display: block;
+  @include head-micro;
+  color: $color-slate;
+  margin: 0 0 5px;
+}
+
+// labels
+.hs-form-field > label,
+.label {
+  @include label;
+}
+
+//  legends
+legend {
+  @include font($font-sectra, 14px, 400, italic);
+  color: $color-slate--light;
+  margin: 0 0 6px;
+  padding: 0;
+}
+
+// buttons
+button,
+.button,
+input[type=submit] {
+  appearance: none !important;
+  border: 0;
+  border-radius: 0;
+  cursor: pointer;
+  transition: color $timing-standard linear, background-color $timing-standard linear;
+
+  &:disabled {
+    cursor: default;
+    background-color: $color-gray--d;
+
+    &:hover {
+      background-color: $color-gray--d;
+    }
+  }
+}
+
+.button--standard {
+  @include button-standard;
+}
+
+.button--slate {
+  background-color: $color-slate;
+
+  &:hover {
+    background-color: $color-slate--dark2;
+  }
+}
+
+.button--full-width {
+  width: 100%;
+  display: block;
+}
+
+
+.button--mini {
+  @include button-standard($mini: true);
+}

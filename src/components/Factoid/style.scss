@@ -1,0 +1,44 @@
+.factoid {
+  text-align: center;
+  padding: 80px 20px 40px;
+  background: svg-load('../img/factoid-border.svg') no-repeat 50% 0;
+}
+
+.factoid__question {
+  color: $color-green--dark;
+  @include font($font-sectra, 24px, 400, italic, $lh: 1.5);
+  margin: 0 0 20px;
+}
+
+.factoid__body {
+  color: $color-slate;
+  @include font($font-gotham-ss, 15px, 400);
+
+  strong {
+    font-weight: 600;
+  }
+
+  p {
+    margin: 0 0 15px;
+
+    &:last-of-type a {
+      @include link-mini-caps($arrow: right);
+    }
+  }
+}
+
+@include mq($bp--tablet-xl) {
+  .factoid {
+    padding: 80px 60px 40px;
+    margin: 0 auto;
+    @include grid-width(10);
+  }
+
+  .factoid__question {
+    font-size: 36px;
+  }
+
+  .factoid__body {
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,49 @@
+
+// GRIDTOGGLE COMPONENT
+
+.grid {
+  z-index: $z-index-9;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+}
+
+.grid__btn {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  pointer-events: auto;
+  appearance: none;
+  border: 0;
+  background-color: $color-fire;
+  cursor: pointer;
+  color: $color-white;
+  transition: background-color $timing-short;
+  @include circle(20px);
+  @include hide-text();
+
+  &:hover {
+    background-color: $color-orange;
+  }
+}
+
+.grid__content {
+  pointer-events: none;
+  position: relative;
+  justify-content: space-between;
+  display: none;
+
+  .is-showing-grid & {
+    display: flex;
+  }
+}
+
+.grid__col {
+  @include grid-width(1);
+  height: 100vh;
+  background: rgba($color-black, 0.1);
+}

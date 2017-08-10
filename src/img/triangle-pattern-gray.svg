@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="758px" height="765px" viewBox="0 0 758 765" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+    <title>triangle-pattern-light</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="triangle-pattern-light" stroke="#ededed" stroke-width="2">
+            <g id="triangle-pattern" transform="translate(378.281089, 380.824627) rotate(-30.000000) translate(-378.281089, -380.824627) translate(104.281089, 96.324627)">
+                <path d="M215.741574,253 L218.375549,505.791045" id="Path" stroke-dasharray="1000"></path>
+                <polyline id="Path-3" stroke-dasharray="1000" transform="translate(438.572655, 319.713916) rotate(90.000000) translate(-438.572655, -319.713916) " points="249.280661 321.707759 374.120093 322.544997 627.864649 316.882834"></polyline>
+                <polyline id="Path-4" stroke-dasharray="1000" transform="translate(437.890012, 317.369351) rotate(90.000000) translate(-437.890012, -317.369351) " points="311.118737 213.034995 437.801911 426.517788 564.661286 208.220913 438.992963 210.220913 501.577302 316.246667"></polyline>
+                <polygon id="Path-4" stroke-dasharray="1000" transform="translate(80.602074, 394.185920) rotate(-30.000000) translate(-80.602074, -394.185920) " points="79.6311877 447.335638 142.944968 341.166532 18.2591792 341.036202"></polygon>
+                <polygon id="Path-4-Copy" stroke-dasharray="1000" transform="translate(82.151228, 269.376070) rotate(-30.000000) translate(-82.151228, -269.376070) " points="80.5260726 322.91987 145.430733 215.832269 18.8717219 216.783444"></polygon>
+                <polygon id="Path-4-Copy" stroke-dasharray="1000" transform="translate(188.895323, 81.556428) rotate(-30.000000) translate(-188.895323, -81.556428) " points="187.270168 135.100229 252.174829 28.012628 125.615818 28.9638026"></polygon>
+                <polygon id="Path-4-Copy-2" stroke-dasharray="1000" transform="translate(406.481846, 81.361328) rotate(-30.000000) translate(-406.481846, -81.361328) " points="408.460618 138.309045 470.162986 24.4136103 342.800705 24.5827396"></polygon>
+                <polyline id="Path-5" stroke-dasharray="1000" transform="translate(274.600557, 380.695194) rotate(90.000000) translate(-274.600557, -380.695194) " points="145.4045 439.299406 210.717863 547.554176 403.796614 213.836211"></polyline>
+                <path d="M434.578139,254.646573 L213.909536,127.243495" id="Line" stroke-linecap="square"></path>
+                <polyline id="Path-6" stroke-dasharray="1000" transform="translate(219.859638, 380.231728) rotate(90.000000) translate(-219.859638, -380.231728) " points="31.1111624 489.551846 157.343162 270.91161 408.608114 271.352957"></polyline>
+                <path d="M438.241575,381.366025 L219.741574,505.839746" id="Line" stroke-linecap="square"></path>
+                <polygon id="Path" stroke-dasharray="1000" transform="translate(268.970552, 158.206312) rotate(90.000000) translate(-268.970552, -158.206312) " points="362.444813 211.817433 301.683947 102.977335 175.49629 104.40404 237.911017 213.43529"></polygon>
+                <path d="M213.811491,127.380738 L111.03912,191.194346" id="Line" stroke-linecap="square"></path>
+            </g>
+            <path d="M441.67795,166.5 L374.67795,274.5" id="Line" stroke-linecap="square"></path>
+            <path d="M441.923828,381.473633 L377.307617,491.921875" id="Line" stroke-linecap="square"></path>
+            <path d="M374.17795,275 L442.17795,382" id="Line" stroke-linecap="square"></path>
+            <path d="M441.67795,600 L567.693217,600" id="Line" stroke-linecap="square"></path>
+        </g>
+    </g>
+</svg>

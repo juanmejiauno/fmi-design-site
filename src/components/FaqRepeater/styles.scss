@@ -1,0 +1,38 @@
+// FAQs
+
+
+
+.faq-set__list {
+  list-style: none;
+  margin: 50px 0;
+  padding: 0 0 0 40px;
+}
+
+.faq-set__item {
+  margin: 0 0 50px;
+  padding: 0;
+}
+
+.faq-set__q {
+  color: $color-slate;
+  margin: 0 0 20px;
+  padding: 0;
+  @include font($font-gotham-ss, 21px, 600, $lh: 1.375);
+  position: relative;
+  font-style: normal;
+
+  &::before {
+    position: absolute;
+    left: -40px;
+    content: "Q";
+    font-weight: 500;
+    color: $color-green--dark;
+  }
+}
+
+
+@include mq($bp--desktop-xxl) {
+  .faq-set__list {
+    padding-left: 0;
+  }
+}

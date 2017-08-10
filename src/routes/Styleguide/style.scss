@@ -1,0 +1,66 @@
+.styleguide__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: style-counter;
+}
+
+h2.styleguide__head {
+  margin: 0;
+  position: relative;
+  top: 0;
+  display: inline-block;
+  z-index: $z-index-4;
+  padding: 0 20px 0 0;
+  color: $color-gray--9;
+  background: $color-white;
+  @include font($font-gotham-ss, 11px, 500, $caps:true, $lh: 1, $ls: 0.9px);
+}
+
+h3.styleguide__subhead {
+  color: $color-gray--7;
+  @include font($font-sectra, 17px, 400);
+}
+
+.styleguide__item {
+  margin: 0;
+  counter-increment: style-counter;
+  position: relative;
+
+  &::after {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 20px;
+    background: $color-gray--d;
+    @include pseudo;
+    @include size(100% 1px);
+  }
+}
+
+.secondary-text {
+  @include secondary-text;
+}
+
+.styleguide__example {
+  padding: 40px 0;
+}
+
+.style-guide__group {
+  margin-bottom: 30px;
+}
+
+
+@include mq($bp--tablet) {
+
+  h2.styleguide__h {
+    font-size: 12px;
+  }
+
+  .styleguide__item::after {
+    top: 15px;
+  }
+  .styleguide__example {
+    padding: 60px 0;
+  }
+}

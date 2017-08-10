@@ -1,0 +1,44 @@
+.social-shares {
+  padding: 0;
+}
+
+.social-shares__list {
+  list-style: none;
+  margin: 0 0 30px;
+  padding: 0;
+}
+
+.social-shares__item {
+  display: inline-block;
+  margin: 0 10px 0 0;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+
+  @include mq($bp--tablet-xl) {
+    display: block;
+    margin: 0 0 10px;
+  }
+}
+
+.social-shares__button circle {
+  color: $color-white;
+  transition: fill $timing-short linear;
+}
+
+.social-shares__button {
+  padding: 0;
+  background: transparent;
+  border: none;
+
+  &:focus,
+  &:hover {
+    cursor: pointer;
+    opacity: 0.8;
+
+    circle {
+      fill: $color-orange--light;
+    }
+  }
+}

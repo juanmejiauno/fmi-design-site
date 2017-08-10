@@ -1,0 +1,341 @@
+.assay-single__section {
+  margin-bottom: 80px;
+
+  @include mq($bp--tablet) {
+    margin-bottom: 120px;
+  }
+  @include mq($bp--desktop-xl) {
+    margin-bottom: 140px;
+  }
+
+  & + .page-outro {
+    padding-top: 0;
+    padding-bottom: 60px;
+  }
+}
+
+//mini overview
+.assay-single__intro-content__mini-overview {
+  margin-top: 20px;
+  padding: 20px 10px;
+  text-align: center;
+  background-color: $color-white;
+}
+
+.assay-single__mini-overview-list {
+  display: flex;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.assay-single__mini-overview-item {
+  width: 33.3%; //make all 3 items take up the same space
+  padding: 5px;
+  border-right: 1px solid $color-gold;
+
+  &:last-of-type {
+    border: 0;
+  }
+}
+
+.mini-overview-item__top {
+  @include font($font-gotham-ss, 9px, 500, $lh: 1.375, $ls: 1px, $caps: true);
+  margin-bottom: 10px;
+  color: $color-gray--7;
+}
+
+.mini-overview-item__bottom {
+  font-size: 14px;
+  font-style: italic;
+  line-height: 1.3;
+}
+
+
+// card section
+.assay-single-overview {
+  padding: 40px 0 80px;
+  border-top: 1px solid $color-gold--light;
+  border-bottom: 1px solid $color-gold--light;
+  background-image: url('/img/pattern-background.png');
+  background-repeat: repeat;
+  background-position: 50% 50%;
+}
+
+.assay-single-overview__prehead {
+  text-align: center;
+  color: $color-gray--7;
+  @include font($font-gotham-ss, 12px, 500, $lh: 1.2, $caps: true, $ls: 0.8px);
+  margin: 0 0 8px;
+}
+
+.assay-single-overview__head {
+  text-align: center;
+  margin: 0 0 30px;
+}
+
+// reports section
+.assay-single-reports__studies {
+  margin-bottom: 30px;
+  color: $color-white;
+}
+
+.assay-single-reports__study {
+  margin-bottom: 30px;
+  padding: 25px;
+  background-color: $color-slate--dark;
+  background-image: url('/img/pattern-background-dark.png');
+  background-repeat: repeat;
+  background-position: 50% 50%;
+
+  p {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.assay-single-reports__study__microhead {
+  color: $color-white;
+  @include font($font-gotham-ss, 10px, $lh: 1.1, $ls: 0.8px, $caps: true);
+  margin: 0 0 20px;
+}
+
+.assay-single-reports__study__head {
+  @include font($font-sectra, 24px, 400, $lh: 1.15);
+}
+
+.assay-single-reports__study__tease {
+  @include font($font-gotham-ss, 12px, 400, $lh: 1.625);
+  color: $color-white;
+  margin-bottom: 12px;
+
+  a {
+    font-weight: 600;
+    color: $color-white;
+    border-color: $color-white;
+  }
+}
+
+.assay-single-reports__study__link {
+  font-size: 12px;
+  color: $color-white;
+}
+
+
+
+// Info card
+.assay-single-order__info-card {
+  margin: 0 auto 40px;
+  background-color: $color-white;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+  padding: 10px;
+  position: relative;
+  z-index: 2;
+}
+
+// contact
+.assay-single-order__contact {
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+
+.assay-single-order__image {
+  margin-bottom: 30px;
+}
+
+.assay-single-order__text--secondary {
+  @include font($font-gotham-ss, 12px, 400, $lh: 1.6);
+  color: $color-slate--light;
+}
+
+.assay-single-order__info-card__wrapper {
+  border: 1px solid $color-gray--d;
+
+  &::before,
+  &::after {
+    @include pseudo;
+    display: block;
+    width: 100%;
+    height: 1px;
+    margin: 4px auto;
+    background-color: $color-gray--d;
+  }
+}
+
+.assay-single-order__info-card__inner {
+  padding: 30px;
+}
+
+.assay-single-order__info-card__head {
+  color: $color-fire;
+}
+
+.assay-single-order__info-card__group {
+  margin-bottom: 50px;
+}
+
+.assay-single-order__info-card__text {
+  @include font($font-sectra, 14px, 400, $lh: 1.6);
+  margin-bottom: 20px;
+}
+
+
+
+// Breakpoints -------
+
+@include mq($bp--tablet-xl) {
+  //mini overview - tablet xl
+  .assay-single__intro-content__mini-overview {
+    @include grid-width(3);
+    margin-top: 0;
+    padding: 20px;
+  }
+
+  .assay-single__mini-overview-list {
+    display: block;
+  }
+
+  .assay-single__mini-overview-item {
+    width: auto;
+    margin: 0;
+    border-right: 0;
+
+    &::after {
+      @include pseudo;
+      @include size(70px 2px);
+      background-color: $color-gold;
+      margin: 20px auto 28px;
+    }
+
+    &:last-of-type {
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  .mini-overview-item__top {
+    font-size: 10px;
+  }
+
+  .mini-overview-item__bottom {
+    font-size: 16px;
+  }
+
+  .assay-single-order__info-card {
+    padding: 40px;
+  }
+
+  //reports - tablet xl
+  .assay-single-reports__studies {
+    display: flex;
+    margin-bottom: 50px;
+  }
+
+  .assay-single-reports__study {
+    @include grid-width(6, $gallery-gutters: true);
+    margin-bottom: 0;
+    padding: 30px;
+  }
+
+  .assay-single-reports__study__head {
+    font-size: 28px;
+  }
+
+
+
+  //order - tablet xl
+  .assay-single-order__intro {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .assay-single-order__body {
+    text-align: left;
+    @include grid-width(5);
+    @include grid-width(1, $gutter-count: 1, $property: 'margin-left');
+  }
+
+  .assay-single-order__image {
+    @include grid-width(6);
+  }
+
+  .assay-single-order__contact {
+    @include grid-width(6);
+    margin: 0 auto 30px;
+  }
+
+  .assay-single-order__info-card__inner {
+    padding: 60px 60px 20px;
+  }
+
+  .assay-single-order__info-card__group {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .assay-single-order__info-card__text {
+    font-size: 16px;
+    width: 42%;
+  }
+
+  .assay-single-order__info-card__filelist {
+    padding-top: 35px;
+    width: 52%;
+  }
+} //mq
+
+
+@include mq($bp--desktop) {
+  .assay-single__intro-content__mini-overview {
+    @include grid-width(2);
+    //padding: 30px;
+  }
+
+  .mini-overview-item__bottom {
+    font-size: 18px;
+  }
+
+  //overview card - desktop
+  .assay-single-overview {
+    padding: 80px 0 100px;
+  }
+
+
+  //reports - desktop
+  .assay-single-reports__study {
+    @include grid-width(6, $gallery-gutters: true);
+    padding: 75px;
+  }
+
+  .assay-single-reports__study__tease {
+    font-size: 14px;
+  }
+
+  .assay-single-reports__study__head {
+    font-size: 32px;
+  }
+
+  //order - desktop
+  .assay-single-order__info-card {
+    @include grid-width(10);
+    margin: -150px auto 60px;
+  }
+} // mq
+
+@include mq($bp--desktop-xl) {
+  .assay-single__intro-content__mini-overview {
+    padding: 30px;
+  }
+
+  .assay-single-reports__study__microhead {
+    font-size: 11px;
+  }
+
+  .assay-single-reports__study__head {
+    font-size: 40px;
+  }
+}

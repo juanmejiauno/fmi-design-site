@@ -1,0 +1,105 @@
+
+.card {
+  position: relative;
+  margin: 0 auto 30px;
+  padding: 20px;
+  background-color: $color-white;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.08);
+}
+
+.card__header {
+  margin: 0 auto 20px;
+  max-width: 600px;
+}
+
+.card__microhead {
+  text-align: center;
+  color: $color-gray--7;
+  @include font($font-gotham-ss, 11px, 500, $lh: 1.5, $caps: true, $ls: 0.8px);
+  margin: 0 0 10px;
+  padding: 0;
+}
+
+.card__head {
+  @include head-section;
+}
+
+.card__caption {
+  text-align: center;
+  color: $color-slate;
+  @include font($font-sectra, 15px, 400, $lh: 1.5);
+  padding: 0;
+  margin: 0;
+}
+
+.card__inner {
+  border: 1px solid $color-gray--d;
+
+  &::before,
+  &::after {
+    @include pseudo;
+    display: block;
+    width: 100%;
+    height: 1px;
+    margin: 4px auto;
+    background-color: $color-gray--d;
+  }
+}
+
+.card__content {
+  padding: 30px 20px;
+}
+
+.card__cta-tab {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  left: 0;
+  text-align: center;
+}
+
+
+// Breakpoints -------
+
+@include mq($bp--phablet) {
+  .card__content {
+    padding: 30px;
+  }
+}
+
+@include mq($bp--tablet) {
+  .card {
+    @include grid-width(11);
+  }
+}
+
+@include mq($bp--tablet-xl) {
+  .card {
+    @include grid-width(10);
+    margin-bottom: 60px;
+  }
+
+  .card__content {
+    padding: 50px;
+  }
+} // mq
+
+
+@include mq($bp--desktop) {
+  .card {
+    @include grid-width(9);
+    padding: 40px;
+    margin-bottom: 80px;
+  }
+} // mq
+
+@include mq($bp--desktop-xl) {
+  .card {
+    padding: 50px;
+    @include grid-width(8);
+  }
+
+  .card__content {
+    padding: 60px;
+  }
+} // mq

@@ -1,0 +1,61 @@
+// Careers
+
+//Main
+
+.careers__main-col {
+  @include secondary-text;
+  margin-bottom: 30px;
+}
+
+.careers__image {
+  margin-bottom: 30px;
+
+  img {
+    width: 100%;
+  }
+}
+
+
+
+// Breakpoints ------------
+
+@include mq(760px) {
+  .careers__main {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .careers__main-col {
+    order: 1;
+    padding-right: 15px;
+    @include grid-width(6);
+  }
+
+  .careers__image {
+    order: 2;
+    @include grid-width(6);
+    margin: 0;
+  }
+} // mq
+
+
+
+@include mq(950px) {
+  .careers__main {
+    @include grid-width(10);
+    margin: 0 auto;
+  }
+
+  .careers__main-col {
+    padding-right: 0;
+    @include grid-width(6, $context-col-count: 10);
+  }
+
+  .careers__image {
+    @include grid-width(4, $context-col-count: 10);
+  }
+
+  .careers-action {
+    margin-bottom: 80px;
+  }
+}

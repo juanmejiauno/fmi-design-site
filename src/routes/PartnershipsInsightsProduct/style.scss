@@ -1,0 +1,120 @@
+.insights__section {
+  padding-bottom: 40px;
+}
+
+.insights__explore--inner {
+  padding: 20px;
+  background-color: $color-green--dark;
+}
+
+.insights__explore__head {
+  margin-top: 15px;
+  color: $color-white;
+}
+
+.insights__explore__secondary {
+  margin-bottom: 30px;
+  color: $color-white;
+}
+
+.insights__explore__image {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.insights__explore__text {
+  h1,
+  h2,
+  h3 {
+    @include head-tertiary;
+    color: $color-white;
+    padding-top: 30px;
+
+    &::after {
+      @include pseudo;
+      height: 1px;
+      width: 100%;
+      background-color: $color-white;
+    }
+  }
+
+  h4,
+  h5,
+  h6 {
+    @include font($font-gotham-ss, 11px, 500, $lh: 1.5, $ls: 0.6px, $caps: true);
+    @include smooth;
+    margin: 20px 0 5px;
+    color: $color-white;
+  }
+
+  p {
+    @include font($font-gotham-ss, 12px, 400, $lh: 1.6);
+    color: $color-white;
+    margin-bottom: 30px;
+
+    &:last-of-type {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.insights__explore__cta {
+  padding-bottom: 0;
+}
+
+//Breakpoints --------------------------------------------
+
+@include mq($bp--tablet) {
+  .insights__explore--inner {
+    padding: 40px;
+  }
+
+  .insights__overview {
+    .head-secondary {
+      @include grid-width(8);
+      margin: 0 auto;
+    }
+  }
+}
+
+@include mq($bp--tablet-xl) {
+  .insights__explore {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .insights__explore--inner {
+    padding-bottom: 80px;
+  }
+
+  .insights__explore__image {
+    @include grid-width(7);
+    position: absolute;
+    top: calc(50% - 250px);
+    right: -115px;
+    margin-bottom: 0;
+  }
+
+  .insights__explore__text {
+    @include grid-width(6);
+  }
+
+  .insights__explore__cta {
+    margin: -40px auto 0;
+    padding: 40px;
+    background-color: $color-white;
+  }
+}
+
+@include mq($bp--desktop) {
+  .insights__explore--inner {
+    padding: 80px;
+    min-height: 780px;
+  }
+
+  .insights__explore__text {
+    p {
+      font-size: 14px;
+    }
+  }
+}

@@ -1,0 +1,123 @@
+.article-list {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 100px;
+}
+
+$article-list-border-style: 1px solid $color-gray--e;
+
+.article-list__item {
+  border-top: $article-list-border-style;
+  padding: 30px 0;
+
+  > div:first-child {
+    margin-bottom: 40px;
+  }
+
+  &:last-child {
+    border-bottom: $article-list-border-style;
+  }
+}
+
+.article-list__date {
+  @include mini-caps;
+  margin-top: 0;
+  color: $color-slate--light;
+}
+
+.article-list__title {
+  margin: 0 0 10px;
+}
+
+.article-list__title-link {
+  @include font($font-sectra, 18px, 400, normal, $lh: 1.25);
+  color: $color-slate;
+  display: block;
+  margin: 0;
+  border: 0;
+
+  &:hover {
+    color: $color-fire;
+  }
+}
+
+.article-list__author,
+.article-list__author-title {
+  @include font($font-gotham-ss, 12px, 400, $lh: 1.25);
+  color: $color-slate;
+  padding: 0;
+  margin: 0;
+}
+
+.article-list__author {
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.article-list__excerpt {
+  @include font($font-sectra, 16px, 400, italic);
+  color: $color-slate;
+}
+
+.article-list__read-link {
+  display: inline-block;
+  text-align: right;
+  color: $color-slate;
+  @include font($font-gotham-ss, 12px, 500, $lh: 1.1);
+  padding: 0 0 3px;
+  border-bottom: 1px solid $color-fire;
+
+  &:hover {
+    color: $color-fire--dark;
+  }
+}
+
+
+@include mq($bp--tablet) {
+  .article-list__title-link {
+    font-size: 26px;
+  }
+} // mq
+
+
+@include mq($bp--tablet-xl) {
+  .article-list__item {
+    display: flex;
+    justify-content: space-between;
+
+    > div:first-child {
+      @include grid-width(5, $context-col-count: 10);
+      margin-bottom: 0;
+      padding-right: 30px;
+    }
+
+    > div:last-child {
+      @include grid-width(5, $context-col-count: 10);
+    }
+  }
+
+  .article-list__title {
+    margin-bottom: 40px;
+  }
+
+
+  .article-list__excerpt {
+    padding-top: 30px;
+  }
+} // mq
+
+@include mq($bp--desktop) {
+  .article-list__title-link {
+    font-size: 30px;
+  }
+
+  .article-list__item {
+    > div:first-child {
+      @include grid-width(6, $context-col-count: 10);
+    }
+
+    > div:last-child {
+      @include grid-width(4, $context-col-count: 10);
+    }
+  }
+} //mq

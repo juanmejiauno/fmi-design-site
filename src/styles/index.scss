@@ -1,0 +1,29 @@
+// Vendor
+
+@import './vendor/normalize';
+
+//  Vars
+
+@import './partials/variables';
+
+@import './partials/mixins';
+
+// Global styles
+
+@import './partials/fonts';
+
+@import './partials/base';
+
+@import './partials/forms';
+
+@import './partials/modals';
+
+@import './partials/basic-text';
+
+// Routes
+
+@import '../routes/**/*.scss';
+
+// Components
+
+@import '../components/**/*.scss';

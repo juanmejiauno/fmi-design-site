@@ -1,0 +1,28 @@
+
+.article-topics {
+  padding: 20px 0;
+}
+
+
+.article-topics__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.article-topics__item {
+  display: inline-block;
+  margin: 0 10px 10px 0;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.article-topics__link {
+  @include font($font-gotham-ss, 12px, 500, $lh: 1);
+  display: inline-block;
+  color: $color-slate;
+  padding: 0 0 2px;
+  border-bottom: 1px solid $color-gray--d;
+}

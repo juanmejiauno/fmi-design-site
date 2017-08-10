@@ -1,0 +1,68 @@
+
+//Quote
+
+.bordered-quote {
+  @include font($font-sectra, 18px, 400, $lh: 1.2);
+  text-align: center;
+  border: 1px solid $color-gold;
+  margin-bottom: 80px;
+
+  &::before,
+  &::after {
+    @include pseudo;
+    display: block;
+    width: 100%;
+    height: 1px;
+    margin: 4px auto;
+    background-color: $color-gold;
+  }
+}
+
+.bordered-quote__content {
+  padding: 30px;
+}
+
+.bordered-quote__text {
+  margin-bottom: 40px;
+}
+
+.bordered-quote__person {
+  @include mini-caps;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.bordered-quote__description {
+  @include mini-caps;
+  display: block;
+  margin: 0;
+  color: $color-slate;
+}
+
+
+// Breakpoints ------------
+
+@include mq($bp--tablet) {
+  .bordered-quote {
+    font-size: 30px;
+  }
+}
+
+@include mq($bp--tablet-xl) {
+  .bordered-quote__content {
+    padding: 60px;
+  }
+} // mq
+
+
+@include mq($bp--desktop-xl) {
+  .bordered-quote {
+    @include grid-width(10);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .bordered-quote__content {
+    padding: 90px 180px;
+  }
+}

@@ -1,0 +1,518 @@
+/******************************
+Home Component
+******************************/
+
+.home {
+  overflow-x: hidden; //prevents horizontal scrolling
+}
+
+$hero-max-width: $layout-content + 4 * ($layout-col-width + $layout-gutter-width);
+// Hero
+
+
+.home-hero {
+  overflow: hidden;
+}
+
+.home-hero__content {
+  margin: 0 auto;
+  position: relative;
+  @include clearfix;
+  max-width: $layout-content;
+  // max-width: $hero-max-width;
+}
+
+.home-hero__header {
+  position: relative;
+  background-color: $color-white;
+  padding: 30px 15px 0;
+  margin: 0 30px;
+  top: -30px;
+  z-index: $z-index-3;
+}
+
+.home-hero__h1 {
+  color: $color-fire;
+  @include font($font-sectra, 28px, 400, $lh: 1);
+  margin: 0 0 20px;
+  text-align: center;
+}
+
+.home-hero__image {
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+  z-index: $z-index-2;
+  margin: 0;
+
+  img {
+    position: absolute;
+    top: -25%;
+    left: 0;
+    width: 100%;
+    display: block;
+  }
+}
+
+
+.home-hero__text {
+  @include font($font-gotham-ss, 11px, 400, $lh: 1.625);
+  color: $color-slate;
+  padding: 0;
+  text-align: center;
+
+
+  strong {
+    color: $color-slate;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    font-weight: 600;
+  }
+}
+
+
+// Preface
+
+.home-preface {
+  max-width: $layout-content;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+  clear: both;
+}
+
+.home-preface__content {
+  color: $color-slate;
+  padding: 0 30px 50px;
+  background-color: $color-white;
+  text-align: center;
+  @include font($font-sectra, 18px, 400, $lh: 1.5);
+
+  p {
+    margin: 0;
+  }
+}
+
+// sections
+
+.home-story-block {
+  position: relative;
+}
+
+.home-story-block__triangle {
+  opacity: 0.35;
+  position: absolute;
+  pointer-events: none;
+  z-index: $z-index-5;
+  @include size(460px 600px);
+  display: none; // hide on mobile
+
+  &--today {
+    right: -190px;
+    top: -120px;
+  }
+
+  &--tomorrow {
+    left: -170px;
+    top: -160px;
+    transform: rotate(180deg);
+  }
+
+  &--together {
+    right: -200px;
+    top: -90px;
+  }
+}
+
+.home-story-block__content {
+  padding: 50px 0;
+  margin: 0 auto;
+  position: relative;
+  z-index: $z-index-6;
+  max-width: $layout-content;
+
+  .home-story-block--today & {
+    padding-top: 0 !important;
+  }
+}
+
+.home-story-block__h3 {
+  text-align: center;
+  padding: 0 30px;
+  margin: 0;
+  @include font($font-gotham-ss, 36px, 200, $lh: 1.1);
+  @include smooth;
+  color: $color-slate;
+  letter-spacing: -0.02em;
+
+
+  em {
+    font-style: normal;
+  }
+
+  &--today em {
+    color: $color-fire;
+  }
+
+  &--tomorrow em {
+    color: $color-green--dark;
+  }
+
+  &--together em {
+    color: $color-blue--bright;
+  }
+}
+
+// offerings
+
+.home-story-block__offer {
+  padding: 25px 30px;
+  text-align: center;
+}
+
+.home-story-block__h4 {
+  color: $color-slate--dark;
+  text-align: center;
+  @include font($font-gotham-ss, 11px, 600, $lh: 1.1, $ls: 0.8px, $caps: true);
+  margin: 0 0 20px;
+  padding: 0;
+
+  .home-story-block__offer--today & {
+    color: $color-fire--dark;
+  }
+
+  .home-story-block__offer--tomorrow & {
+    color: $color-green--dark2;
+  }
+
+  .home-story-block__offer--together & {
+    color: $color-blue--rich;
+  }
+}
+
+.home-story-block__h5 {
+  color: $color-slate;
+  @include font($font-sectra, 24px, 400, $lh: 1.1);
+  margin: 0 0 20px;
+  padding: 0;
+}
+
+.home-story-block__text {
+  @include secondary-text;
+  margin: 0;
+
+  p {
+    margin: 0 0 20px;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  a {
+    border-color: $color-gray--d;
+
+    .home-story-block__offer--today & {
+      color: $color-fire;
+    }
+
+    .home-story-block__offer--tomorrow & {
+      color: $color-green--dark;
+    }
+
+    .home-story-block__offer--together & {
+      color: $color-blue;
+    }
+  }
+}
+
+@svg-load small-hexagon-fire url('../img/small-hexagon.svg') {
+  fill: $color-fire--dark;
+}
+
+@svg-load small-hexagon-green url('../img/small-hexagon.svg') {
+  fill: $color-green--dark2;
+}
+
+@svg-load small-hexagon-blue url('../img/small-hexagon.svg') {
+  fill: $color-blue--rich;
+}
+
+.home-story-block__number {
+  display: block;
+  margin: 0 auto 15px;
+  padding: 7px 0 0;
+  background-position: 50% 50%;
+  @include size(30px 30px);
+  background-repeat: no-repeat;
+  color: $color-white;
+  @include font($font-gotham-ss, 11px, 600, $lh: 1.5);
+
+  .home-story-block__offer--today & {
+    background-image: svg-inline(small-hexagon-fire);
+  }
+
+  .home-story-block__offer--tomorrow & {
+    background-image: svg-inline(small-hexagon-green);
+  }
+
+  .home-story-block__offer--together & {
+    background-image: svg-inline(small-hexagon-blue);
+  }
+}
+
+
+// Breakpoints ------------
+
+@include mq($bp--tablet) {
+  .home-hero__header {
+    top: 0;
+    margin: 0;
+    padding: 40px 50px 0 30px;
+    background: transparent;
+  }
+
+  .home-hero__h1 {
+    font-size: 42px;
+    text-align: left;
+  }
+
+  .home-hero__text {
+    padding: 0;
+    text-align: left;
+    @include grid-width(5);
+  }
+
+  .home-hero__image {
+    float: right;
+    width: 50%;
+    margin: 0;
+    height: 450px;
+
+    img {
+      top: 0;
+    }
+  }
+
+  .home-preface {
+    top: -40px;
+    z-index: $z-index-5;
+  }
+
+  .home-preface__content {
+    margin: 0 auto;
+    font-size: 21px;
+    @include grid-width(10);
+    padding: 40px 60px;
+  }
+
+  .home-story-block__h3 {
+    margin-bottom: 1em;
+  }
+
+  .home-story-block__offer-set {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .home-story-block__offer {
+    padding: 50px 40px;
+    @include grid-width(6);
+    position: relative;
+
+    &:nth-of-type(2)::before {
+      @include pseudo;
+      display: block;
+      top: 0;
+      left: -#{$layout-gutter-width};
+      height: 100%;
+      width: $layout-gutter-width;
+      position: absolute;
+      background: svg-load('../img/fancy-border.svg');
+      background-repeat: no-repeat;
+      background-position: 9px 50%;
+    }
+  }
+} // mq
+
+@include mq($bp--tablet-xl) {
+  .home-hero__header {
+    left: 0;
+    padding-right: 0;
+  }
+
+  .home-hero__h1 {
+    font-size: 55px;
+  }
+
+  .home-hero__text {
+    font-size: 13px;
+  }
+
+  .home-hero__image {
+    height: 500px;
+    margin-bottom: 0;
+  }
+
+
+  // sections
+
+  .home-story-block__triangle {
+    display: block;
+  }
+
+  .home-story-block__content {
+    padding: 100px 0;
+  }
+
+  .home-story-block__h3 {
+    font-size: 48px;
+  }
+
+  .home-story-block__h4 {
+    font-size: 12px;
+  }
+
+  .home-story-block__h5 {
+    font-size: 30px;
+  }
+
+  .home-story-block__text {
+    padding: 0 30px;
+  }
+} // mq
+
+
+@include mq($bp--desktop) {
+  .home-hero__h1 {
+    font-size: 72px;
+
+    &::after {
+      @include pseudo();
+      position: relative;
+      left: 2px;
+      display: block;
+      @include size(1px 75px);
+      background-color: $color-slate;
+    }
+  }
+
+  .home-hero__header {
+    position: absolute;
+    top: 60px;
+    left: 100px;
+    padding: 0;
+    z-index: $z-index-2;
+    @include grid-width(6);
+  }
+
+  .home-hero__background {
+    position: absolute;
+    top: -60px;
+    left: -180px;
+    background-image: svg-load('../img/triangle-pattern-light.svg');
+    background-repeat: no-repeat;
+    @include size(700px);
+    opacity: 0.2;
+    transform: rotate(90deg);
+  }
+
+  .home-hero__text {
+    @include grid-width($col-count: 4,  $context-col-count: 7);
+  }
+
+  .home-preface {
+    position: relative;
+    top: -100px;
+    z-index: $z-index-4;
+  }
+
+  .home-preface__content {
+    font-size: 25px;
+  }
+
+  .home-hero__image {
+    @include grid-width(6);
+    float: right;
+    position: relative;
+    z-index: $z-index-1;
+    height: 650px;
+  }
+
+  .home-story-block__triangle {
+    @include size(600px);
+
+    &--tomorrow {
+      top: -130px;
+    }
+  }
+
+  .home-story-block__offer-set {
+    padding: 0 60px; // cheat the offerings closer to the center
+  }
+
+  .home-story-block__h3 {
+    font-size: 58px;
+  }
+
+  // sections
+  .home-story-block__content {
+    padding: 150px 0;
+  }
+
+  .home-story-block__offer {
+    padding: 60px;
+    min-height: 250px;
+  }
+} // mq
+
+
+
+@include mq($bp--desktop-xl) {
+  .home-hero__header {
+    top: 100px;
+  }
+
+  .home-hero__background {
+    opacity: 0.25;
+    background-size: 820px;
+    @include size(770px);
+  }
+
+  .home-hero__h1 {
+    font-size: 78px;
+
+    &::after {
+      height: 150px;
+    }
+  }
+
+  .home-hero__image {
+    @include grid-width(7);
+    height: 800px;
+  }
+
+  .home-preface__content {
+    padding: 60px 60px 0;
+    font-size: 34px;
+  }
+
+  .home-story-block__h5 {
+    font-size: 40px;
+  }
+
+  .home-story-block::before {
+    bottom: -80px;
+  }
+
+  .home-story-block__offer-set {
+    padding: 0 80px; // cheat the offerings closer to the center
+  }
+} // mq
+
+
+@include mq($bp--desktop-xxl) {
+  .home-story-block__triangle {
+    opacity: 0.625;
+  }
+} // mq

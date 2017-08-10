@@ -1,0 +1,190 @@
+// HEADER COMPONENT
+
+
+$small-logo-width: 140px;
+$medium-logo-width: 180px;
+$large-logo-width: 220px;
+
+$bp--space-for-3-links: 460px;
+$bp--bigger-logo: 500px;
+
+
+.primary-header {
+  background: $color-white;
+  border-bottom: 1px solid $color-gray--e;
+}
+
+.primary-header__content {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// Logo
+.primary-header__logo-h1 {
+  margin: 0;
+  padding: 0;
+}
+
+.primary-header__logo-h1-link {
+  border: 0;
+  margin: 0;
+  display: block;
+  background: url(/img/fmi-logo-horiz--slate.svg) no-repeat 0 center;
+  @include image-replace($small-logo-width, 40px);
+  background-size: contain;
+}
+
+// Primary Navigation
+.primary-header__nav {
+  width: calc(100% - $small-logo-width);
+
+  @include mq($bp--tablet-xl) {
+    width: calc(100% - $large-logo-width);
+  }
+}
+
+.primary-header__nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  @include mq($bp--space-for-3-links) {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+  }
+}
+
+.primary-header__nav-item {
+  margin-left: 20px;
+  // hide all the items
+  display: none;
+  //except the menu link:
+  &--menu {
+    display: block;
+  }
+
+  &:first-of-type {
+    margin-left: 0;
+  }
+
+
+
+  @include mq($bp--space-for-3-links) {
+    // now show non-login links
+    display: block;
+  }
+
+  @include mq($bp--tablet) {
+    margin-left: 25px;
+  }
+
+  @include mq($bp--tablet-xl) {
+    margin-left: 35px;
+  }
+
+  @include mq($bp--desktop-xl) {
+    margin-left: 50px;
+  }
+}
+
+
+
+.primary-header__nav-link {
+  color: $color-slate;
+  display: block;
+  border: 0;
+  margin: 0;
+  padding: 20px 0;
+  transition: color $timing-medium;
+  background-color: transparent;
+  @include font($font-gotham-ss, 10px, 600, $lh: 1, $ls: 1px, $caps: true);
+  @include smooth;
+
+  &:hover,
+  &:focus {
+    color: rgba($color-slate, 0.4);
+  }
+}
+
+@svg-load hamburger-fire url('../img/fmi-hamburger.svg') {
+  fill: $color-fire;
+}
+
+.primary-header__nav-link--menu {
+  padding-left: 30px;
+  position: relative;
+  cursor: pointer;
+  color: $color-fire;
+
+  &::before {
+    @include pseudo;
+    display: block;
+    position: absolute;
+    top: 50%;
+    margin-top: -5px;
+    left: 0;
+    transition: background $timing-medium;
+    background-image: svg-inline(hamburger-fire);
+    background-repeat: no-repeat;
+    @include size(20px);
+
+    @include mq($bp--tablet-xl) {
+      margin-top: -6px;
+    }
+  }
+}
+
+.skip-to-content {
+  opacity: 0;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  display: block;
+  background: $color-fire;
+  color: $color-white;
+  padding: 6px 10px;
+  top: -50px;
+  transition: top $timing-standard ease-out;
+  @include font($font-gotham-ss, 10px, 600, $lh:1, $caps: true, $ls: 0.8px);
+
+  &:focus {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+// Breakpoints ------------
+@include mq($bp--tablet) {
+  .primary-header__logo-h1-link {
+    @include image-replace($medium-logo-width, 65px);
+  }
+}
+
+
+@include mq($bp--no-mobile-nav) {
+  .primary-header__content {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .primary-header__logo-h1-link {
+    @include image-replace($large-logo-width, 65px);
+  }
+
+  .primary-header__nav-link {
+    font-size: 12px;
+  }
+}
+
+/***********************************
+  Bad Styles
+***********************************/
+
+.primary-header-wrapper {
+  position: relative;
+  z-index: 100;
+}

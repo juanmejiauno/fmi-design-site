@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="25" height="29" viewBox="0 0 25 29">
+  <g fill="none" fill-rule="evenodd">
+    <path id="line" stroke="#CACACA" stroke-width="2" d="M12.3909697,1.15470054 L23.7819395,7.73127998 L23.7819395,20.8844389 L12.3909697,27.4610183 L1,20.8844389 L1,7.73127998 L12.3909697,1.15470054 Z"/>
+    <polygon id="hexagon" fill="#CACACA" points="12.361 6 19.722 10.25 19.722 18.75 12.361 23 5 18.75 5 10.25"/>
+  </g>
+</svg>

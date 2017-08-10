@@ -1,0 +1,566 @@
+.assays-index-section {
+  margin-bottom: 80px;
+
+  @include mq($bp--tablet) {
+    margin-bottom: 120px;
+  }
+  @include mq($bp--desktop-xl) {
+    margin-bottom: 140px;
+  }
+
+  & + .page-outro {
+    padding-top: 0;
+  }
+}
+
+// How
+.assays-index-how {
+  display: block;
+}
+
+.assays-index-how__content {
+  margin-bottom: 80px;
+}
+
+.assays-index-how__body {
+  @include secondary-text;
+  @include drop-cap($color-green);
+  margin-bottom: 30px;
+}
+
+.assays-index-how__process {
+  #{$all-headings} {
+    @include head-ital;
+  }
+
+  #{$all-lists} {
+    list-style: none;
+    margin: 0;
+    padding: 4px 0 0;
+    counter-reset: process-counter;
+  }
+
+  li {
+    @include font($font-gotham-ss, 11px, $lh: 1.5);
+    @include smooth;
+    counter-increment: process-counter;
+    margin: 0 0 15px;
+    padding: 0 0 0 24px;
+    position: relative;
+    color: $color-gray--7;
+    text-indent: -12px;
+
+    strong {
+      color: $color-slate;
+      font-weight: 500;
+    }
+
+    &::before {
+      width: 12px;
+      display: inline-block;
+      font-weight: 500;
+      color: $color-fire;
+      content: counter(process-counter);
+    }
+  }
+}
+
+
+// portfolio
+.assays-index-portfolio {
+  margin-bottom: 140px;
+}
+
+.assays-index-portfolio__prehead {
+  text-align: center;
+  color: $color-slate;
+  @include font($font-gotham-ss, 10.5px, 500, $lh: 1.2, $caps: true, $ls: 0.6px);
+  margin: 0 0 8px;
+}
+
+.assays-index-portfolio__head {
+  text-align: center;
+  margin: 0 0 30px;
+}
+
+
+// FAQs
+.assays-index-faqs {
+  padding: 30px;
+  margin-bottom: 60px;
+  background: $color-blue--dark url('/img/assays-index-faqs-bg.jpg') no-repeat 50% 50%;
+  background-size: cover;
+  position: relative;
+
+  a {
+    color: $color-white;
+  }
+}
+
+.assays-index-faqs__head {
+  text-align: center;
+  color: $color-white;
+  @include font($font-gotham-ss, 25px, 300, $lh: 1);
+  @include smooth;
+  padding: 10px 0 0;
+  margin: 0 0 50px;
+}
+
+.assays-index-faqs__faq-sets {
+  margin: 0 0 60px;
+}
+
+.assays-index-faqs__faq-set {
+  margin: 0 0 30px;
+}
+
+
+.assays-index-faqs__faq-set {
+  #{$all-headings} {
+    color: $color-white;
+    @include font($font-sectra, 14px, 400, italic);
+    padding: 0 0 4px;
+    margin: 0 0 16px;
+    border-bottom: 1px solid rgba($color-white, 0.3);
+  }
+
+  #{$all-lists} {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    padding: 0;
+    margin: 0 0 15px 30px;
+    text-indent: -15px;
+    @include font($font-gotham-ss, 14px, 500, $lh: 1.5);
+
+    a {
+      @include smooth;
+      color: $color-white;
+      border: 0;
+      transition: color $timing-standard;
+
+      &:hover {
+        // color: rgba($color-white, 0.7);
+        color: $color-yellow;
+      }
+
+      &::before {
+        content: "Q";
+        transition: color $timing-standard;
+        color: $color-yellow;
+        width: 15px;
+        display: inline-block;
+      }
+    }
+  } //li
+}
+
+
+.assays-index-faqs__outro {
+  padding: 0 30px 20px;
+  text-align: center;
+
+  h2 {
+    color: $color-white;
+    margin: 0 auto 15px;
+    max-width: 450px;
+    @include font($font-sectra, 15px, 400, italic);
+  }
+
+  a {
+    @include font($font-gotham-ss, 14px, 500, $lh: 1.2);
+    color: $color-white;
+  }
+}
+
+// Results and Reporting
+
+.assays-index-results-diagram {
+  margin: 0 0 80px;
+}
+
+.assays-index-results-diagram__illo {
+  display: none;
+}
+
+
+.assays-index-results-diagram {
+  ol {
+    @include list-hexagon-numbers;
+  }
+
+  li {
+    @include font($font-gotham-ss, 12px, 400, $lh: 1.625);
+    @include smooth;
+    color: $color-slate;
+
+    strong {
+      display: inline-block;
+      @include font($font-gotham-ss, 18px, 500, $lh: 1.2);
+      color: $color-slate;
+      padding-top: 3px;
+      margin: 0 0 6px;
+    }
+  }
+}
+
+.assays-index-results__cta {
+  text-align: center;
+}
+
+
+// Support Services
+.assays-index-support__block {
+  margin: 0 0 40px;
+}
+
+.assays-index-support__block-image {
+  margin: 0 0 15px;
+
+  img {
+    width: 100%;
+  }
+}
+
+.assays-index-support__block-body {
+  @include secondary-text;
+
+  h3 {
+    @include head-tertiary;
+  }
+
+  p:last-of-type a {
+    @include link-mini-caps($arrow:right);
+  }
+}
+
+
+
+// Breakpoints -------
+
+
+@include mq($bp--tablet) {
+
+
+  // how
+  .assays-index-how__head {
+    margin-bottom: 35px;
+  }
+
+  .assays-index-how__content {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .assays-index-how__body {
+    @include grid-width(8);
+    margin-bottom: 0;
+  }
+
+  .assays-index-how__process {
+    @include grid-width(4);
+  }
+
+  // FAQs
+  .assays-index-faqs {
+    padding: 100px 60px;
+
+    &::before {
+      @include pseudo;
+      display: block;
+      position: absolute;
+      @include size(35px);
+      transform: rotate(45deg);
+      background-color: $color-white;
+      left: 50%;
+      top: -17.5px;
+      margin-left: -17.5px;
+    }
+
+    &::after {
+      @include pseudo;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      @include size(100% 25px);
+      background: url('/img/reverse-wedge.svg') no-repeat 50% 100%;
+    }
+  }
+
+
+  .assays-index-results-diagram {
+    position: relative;
+
+    ol {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    li {
+      @include grid-width(6);
+      position: relative;
+    }
+  }
+
+  .assays-index-support__block {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .assays-index-support__block-image {
+    @include grid-width(6);
+    margin-bottom: 0;
+  }
+
+  .assays-index-support__block-body {
+    @include grid-width(6);
+    align-self: flex-start;
+  }
+
+  .assays-index-support__block:nth-of-type(even) {
+    .assays-index-support__block-body {
+      order: 1;
+    }
+
+    .assays-index-support__block-image {
+      order: 2;
+    }
+  }
+} // mq
+
+
+@include mq($bp--tablet-xl) {
+
+
+  // faqs
+  .assays-index-faqs__head {
+    font-size: 35px;
+  }
+
+  .assays-index-faqs__faq-sets {
+    width: 75%;
+    margin: 0 auto 60px;
+  }
+
+  // Results & Reporting
+  .assays-index-results-diagram__illo {
+    display: block;
+    width: 20%;
+    padding: 50px 0;
+    margin: 0 auto;
+    position: relative;
+    z-index: $z-index-1;
+  }
+
+  .assays-index-results-diagram {
+    #{$all-lists} {
+      @include size(100%);
+      position: absolute;
+      display: block;
+    }
+
+    li {
+      position: absolute !important;
+      z-index: $z-index-2;
+      width: 260px;
+
+      &:nth-child(1) {
+        top: 0;
+        left: 0;
+      }
+
+      &:nth-child(2) {
+        top: 0;
+        right: 0;
+      }
+
+      &:nth-child(3) {
+        top: 150px;
+        left: 0;
+      }
+
+      &:nth-child(4) {
+        top: 150px;
+        right: 0;
+      }
+    }
+  }
+} // mq
+
+
+@include mq($bp--desktop) {
+
+  // how
+  .assays-index-how {
+    @include grid-width(10);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .assays-index-how__body {
+    @include grid-width(7, $context-col-count: 10);
+    padding-right: 20px; // cheat the gutter a bit
+  }
+
+  .assays-index-how__process {
+    @include grid-width(3, $context-col-count: 10);
+
+    li {
+      font-size: 12.5px;
+    }
+  }
+
+
+  // portfolio
+  .assays-index-portfolio__head {
+    font-size: 32px;
+  }
+
+  // faq
+  .assays-index-faqs__faq-sets {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .assays-index-faqs__faq-set {
+    width: 30%;
+    margin-bottom: 0;
+  }
+
+  // Results * Reporting
+  .assays-index-results-diagram__illo {
+    padding: 10px 0;
+    width: 200px;
+    position: relative;
+    z-index: $z-index-2;
+  }
+
+  .assays-index-results-diagram {
+    strong {
+      display: inline-block;
+      padding-right: 20px;
+      background-color: $color-white;
+      position: relative;
+      z-index: $z-index-3;
+    }
+
+    li {
+      width: 290px;
+      position: relative;
+      z-index: $z-index-1;
+
+
+      &:nth-child(1) {
+        top: 40px;
+        z-index: $z-index-5;
+      }
+
+      &:nth-child(2) {
+        top: 0;
+      }
+
+      &:nth-child(3) {
+        top: 220px;
+      }
+
+      &:nth-child(4) {
+        top: 180px;
+      }
+
+      // add lines:
+      &::after {
+        @include pseudo;
+        height: 1px;
+        width: 380px;
+        background-color: $color-gray--d;
+        position: absolute;
+        left: 50px;
+        top: 14px;
+      }
+
+
+      &:nth-child(2),
+      &:nth-child(4) {
+        &::after {
+          width: 140px;
+          left: -155px;
+        }
+      }
+    }
+  }
+
+
+  .assays-index-results-diagram strong {
+    display: inline-block;
+    padding-right: 20px;
+    background-color: $color-white;
+    position: relative;
+    z-index: $z-index-3;
+  }
+
+
+  .assays-index-support__blocks {
+    // @include grid-width(10);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .assays-index-support__block-body {
+    @include grid-width(5, $context-col-count: 12);
+  }
+
+  .assays-index-support__block-image {
+    background: $color-white;
+    box-shadow: 0 0 0 10px $color-white; // creates an *exterior* border
+    @include grid-width(7, $context-col-count: 12);
+  }
+} // mq
+
+@include mq($bp--desktop-xl) {
+  .assays-index-intro__head {
+    font-size: 72px;
+  }
+
+  .assays-index-results-diagram {
+    margin-left: auto;
+    margin-right: auto;
+    @include grid-width(10);
+  }
+
+  .assays-index-support__blocks {
+    @include grid-width(10);
+  }
+
+  .assays-index-support__block-image {
+    @include grid-width(6, $context-col-count: 10);
+  }
+
+  .assays-index-support__block-body {
+    @include grid-width(4, $context-col-count: 10);
+  }
+} // mq
+
+
+@include mq($bp--desktop-xxl) {
+  .assays-index-intro__head {
+    font-size: 84px;
+  }
+
+  .assays-index-support__block-body {
+    padding-right: 15px;
+  }
+
+  .assays-index-support__block:nth-of-type(even) {
+    margin-bottom: 0;
+
+    .assays-index-support__block-image {
+      margin-top: -100px;
+    }
+  }
+} // mq

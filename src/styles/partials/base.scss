@@ -1,0 +1,644 @@
+
+body,
+body * {
+  box-sizing: border-box;
+}
+
+//   Base HTML element styles
+
+body {
+  background-color: $color-slate--dark;
+  @include smooth;
+  @include basic-text;
+}
+
+
+// Common Layouts
+
+.main {
+  background: $color-white;
+  min-height: calc(100vh - 390px);
+}
+
+
+.base-layout {
+  margin: 0 auto;
+  padding: 0 $layout-gutter-width;
+  max-width: $layout-content + $layout-gutter-width * 2;
+
+  &--pad-bottom {
+    padding-bottom: 80px;
+  }
+
+  @include mq($bp--tablet) {
+    padding-left: $layout-gutter-width * 2;
+    padding-right: $layout-gutter-width * 2;
+    max-width: $layout-content + $layout-gutter-width * 4;
+  }
+}
+
+
+.page-title {
+  display: inline;
+  margin: 20px 0;
+  padding: 10px 0;
+
+  @include underline($color-fire, $color-white, 1px, 15px);
+
+  @include mq($bp--tablet) {
+    @include underline($color-fire, $color-white, 1px, 20px);
+  }
+  @include mq($bp--desktop) {
+    @include underline($color-fire, $color-white, 1px, 22px);
+  }
+  @include mq($bp--desktop-xl) {
+    @include underline($color-fire, $color-white, 1px, 25px);
+  }
+}
+
+
+// Secondary Text
+
+.secondary-section {
+  @include secondary-text;
+  margin-bottom: 60px;
+
+  &--centered {
+    text-align: center;
+    @include mq($bp--tablet-xl) {
+      margin-left: auto;
+      margin-right: auto;
+      @include grid-width(8);
+    }
+  }
+
+  @include mq($bp--tablet-xl) {
+    margin: 0 auto 70px;
+    @include grid-width(8);
+  }
+}
+
+.secondary-section--intro p:first-of-type {
+  @include drop-cap($color-green--dark);
+}
+
+
+
+// Common headings
+
+// Big green sectra
+.head-secondary {
+  margin: 40px 0 15px;
+  @include smooth;
+  text-align: center;
+  @include font($font-sectra, 24px, 400, $lh: 1.25);
+  color: $color-green--dark;
+  @include mq($bp--tablet) {
+    font-size: 36px;
+  } // mq
+  @include mq($bp--tablet-xl) {
+    font-size: 42px;
+  } // mq
+  @include mq($bp--desktop) {
+    font-size: 48px;
+  } // mq
+  @include mq($bp--desktop-xl) {
+    font-size: 56px;
+  } // mq
+}
+
+// Mid-sized slate Sectra
+
+@mixin head-tertiary {
+  @include font($font-sectra, 21px, 400, $lh: 1.1);
+  color: $color-slate;
+  margin: 0 0 10px;
+
+  @include mq($bp--tablet) {
+    font-size: 24px;
+  }
+
+  @include mq($bp--desktop) {
+    font-size: 32px;
+    margin-bottom: 15px;
+  }
+}
+
+.head-tertiary {
+  @include head-tertiary;
+}
+
+// head micro
+
+@mixin head-micro {
+  @include font($font-gotham-ss, 11px, 500, $caps: true, $lh: 1.2, $ls: 1px);
+  margin: 0 0 7px;
+  padding: 0;
+  color: $color-gray--7;
+}
+
+.head-micro {
+  @include head-micro;
+}
+
+// Centered orange caps
+
+@mixin head-section {
+  @include font($font-gotham-ss, 15px, 400, $lh: 1.2, $ls: 0.8px, $caps:true);
+  text-align: center;
+  color: $color-fire;
+  margin-top: 0;
+
+  @include mq($bp--tablet-xl) {
+    font-size: 20px;
+  }
+}
+
+.head-section {
+  @include head-section;
+}
+
+// Footnotes
+
+@mixin footnotes {
+  #{$all-lists} {
+    padding: 20px 0 0;
+    margin: 0 0 0 0.8em;
+    list-style: decimal;
+  }
+
+  li,
+  p {
+    color: $color-slate--light;
+    @include font($font-sectra, 12px, normal);
+    margin: 0 0 3px;
+  }
+}
+
+// Call to action with vertical line between
+// decsriptoin adn the link (which is usually link-cta-big or link-cta-medium)
+.cta {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.cta__desc {
+  @include font($font-sectra, 15px, 400, italic, $lh: 1.5);
+  color: $color-slate;
+
+  @include mq($bp--tablet) {
+    font-size: 18px;
+  }
+}
+
+
+// small italic gray
+
+@mixin head-ital($add-underline: true) {
+  @include font($font-sectra, 13px, 400, italic, $lh: 1.2);
+  color: $color-gray--7;
+  padding: 0 0 5px;
+  margin: 0 0 15px;
+
+  @if ($add-underline) {
+    border-bottom: 1px solid $color-gray--d;
+  }
+
+  @include mq($bp--tablet-xl) {
+    font-size: 14.5px;
+  }
+}
+
+.head-ital {
+  @include head-ital(true);
+
+  &--no-underline {
+    border: 0;
+  }
+}
+
+@mixin line-under {
+  &::after {
+    @include pseudo;
+    display: block;
+    @include size(1px 60px);
+    margin: 10px auto 0;
+    background-color: $color-gray--d;
+  }
+}
+
+// add a line to any heading
+.line-under {
+  @include line-under;
+}
+
+// Common link styles
+
+.link-jump-nav {
+  @include font($font-gotham-ss, 13px, 500);
+  color: $color-slate;
+  border-bottom: 1px solid $color-green;
+
+  &:hover {
+    border-color: $color-slate--light;
+  }
+}
+
+// Big slate gotham
+.link-cta-big {
+  color: $color-slate;
+  display: inline-block;
+  border: none;
+  @include font($font-gotham-ss, 24px, 200, $lh: 1);
+  @include underline($color-fire, $color-white, 1px, 0);
+  transition: $timing-standard;
+
+  @include mq($bp--tablet) {
+    font-size: 48px;
+    @include underline($color-fire, $color-white, 1px, 2px);
+  }
+
+  &:hover {
+    color: $color-fire;
+    cursor: pointer;
+  }
+}
+
+
+// Green box --  "Details" and "Gene List" link on product pages
+.link-cta-tab {
+  @include font($font-gotham-ss, 11px, 600, $caps: true, $ls: 0.8px);
+  display: inline-block;
+  border: 0;
+  padding: 8px 20px;
+  background: $color-green--dark2;
+  color: $color-white;
+  transition: background-color $timing-standard, padding $timing-standard;
+
+  &:hover {
+    padding-top: 14px;
+    padding-bottom: 14px;
+    background-color: $color-green--dark;
+  }
+}
+
+// Slate text with orange border
+.link-cta-medium {
+  @include font($font-gotham-ss, 14px, 500);
+  color: $color-slate;
+  border-bottom: solid 1px $color-fire;
+  display: inline-block;
+  text-decoration: none;
+
+  &:hover {
+    border-color: $color-slate--light;
+  }
+
+  @include mq($bp--tablet) {
+    font-size: 16px;
+  }
+}
+
+// Orange small caps
+
+@mixin mini-caps {
+  @include font($font-gotham-ss, 9px, 500, $caps: true, $ls: 0.8px);
+  text-decoration: none;
+  color: $color-fire--dark;
+  display: inline-block;
+  border: 0;
+  padding: 0;
+
+  @include mq($bp--tablet) {
+    font-size: 10px;
+  }
+}
+
+@mixin link-mini-caps($arrow: 'right') {
+  @include mini-caps;
+
+  @if $arrow == 'right' {
+    &::after {
+      display: inline-block;
+      padding-left: 5px;
+      transition: transform $timing-standard ease;
+      content: "→";
+    }
+  }
+
+  @if $arrow == 'left' {
+    &::before {
+      display: inline-block;
+      padding-right: 5px;
+      transition: transform $timing-standard ease;
+      content: "←";
+    }
+  }
+
+  &:hover {
+    color: $color-slate;
+
+    &::after {
+      transform: translateX(3px);
+    }
+
+    &::before {
+      transform: translateX(-3px);
+    }
+  }
+}
+
+.link-mini-caps {
+  @include link-mini-caps;
+
+  &--arrow-after {
+    @include link-mini-caps($arrow: right);
+  }
+}
+
+
+
+// Paragraphs
+p {
+  margin: 0 0 1em;
+}
+
+// Links
+a {
+  border-bottom: solid 1px $color-peach;
+  color: $color-fire;
+  text-decoration: none;
+  transition: color $timing-short linear, border-color $timing-short linear;
+
+  &:hover {
+    border-color: $color-fire;
+  }
+}
+
+
+// Images
+img {
+  max-width: 100%;
+}
+
+figure {
+  margin: 0;
+}
+
+// Time
+time {
+  letter-spacing: inherit;
+}
+
+.aria-hidden-text {
+  @include visuallyhidden();
+}
+
+
+// Embeds, iframes, videos
+.iframe-wrap {
+  position: relative;
+  height: 0;
+  width: 100%;
+  margin: 0 0 1em;
+  padding-bottom: percentage(9 / 16);
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important; // override inline attributes
+    height: 100% !important; // override inline attributes
+    border: none;
+  }
+}
+
+// modals
+
+// The modal version shouldn't expand to the container (which here is the viewport width),
+// so we'll set some widths manually
+
+
+.iframe-wrap--modal {
+  width: 300px;
+
+  @include mq($bp--tablet) {
+    width: 500px;
+  }
+
+  @include mq($bp--desktop) {
+    width: 800px;
+  }
+}
+
+
+// Forms
+
+form,
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+// Custom Lists
+
+@svg-load small-hexagon--stroke url('../img/small-hexagon-outline.svg') {
+  fill: none;
+}
+
+@svg-load small-hexagon--fill url('../img/small-hexagon.svg') {
+  fill: $color-white;
+}
+
+@mixin list-hexagon-numbers($keep-above:false, $hex-type: 'outline') {
+  padding: 0;
+  margin: 0 0 20px;
+  list-style: none;
+  counter-reset: diagram-counter;
+
+
+  li {
+    margin: 0 0 30px;
+    padding: 45px 0 0;
+    counter-increment: diagram-counter;
+    position: relative;
+    text-align: center;
+
+    &::before {
+      @include pseudo;
+      display: block;
+      @include size(32px);
+      left: 50%;
+      margin-left: -16px;
+      top: 0;
+      color: $color-fire;
+      padding-top: 5.25px;
+      @include font($font-gotham-ss, 12.5px, 500);
+      position: absolute;
+      content: counter(diagram-counter);
+      text-align: center;
+    }
+
+    @if ($keep-above == false) {
+
+      @include mq($bp--tablet) {
+        text-align: left;
+        padding: 0 0 0 45px;
+
+        &::before {
+          left: 0;
+          top: -3px;
+          margin-left: 0;
+        }
+      }
+    } // if
+
+    @if ($hex-type == 'outline') {
+      &::before {
+        background: svg-inline(small-hexagon--stroke) no-repeat 50% top;
+      }
+    }
+
+    @if ($hex-type == 'fill') {
+      &::before {
+        background: svg-inline(small-hexagon--fill) no-repeat 50% top;
+      }
+    } //if
+  }
+}
+
+
+.list-hexagon-numbers {
+  @include list-hexagon-numbers;
+}
+
+
+// feature list
+
+@mixin list-mini-features {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  #{$all-headings} {
+    @include head-ital;
+  }
+
+  #{$all-lists} {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li,
+  p {
+    @include font($font-gotham-ss, 12px, 400, $lh: 1.75);
+    margin: 0 0 7px;
+    color: $color-slate--light;
+
+    strong {
+      color: $color-slate;
+      font-weight: 600;
+    }
+  }
+
+  p:last-of-type a {
+    @include link-mini-caps($arrow:right);
+  }
+
+  @include mq($bp--tablet) {
+    li {
+      margin-bottom: 15px;
+    }
+  }
+}
+
+// misc
+address {
+  font-style: normal;
+}
+
+
+// Page outros
+
+
+// Outro
+.page-outro {
+  max-width: $layout-content;
+  padding: 60px 0;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.page-outro__head {
+  text-align: center;
+  color: $color-fire;
+  @include font($font-sectra, 18px, 500);
+  margin: 0 0 0.375em;
+}
+
+.page-outro__body {
+  margin: 0 auto;
+  text-align: center;
+  color: $color-slate--light;
+  @include font($font-sectra, 18px, 400, $lh: 1.5);
+
+  a {
+    color: $color-slate;
+    display: inline;
+    padding-bottom: 0;
+
+    &:hover {
+      color: $color-fire;
+    }
+  }
+
+  sup {
+    color: $color-slate--light;
+    font-size: 12px;
+  }
+}
+
+@include mq($bp--tablet-xl) {
+  .page-outro {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .page-outro__head,
+  .page-outro__body {
+    font-size: 28px;
+  }
+}
+
+@include mq($bp--desktop) {
+  // outro
+  .page-outro {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .page-outro__head,
+  .page-outro__body {
+    font-size: 36px;
+  }
+
+  .page-outro__body {
+    @include grid-width(10);
+
+    a {
+      border: 0;
+      @include underline($color: $color-fire, $background-color: $color-white, $weight: 1px, $offset: 5px);
+    }
+  }
+}
+
+@include mq($bp--desktop-xl) {
+  // outro
+  .page-outro {
+    padding: 150px 0;
+  }
+}

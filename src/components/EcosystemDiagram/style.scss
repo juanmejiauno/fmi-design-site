@@ -1,0 +1,385 @@
+.ecosystem-diagram {
+  position: relative;
+}
+
+.ecosystem-diagram__groups {
+  position: relative;
+}
+
+.ecosystem-diagram__microhead {
+  @include head-micro;
+  color: $color-slate;
+  text-align: center;
+}
+
+.ecosystem-diagram__head {
+  margin: 0;
+  padding: 0 0 30px;
+  text-align: center;
+  @include font($font-sectra, 24px, 400, $lh: 1.2);
+  @include smooth;
+  color: $color-slate--dark2;
+
+  em {
+    font-size: italic;
+  }
+}
+
+.ecosystem-diagram__circle {
+  margin: 0 auto 50px;
+  max-width: 400px;
+
+  img {
+    width: 100%;
+    display: block;
+  }
+}
+
+
+$hexagon-types: (
+  fire: $color-fire,
+  green: $color-green,
+  slate: $color-slate--dark2
+);
+
+@each $name, $color in $hexagon-types {
+  @svg-load hexagon-stroke--#{$name} url('../img/hexagon-stroke--gray.svg') {
+    #hexagon {
+      fill: $color;
+    }
+
+    #line {
+      stroke: $color;
+    }
+  }
+}
+
+.ecosystem-diagram__group {
+  padding-bottom: 5px;
+  margin-bottom: 30px;
+  border-bottom: solid 1px $color-gray--e;
+
+  #{$all-lists} {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    padding: 0;
+    margin: 0 0 20px;
+    @include font($font-gotham-ss, 11px, 400, $lh: 1.625);
+    margin: 0 0 30px;
+    color: $color-slate;
+  }
+
+  h3 {
+    @include font($font-sectra, 28px, 500, $lh: 1.2);
+    padding: 5px 0 0 40px;
+    margin: 0 0 20px;
+    color: $color-slate--dark2;
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+
+    em {
+      font-style: normal;
+    }
+  }
+
+  h4 {
+    color: $color-slate--dark2;
+    @include font($font-gotham-ss, 13px, 500, $lh: 1.375, $ls: 0);
+    margin: 0 0 6px;
+    padding: 0;
+  }
+
+  // color code group 1
+  &:nth-of-type(1) {
+    h3 {
+      em {
+        color: $color-fire;
+      }
+      background-image: svg-inline(hexagon-stroke--fire);
+    }
+  } // 1
+
+  // color code group 2
+  &:nth-of-type(2) {
+    h3 {
+      em {
+        color: $color-green--dark;
+      }
+      background-image: svg-inline(hexagon-stroke--green);
+    }
+  } // 2
+
+  // color code group 3
+  &:nth-of-type(3) {
+    border-bottom: 0;
+
+    h3 {
+      em {
+        color: $color-slate--dark2;
+      }
+      background-image: svg-inline(hexagon-stroke--slate);
+    }
+  } // 2
+} // group
+
+
+
+// Breakpoints ---------------------
+
+@include mq($bp--tablet) {
+  .ecosystem-diagram__group {
+    #{$all-lists} {
+      column-count: 2;
+    }
+
+    li {
+      margin: 0;
+      padding: 10px 0;
+      break-inside: avoid;
+      -webkit-margin-before: 0;
+      -webkit-margin-after: 0;
+      -webkit-column-break-inside: avoid;
+      width: 100%;   // hack to get proper vertical-alignment
+      display: inline-block;
+      vertical-align: top;
+    }
+  }
+} // mq
+
+@include mq($bp--tablet-xl) {
+  .ecosystem-diagram__group {
+    #{$all-lists} {
+      column-count: 3;
+    }
+  }
+} // mq
+
+
+$tablet-left-align: 0;
+$tablet-right-align: 700px;
+$tablet-breakpoint: 1000px;
+
+$desktop-left-align: 0;
+$desktop-right-align: 950px;
+$desktop-breakpoint: 1300px;
+
+$ecosystem-settings: (
+  'tablet': (
+    'breakpoint': 1000px,
+    'circle-width': 440px,
+    'item-width': 200px,
+    'groups': (
+      'today': (
+        (right, $tablet-left-align, 140px, 80px), // text-alignment, x-pos, y-pos, hexagon/line length
+        (right, $tablet-left-align, 250px, 15px),
+        (right, $tablet-left-align, 355px, 15px)
+      ),
+      'tomorrow': (
+        (left, $tablet-right-align, 140px, 80px),
+        (left, $tablet-right-align, 250px, 15px),
+        (left, $tablet-right-align, 355px, 15px)
+      ),
+      'together': (
+        (right, $tablet-left-align, 480px, 80px),
+        (left, $tablet-right-align, 480px, 80px),
+        ('dummy', 0, 0, 0)
+      ),
+    )
+  ),
+  'desktop' : (
+    'breakpoint' : 1300px,
+    'circle-width': 650px,
+    'item-width': 250px,
+    'groups' : (
+      'today': (
+        (right, $desktop-left-align, 180px, 105px),
+        (right, $desktop-left-align, 320px, 30px),
+        (right, $desktop-left-align, 460px, 20px)
+      ),
+      'tomorrow': (
+        (left, $desktop-right-align, 180px, 105px),
+        (left, $desktop-right-align, 320px, 30px),
+        (left, $desktop-right-align, 460px, 20px)
+      ),
+      'together': (
+        (right, $desktop-left-align, 630px, 105px),
+        (left, $desktop-right-align, 630px, 105px),
+        ('dummy', 0, 0, 0)
+      ),
+    )
+  ),
+);
+
+
+@include mq($tablet-breakpoint) {
+  .ecosystem-diagram {
+    margin: 0 auto;
+  }
+
+  .ecosystem-diagram__group {
+    #{$all-lists} {
+      column-count: 1;
+    }
+
+    li {
+      padding: 0;
+    }
+
+    // line
+    li::before {
+      @include pseudo;
+      display: block;
+      height: 1px;
+      background: $color-gray--d;
+      position: absolute;
+      top: 7px;
+    }
+
+    // hexagon
+    li::after {
+      @include pseudo;
+      display: block;
+      position: absolute;
+      z-index: $z-index-2;
+      top: 0;
+      @include size(30px 20px);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-color: $color-white;
+    }
+
+    &--today li::after {
+      background-image: svg-inline(hexagon-stroke--fire);
+    }
+
+    &--tomorrow li::after {
+      background-image: svg-inline(hexagon-stroke--green);
+    }
+
+    &--together li::after {
+      background-image: svg-inline(hexagon-stroke--slate);
+    }
+  }
+
+
+
+  .ecosystem-diagram__head {
+    font-size: 36px;
+  }
+
+  .ecosystem-diagram__circle {
+    max-width: none;
+    position: relative;
+    z-index: $z-index-3;
+  }
+
+  .ecosystem-diagram__groups {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  .ecosystem-diagram__group {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    h3 {
+      display: none;
+    }
+
+    li {
+      position: absolute;
+    } // li
+  } // group
+} // mq
+
+@include mq($desktop-breakpoint) {
+  .ecosystem-diagram__head {
+    font-size: 42px;
+  }
+
+  .ecosystem-diagram__group {
+    li {
+      font-size: 13px;
+    }
+
+    h4 {
+      font-size: 17px;
+    }
+  } // group
+} // mq
+
+
+// generate positioning
+
+@each $key, $value in $ecosystem-settings {
+
+  // make media query
+  $bp: map-get($value, 'breakpoint');
+  $groups: map-get($value, 'groups');
+
+  @include mq($bp) {
+    .ecosystem-diagram {
+      width: $bp - 100px;
+    }
+
+    .ecosystem-diagram__circle {
+      width: map-get($value, 'circle-width');
+    }
+
+    .ecosystem-diagram__group li {
+      width: map-get($value, 'item-width');
+    }
+
+    // loop over groups
+
+    @each $group-name, $group-items-list in $groups {
+      .ecosystem-diagram__group {
+        &--#{$group-name} {
+          @for $i from 1 through 3 {
+            $item-settings: nth($group-items-list, $i);
+
+            $item-align: nth($item-settings, 1);
+            $item-x: nth($item-settings, 2);
+            $item-y: nth($item-settings, 3);
+            $item-hex-length: nth($item-settings, 4);
+
+            li:nth-child(#{$i}) {
+              text-align: $item-align;
+              left: $item-x;
+              top: $item-y;
+
+              &::before {
+                top: 8px;
+                width: $item-hex-length;
+                @if ($item-align == 'right') {
+                  left: calc(100% + 6px);
+                }
+                @else {
+                  right: calc(100% + 6px);
+                }
+              } // before
+
+              &::after {
+                @if ($item-align == 'right') {
+                  left: calc(100% + #{$item-hex-length});
+                  background-position: right 50%;
+                }
+                @else {
+                  right: calc(100% + #{$item-hex-length});
+                  background-position: left 50%;
+                }
+              } // after
+            } // li
+          } // for
+        } // &--group-name
+      } // group
+    } // each
+  } // mq
+} // each

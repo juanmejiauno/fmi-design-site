@@ -1,0 +1,88 @@
+// jump-nav
+
+.jump-nav {
+  padding-top: 20px;
+}
+
+.jump-nav__head {
+  @include font($font-sectra, 14px, 400, italic);
+  color: $color-gray--7;
+  margin: 0 0 10px;
+}
+
+.jump-nav__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.jump-nav__item {
+  margin: 0 0 5px;
+}
+
+
+@include mq($bp--tablet) {
+  .jump-nav__head,
+  .jump-nav__list,
+  .jump-nav__item {
+    display: inline-block;
+    margin-right: 20px;
+  }
+
+  .jump-nav__item:last-of-type {
+    margin-right: 0;
+  }
+} // mq
+
+
+@include mq($bp--desktop-xl) {
+  .jump-nav__head,
+  .jump-nav__list,
+  .jump-nav__item {
+    margin-right: 30px;
+  }
+} // mq
+
+
+//jump nav on product pages
+
+.product__jump-nav {
+  margin: 0;
+  background-color: $color-white;
+}
+
+@include mq($bp--tablet) {
+  .product__jump-nav {
+    margin-bottom: 100px;
+  }
+}
+
+@include mq($bp--tablet-xl) {
+  .product__jump-nav {
+    @include grid-width(9);
+  }
+}
+
+@include mq($bp--desktop) {
+  .product__jump-nav {
+    @include grid-width(7);
+    margin-top: -50px;
+    font-size: 24px;
+
+    .jump-nav {
+      position: relative;
+
+      &::before {
+        @include pseudo;
+        @include absolute(0 100% x x);
+        @include size(100%);
+        background-color: $color-white;
+      }
+    }
+  }
+
+  .jump-nav__head {
+    padding-left: 3px;
+  }
+
+} // mq

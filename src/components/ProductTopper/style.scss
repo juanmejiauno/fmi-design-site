@@ -1,0 +1,121 @@
+// Product Topper
+
+.product-topper {
+  background-position: right top;
+  background-repeat: no-repeat;
+  padding: 40px 0;
+
+  .page-preheading__link {
+    color: $color-white;
+  }
+}
+
+.product-topper__content {
+  position: relative;
+}
+
+.product-topper__text {
+  .page-preheading__link {
+    &:hover {
+      color: $color-white;
+    }
+  }
+}
+
+.product-topper__head {
+  @include font($font-gotham-ss, 24px, 300, $lh: 1.1, $ls: 0.3px);
+  margin: 20px 0;
+  color: $color-white;
+
+  strong {
+    font-weight: 600;
+
+    // force line break
+    &::before {
+      content: "";
+      display: block;
+    }
+  }
+}
+
+.product-topper__desc {
+  @include font($font-sectra, 18px, 400, $lh: 1.2);
+  color: $color-white;
+}
+
+//Colors
+
+@svg-load triangle-overlay--red url('../img/triangle-overlay-red.svg') {
+  stroke: $color-fire;
+}
+
+@svg-load triangle-overlay--green url('../img/triangle-overlay-green.svg') {
+  stroke: $color-green;
+  stroke-opacity: 0.5;
+}
+
+.product-topper__green {
+  background-color: $color-green--dark;
+  background-image: svg-inline(triangle-overlay--green);
+}
+
+.product-topper__fire {
+  background-color: $color-fire;
+  background-image: svg-inline(triangle-overlay--red);
+}
+
+
+
+// Breakpoints ---------------------------------------------------
+
+@include mq($bp--phablet) {
+  .product-topper__head strong::before {
+    display: none; // undo line break in product name
+  }
+}// mq
+
+@include mq($bp--tablet) {
+  .product-topper__desc {
+    font-size: 20px;
+    margin: 30px 0 0;
+  }
+}
+
+@include mq($bp--tablet-xl) {
+  .product-topper {
+    padding: 60px 0;
+  }
+
+  .product-topper__content {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .product-topper__text {
+    @include grid-width(7);
+  }
+
+  .product-topper__head {
+    font-size: 36px;
+  }
+
+  .product-topper__line {
+    @include size(1px 100px);
+    margin-left: 5px;
+    background-color: $color-white;
+  }
+}
+
+@include mq($bp--desktop) {
+  .product-topper {
+    padding: 100px 0;
+  }
+
+  .product-topper__head {
+    font-size: 56px;
+  }
+
+  .product-topper__desc {
+    font-size: 24px;
+  }
+}

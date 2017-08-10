@@ -1,0 +1,47 @@
+.blog-index__summary {
+  @include secondary-text;
+  margin: 0 0 4em;
+}
+
+.blog-index__featured {
+  margin-bottom: 80px;
+}
+
+.blog-index__content {
+  margin: 0 0 50px;
+}
+
+.blog-index__signup {
+  margin: 0 0 50px;
+}
+
+
+@include mq($bp--tablet-xl) {
+  .blog-index__summary {
+    font-size: 18px;
+    padding-top: 2em;
+
+    .page-header + & {
+      margin-top: -45px;
+    }
+  }
+} // mq
+
+@include mq($bp--desktop-xl) {
+  .blog-index__summary {
+    @include grid-width(8);
+
+    .page-header + & {
+      margin-top: -65px;
+    }
+  }
+
+  .blog-index__featured {
+    margin-bottom: 100px;
+  }
+
+  .blog-index__content {
+    @include grid-width(10);
+    margin: 0 auto 50px;
+  }
+} // mq

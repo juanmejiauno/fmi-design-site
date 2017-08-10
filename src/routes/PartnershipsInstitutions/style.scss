@@ -1,0 +1,129 @@
+// Institutional Partnerships
+
+
+.institutional-sidekicks {
+  margin-bottom: 60px;
+
+  .sidekick {
+    margin-bottom: 30px;
+  }
+}
+
+// research
+
+.institutional-research {
+  margin-bottom: 60px;
+}
+
+// sharing
+.institutional-sharing .trikick__sidebar {
+  #{$all-lists} {
+    column-count: 2;
+    column-gap: $layout-gutter-width;
+  }
+
+  li {
+    color: $color-slate;
+    font-weight: 500;
+  }
+}
+
+
+// trials
+.institutional-trials {
+  margin-bottom: 60px;
+}
+
+.institutional-trials__features {
+  @include secondary-text;
+  text-align: center;
+
+  #{$all-headings} {
+    @include head-tertiary;
+  }
+}
+
+.institutional-trials__feature {
+  img {
+    display: block;
+    width: 30%;
+    margin: 0 auto 20px;
+  }
+
+  p:last-child a {
+    @include link-mini-caps($arrow:right);
+  }
+}
+
+// Breakpoints ---------------
+
+
+@include mq($bp--tablet-xl) {
+
+  // trials
+  .institutional-trials {
+    margin-bottom: 60px;
+  }
+
+  // sidekicks
+  .institutional-sidekicks {
+    margin-bottom: 100px;
+
+    .sidekick {
+      margin-bottom: 50px;
+    }
+  }
+
+
+  // research
+
+  .institutional-research {
+    margin-bottom: 120px;
+  }
+
+  // sharing
+  .institutional-sharing .trikick__sidebar {
+    #{$all-lists} {
+      column-count: 1;
+    }
+  }
+
+  // trials
+  .institutional-trials__features {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .institutional-trials__feature {
+    @include grid-width(6);
+    padding-left: 30px;
+    padding-right: 30px;
+
+    img {
+      width: 150px;
+      margin-bottom: 60px;
+    }
+  }
+}// mq
+
+
+@include mq($bp--desktop) {
+
+  // sharing
+  .institutional-sharing .trikick__sidebar {
+    #{$all-lists} {
+      column-count: 2;
+    }
+  }
+
+  // trials
+  .institutional-trials__features {
+    @include grid-width(10);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .institutional-trials__feature {
+    @include grid-width(5, $context-col-count: 10);
+  }
+}// mq

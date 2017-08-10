@@ -1,0 +1,39 @@
+.Banner {
+    background-color: $color-green; //background-color: $color-green--dark;
+    height: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    transition: all .5s ease-out;
+    position: relative;
+    z-index: 10;
+    .legend-wrapper {
+        display: table;
+        position: relative;
+        width: 65%;
+        margin: 0 auto;
+        @include mq($bp--desktop) {
+            width: 100%;
+        }
+        .legend {
+            vertical-align: middle;
+            text-align: center;
+            display: table-cell;
+            @include font($font-sectra, 18px, 400, normal, 1.375);
+            color: $color-white;
+        }
+    }
+    .close-btn {
+        @include close-button($color-white);
+        top: 20px;
+        right: 45px;
+        @include mq($bp--tablet-xl) {
+            right: 10%;
+        }
+        @include mq($bp--desktop-xxl) {
+            right: 20%;
+        }
+    }
+    &.hide {
+        display: none;
+    }
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="54px" height="11px" viewBox="0 0 54 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>long-arrow</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="long-arrow">
+            <g id="Group-15">
+                <rect id="Rectangle-12" fill="#D6D6D6" x="0" y="5" width="50" height="1"></rect>
+                <polygon id="Rectangle-13" fill="#D5D5D5" transform="translate(48.545942, 5.545942) rotate(45.000000) translate(-48.545942, -5.545942) " points="45 2 52.0918831 2 52.0918831 9.09188309"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

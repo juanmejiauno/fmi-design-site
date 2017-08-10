@@ -1,0 +1,108 @@
+.about-index-hero {
+  padding-top: 50px;
+
+  img {
+    width: 100%;
+    display: block;
+  }
+}
+
+.about-index-hero__image:nth-of-type(2) {
+  display: none;
+}
+
+
+.about-index-facts {
+  background: url('../img/pattern-background.png') repeat 50% 0;
+  padding: 80px 0;
+  margin: 0 0 50px;
+
+  .card {
+    margin-bottom: 0;
+  }
+}
+
+
+.about-index-culture-images {
+  width: 100%;
+
+  img {
+    display: block;
+    margin: 0 0 10px;
+  }
+}
+
+// Milestones wrapper
+.about-index-milestones {
+  margin: 0 0 60px;
+}
+
+// Breakpoints
+
+@include mq($bp--phablet) {
+  .about-index-hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  } // about-index-hero
+
+  .about-index-hero__image {
+    &:nth-of-type(1) {
+      @include grid-width(8);
+    }
+
+    &:nth-of-type(2) {
+      display: block;
+      @include grid-width(4);
+    }
+  }
+
+  .about-index-culture-images__images {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+
+    img {
+      @include grid-width(6);
+    }
+  }
+} // mq
+
+
+@include mq($bp--tablet-xl) {
+  .about-index-page-header {
+    position: relative;
+    z-index: $z-index-1;
+    background: $color-white;
+    margin-top: -100px;
+    @include grid-width(10);
+
+    .page-header {
+      padding-top: 60px;
+    }
+  }
+
+  .about-index-culture-images {
+    @include grid-width(10);
+    margin: 0 auto 30px;
+  }
+
+  .about-index-milestones {
+    margin-bottom: 100px;
+  }
+} // mq
+
+@include mq($bp--desktop) {
+  .about-index-facts {
+    margin-bottom: 80px;
+  }
+
+  .about-index-culture-images {
+    @include grid-width(8);
+  }
+
+  .about-index-culture-images__images img {
+    @include grid-width(4, $context-col-count: 8);
+  }
+} // mq

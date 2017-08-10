@@ -1,0 +1,274 @@
+// Sidekick
+
+.sidekick {
+  margin: 0 auto 30px;
+}
+
+.sidekick__image {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 15px;
+
+  img {
+    display: block;
+    width: 100%;
+  }
+}
+
+.sidekick__text {
+  position: relative;
+  z-index: 10;
+
+  h1,
+  h2,
+  h3 {
+    @include head-tertiary;
+  }
+
+  h4,
+  h5,
+  h6 {
+    @include font($font-gotham-ss, 11px, 500, $lh: 1.5, $ls: 0.6px, $caps: true);
+    @include smooth;
+    color: $color-slate--light;
+  }
+
+  p {
+    @include secondary-text;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  p:last-of-type a {
+    @include link-mini-caps($arrow: right);
+  }
+
+  ul,
+  ol {
+    margin: 0;
+    padding: 20px 0;
+    @include font($font-gotham-ss, 12px, 400, $lh: 1.75);
+    color: $color-slate;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  li {
+    padding-bottom: 5px;
+  }
+}
+
+.sidekick__text-inner {
+  display: block;
+  background-color: $color-white;
+}
+
+.sidekick__link {
+  @include link-mini-caps($arrow: right);
+}
+
+//Overlap
+
+.sidekick--overlap {
+  margin-bottom: 30px;
+
+  .sidekick__text {
+    @include grid-width(11);
+    margin: -40px auto 0 auto;
+  }
+
+  .sidekick__text-inner {
+    padding: 30px;
+  }
+}
+
+// Breakpoints ---------------------------------------------------
+
+@include mq($bp--tablet) {
+  .sidekick {
+    @include grid-width(10);
+  }
+}
+
+@include mq($bp--tablet-xl) {
+  .sidekick {
+    @include grid-width(12);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .sidekick__image {
+    @include grid-width(6);
+    margin-bottom: 0;
+  }
+
+  .sidekick__text {
+    @include grid-width(6);
+  }
+
+  //Reverse (text and image swap sides)
+  .sidekick--reverse {
+    .sidekick__image {
+      order: 2;
+    }
+
+    .sidekick__text {
+      order: 1;
+    }
+  }
+
+  //Overlap
+  .sidekick--overlap {
+    .sidekick__image {
+      @include grid-width(6);
+      margin-bottom: 0;
+    }
+
+    .sidekick__text {
+      @include grid-width(6);
+      margin: 0;
+    }
+
+    .sidekick__text-inner {
+      padding: 0;
+    }
+  }
+}
+
+@include mq($bp--desktop) {
+  .sidekick {
+    @include grid-width(10);
+  }
+
+  .sidekick__image {
+    @include grid-width(6, $context-col-count: 10);
+  }
+
+  .sidekick__text {
+    @include grid-width(4, $context-col-count: 10);
+
+    h4,
+    h5,
+    h6 {
+      font-size: 13px;
+    }
+  }
+
+  // Overlap
+  .sidekick--overlap {
+    margin: 0 0 20px;
+    align-items: center;
+    justify-content: space-between;
+
+    @include grid-width(12);
+
+    .sidekick__image {
+      @include grid-width(7);
+    }
+
+    .sidekick__text {
+      @include grid-width(5);
+      left: -65px;
+    }
+
+    .sidekick__text-inner {
+      padding: 30px 0 30px 30px;
+    }
+  }
+
+  .sidekick--overlap-top {
+    align-items: flex-start;
+
+    .sidekick__text-inner {
+      padding: 0 0 30px 30px;
+    }
+  }
+
+  .sidekick--overlap-bottom {
+    align-items: flex-end;
+
+    .sidekick__text-inner {
+      padding: 30px 0 0 30px;
+    }
+  }
+
+  //Reverse & Overlap
+  .sidekick--overlap.sidekick--reverse {
+    // @include grid-width(1, $gutter-count: 1, $property: margin-left);
+
+    .sidekick__text {
+      left: 65px;
+    }
+
+    .sidekick__text-inner {
+      padding: 30px 30px 30px 0;
+    }
+  }
+
+  .sidekick--overlap.sidekick--reverse.sidekick--overlap-top {
+    align-items: flex-start;
+
+    .sidekick__text-inner {
+      padding: 0 30px 30px 0;
+    }
+  }
+
+  .sidekick--overlap.sidekick--reverse.sidekick--overlap-bottom {
+    align-items: flex-end;
+
+    .sidekick__text-inner {
+      padding: 30px 30px 0 0;
+    }
+  }
+}
+
+@include mq($bp--desktop-xl) {
+  .sidekick--overlap {
+    .sidekick__text {
+      left: -105px;
+    }
+
+    .sidekick__text-inner {
+      padding: 40px 0 40px 40px;
+    }
+  }
+
+  .sidekick--overlap-top {
+    .sidekick__text-inner {
+      padding: 0 0 40px 40px;
+    }
+  }
+
+  .sidekick--overlap-bottom {
+    .sidekick__text-inner {
+      padding: 40px 0 0 40px;
+    }
+  }
+
+  //Reverse & Overlap
+  .sidekick--overlap.sidekick--reverse {
+    .sidekick__text {
+      left: 105px;
+    }
+
+    .sidekick__text-inner {
+      padding: 40px 40px 40px 0;
+    }
+  }
+
+  .sidekick--overlap.sidekick--reverse.sidekick--overlap-top {
+    .sidekick__text-inner {
+      padding: 0 40px 40px 0;
+    }
+  }
+
+  .sidekick--overlap.sidekick--reverse.sidekick--overlap-bottom {
+    .sidekick__text-inner {
+      padding: 40px 40px 0 0;
+    }
+  }
+}

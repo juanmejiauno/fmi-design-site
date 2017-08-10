@@ -1,0 +1,15 @@
+//  APP COMPONENT
+
+#main-content {
+  &:focus {
+    outline: none;
+  }
+}
+
+.page-announcer {
+  position: absolute;
+  z-index: -1;
+  height: 0;
+  width: 0;
+  opacity: 0;
+}

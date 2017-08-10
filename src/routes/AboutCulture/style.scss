@@ -1,0 +1,183 @@
+
+// Culture Pillars
+
+.culture-pillars {
+  padding: 60px;
+  margin-bottom: 60px;
+  text-align: center;
+  background: url('../img/cultural-pillars-bg.jpg') no-repeat 50% 0;
+  background-size: cover;
+  position: relative;
+
+  $wedge-size: 40px;
+  // wedge
+  &::before {
+    @include pseudo;
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: -10px;
+    margin: -#{$wedge-size/2} 0 0 -#{$wedge-size / 2};
+    z-index: $z-index-3;
+    @include size($wedge-size);
+    transform: rotate(45deg);
+    background-color: $color-white;
+  }
+
+
+  h3 {
+    @include font($font-gotham-ss, 22px, 300);
+    @include smooth;
+    margin: 0 0 50px;
+    color: $color-white;
+  }
+
+  p {
+    margin: 0 auto 20px;
+    max-width: 550px;
+    @include font($font-sectra, 15px, 400);
+    color: $color-white;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+    @include line-under;
+
+    &::after {
+      background-color: rgba($color-white, 0.2);
+    }
+  }
+
+  li {
+    color: $color-yellow;
+    @include font($font-sectra, 18px, 400, italic);
+    margin: 0 0 8px;
+  }
+
+  h2 {
+    color: $color-yellow;
+    @include font($font-sectra, 24px, 400, italic);
+    margin: 0;
+    padding: 0;
+
+
+    // logo  glyph
+    &::after {
+      @include pseudo;
+      display: block;
+      @include size(30px);
+      margin: 15px auto 0;
+      background: svg-load('../img/fmi-logo-glyph--white.svg') no-repeat 50% 50%;
+      background-size: contain;
+    }
+  }
+}
+
+
+// Culture People
+.culture-people {
+  padding: 60px 0;
+  margin-bottom: 40px;
+  background: url('../img/pattern-background.png') repeat 50% 0;
+
+  .card {
+    margin-bottom: 10px;
+  }
+}
+
+
+.culture-uniquely__follow-us {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 620px;
+  padding: 60px 0 0;
+
+  #{$all-headings} {
+    color: red;
+    @include head-tertiary;
+  }
+
+  p:last-child a {
+    @include link-mini-caps($arrow:right);
+  }
+}
+
+
+
+// Breakpoints ------------
+
+@include mq($bp--tablet-xl) {
+  .culture-pillars {
+    padding: 80px 80px 60px;
+    margin-bottom: 120px;
+
+    &::before {
+      top: 0;
+    }
+
+    h3 {
+      font-size: 32px;
+    }
+
+    li {
+      font-size: 24px;
+    }
+
+    h2 {
+      font-size: 28px;
+
+      &::after {
+        @include size(42px);
+      }
+    }
+  }
+} //mq
+
+@include mq($bp--tablet-xl) {
+  .culture-people {
+    padding: 100px 0;
+  }
+} //mq
+
+@include mq($bp--desktop) {
+  .culture .hero-topper {
+    margin-bottom: 60px;
+  }
+
+
+  .culture-pillars {
+    margin-bottom: 150px;
+  }
+
+  .culture-people {
+    padding: 120px 0;
+    margin-bottom: 0;
+  }
+
+  // Uniquely
+  .culture-uniquely {
+    margin-top: -50px;
+  }
+
+  .culture-uniquely__follow-us {
+    padding: 110px 0 50px;
+  }
+} //mq
+
+@include mq($bp--desktop-xl) {
+  .culture-pillars {
+    p {
+      margin-bottom: 40px;
+    }
+
+    li {
+      font-size: 32px;
+    }
+
+    h2 {
+      font-size: 40px;
+    }
+  }
+}

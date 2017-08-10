@@ -1,0 +1,45 @@
+/* stylelint-disable selector-class-pattern  */
+
+.contact-form {
+  width: 100%;
+  background: $color-blue--light;
+  padding: 30px;
+
+  fieldset {
+    width: 100%;
+    max-width: none !important;
+  }
+
+  // force select menu to full width
+  .form-columns-1 .hs-input {
+    width: 100% !important;
+  }
+
+  // submit button
+  .hs_submit {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 300px;
+  }
+}
+
+.contact-form__head {
+  @include font($font-gotham-ss, 15px, 500, $lh: 1.5);
+  color: $color-slate;
+  text-align: center;
+  padding: 0;
+  margin: 0 0 40px;
+}
+
+
+@include mq($bp--tablet) {
+  .contact-form {
+    padding: 40px;
+  }
+}
+
+@include mq($bp--desktop) {
+  .contact-form {
+    padding: 50px;
+  }
+}

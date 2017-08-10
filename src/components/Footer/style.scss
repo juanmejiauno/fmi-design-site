@@ -1,0 +1,250 @@
+// FOOTER COMPONENT
+
+.primary-footer {
+  background: $color-slate--dark;
+}
+
+.primary-footer__content {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+// Logo
+.primary-footer__logo-h1 {
+  margin: 0 0 50px;
+  padding: 0;
+}
+
+.primary-footer__logo-h1-link {
+  color: $color-white;
+  border: 0;
+  margin: 0;
+  display: block;
+  background: svg-load('../img/fmi-logo-glyph--white.svg');
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+  @include image-replace(42px);
+}
+
+// transitions
+
+.primary-footer__nav-link,
+.primary-footer__mini-link,
+.primary-footer__legal-link {
+  transition: color $timing-medium;
+}
+
+
+// Large Links
+
+.primary-footer__nav-list {
+  list-style: none;
+  margin: 0 0 30px;
+  padding: 0;
+  column-count: 2;
+  column-gap: $layout-gutter-width / 2;
+
+  @include mq($bp--desktop) {
+    column-gap: $layout-gutter-width;
+  }
+}
+
+.primary-footer__nav-item {
+  margin: 5px 0;
+  padding: 5px 0;
+  break-inside: avoid;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  -webkit-column-break-inside: avoid;
+  width: 100%;   // hack to get proper vertical-alignment
+  display: block;
+  vertical-align: top;
+  @include font($font-gotham-ss, 16px, 500, $lh: 1.375);
+}
+
+.primary-footer__nav-link {
+  color: $color-white;
+  display: block;
+  border: 0;
+  margin: 0;
+  background-color: transparent;
+  @include smooth;
+
+  &:hover {
+    color: rgba($color-white, 0.6);
+  }
+}
+
+// Mini Sets
+
+$bp--space-for-2-footer-min-sets: 460px;
+
+.primary-footer__sets {
+
+  @include mq($bp--space-for-2-footer-min-sets) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.primary-footer__set {
+  margin: 0 0 15px;
+  @include mq($bp--space-for-2-footer-min-sets) {
+    @include grid-width(6);
+  }
+}
+
+.primary-footer__h {
+  @include font($font-gotham-ss, 10.5px, 500, normal, $lh: 1.375, $ls: 0.6px, $caps: true);
+  @include smooth;
+  margin: 0 0 12px;
+  color: rgba($color-gray--f, 0.4);
+}
+
+.primary-footer__mini-list {
+  margin: 0;
+  padding: 0;
+}
+
+.primary-footer__mini-item {
+  margin: 0 0 10px;
+  padding: 0;
+  display: block;
+  @include font($font-gotham-ss, 11px, 500, $lh: 1.375);
+}
+
+.primary-footer__mini-link {
+  @include smooth;
+  color: rgba($color-gray--f, 0.7);
+  border: 0;
+
+  &:hover {
+    color: $color-white;
+  }
+}
+
+// Legal and Privacy
+
+.primary-footer__legal {
+  margin-bottom: 5px;
+  color: rgba($color-gray--f, 0.4);
+  @include font($font-gotham-ss, 10px, 500, $ls: 0.8px, $lh: 1.375, $caps: true);
+}
+
+.primary-footer__legal-link {
+  color: $color-white;
+  border: 0;
+
+  &:hover {
+    color: rgba($color-white, 0.6);
+  }
+}
+
+.primary-footer__legal__copyright,
+.primary-footer__legal-link {
+  //padding-right: 10px;
+}
+
+// Social Icons
+
+.primary-footer__social-list {
+  list-style: none;
+  margin: 0 0 20px;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.primary-footer__social-item {
+  margin: 0 15px 0 0;
+}
+
+.primary-footer__social-link {
+  opacity: 0.4;
+  border: 0;
+  transition: opacity $timing-medium;
+  @include image-replace(25px);
+  display: block;
+
+  &--linkedin {
+    background: svg-load('../img/icon-linkedin--gray.svg');
+  }
+
+  &--twitter {
+    background: svg-load('../img/icon-twitter--gray.svg');
+  }
+
+  &--youtube {
+    background: svg-load('../img/icon-youtube--gray.svg');
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+
+@include mq($bp--tablet) {
+  .primary-footer__nav-links {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .primary-footer__nav-list,
+  .primary-footer__sets {
+    @include grid-width(6);
+  }
+}
+
+
+@include mq($bp--desktop) {
+  .primary-footer__content {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .primary-footer__row {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 30px;
+  }
+
+  .primary-footer__logo {
+    @include grid-width(1);
+    margin-right: $layout-gutter-pct;
+  }
+
+  .primary-footer__nav {
+    @include grid-width(11);
+  }
+
+  // uses 8 of the 11 colums
+  .primary-footer__nav-links {
+    @include grid-width(8, $context-col-count:11);
+    justify-content: space-between;
+  }
+
+  .primary-footer__nav-list,
+  .primary-footer__sets {
+    @include grid-width(4, 8); // the parent is 8 columns
+  }
+
+  .primary-footer__set {
+    @include grid-width(2, 4); // the parent is 4 columns
+  }
+
+  .primary-footer__nav-content {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .primary-footer__social {
+    margin-left: auto;
+    @include grid-width(2, 11); // the parent is 11 columns
+  }
+
+  .primary-footer__legal-privacy {
+    margin-left: 105px;
+  }
+}

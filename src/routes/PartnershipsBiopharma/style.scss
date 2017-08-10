@@ -1,0 +1,232 @@
+
+//Drug Development
+.biopharma-outline {
+  padding: 40px 0;
+  background: url('../img/pattern-background.png') repeat 50% 0;
+}
+
+
+.biopharma-outline__microhead {
+  text-align: center;
+  @include head-micro;
+}
+
+.biopharma-outline__head {
+  text-align: center;
+  margin: 0 0 50px;
+}
+
+
+.biopharma-outline__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  @include list-hexagon-numbers(true);
+}
+
+.biopharma-outline__item {
+  margin: 0 0 20px;
+  padding: 30px !important;
+  background: $color-white;
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.1);
+
+  &::before {
+    top: 25px !important;
+    z-index: $z-index-3;
+    background-color: $color-white !important;
+  }
+}
+
+.biopharma-outline__item-head {
+  width: 100%;
+  padding-top: 35px;
+  color: $color-fire--dark;
+  @include font($font-gotham-ss, 16px, 500, $lh: 1.2);
+  text-align: center;
+  margin: 0 0 30px;
+
+  a {
+    color: $color-fire--dark;
+  }
+}
+
+.biopharma-outline__item-desc {
+  width: 100%;
+  color: $color-slate;
+  //margin-top: auto;
+  text-align: left;
+  @include font($font-gotham-ss, 12px, 400, $lh: 1.5);
+}
+
+// research
+.biopharma-research {
+  margin-bottom: 60px;
+}
+
+// sidekicks
+.biopharma-sidekicks {
+  margin-bottom: 60px;
+
+  .sidekick {
+    margin-bottom: 30px;
+  }
+}
+
+// commercial
+.biopharma-commercial {
+  margin-bottom: 60px;
+}
+
+.biopharma-commercial__main {
+  @include secondary-text;
+
+  #{$all-headings} {
+    @include head-tertiary;
+  }
+
+  p:last-of-type a {
+    @include link-mini-caps;
+  }
+}
+
+.biopharma-commercial__sidebar {
+  @include list-mini-features;
+}
+// cta
+.biopharma-cta {
+  padding: 40px 0;
+}
+
+
+// Breakpoints ---------------
+
+
+@include mq($bp--tablet-xl) {
+  .biopharma-outline {
+    padding: 80px 0;
+    margin-bottom: 100px;
+  }
+
+  .biopharma-outline__list {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+
+    //dotted line
+    &::before {
+      @include pseudo;
+      display: block;
+      @include size(70% 3px);
+      pointer-events: none;
+      text-align: center;
+      background: url('../img/dotted-line-horiz.svg') repeat-x 50% 50%;
+      transform: translateX(calc(15% + 50px));
+      position: absolute;
+      top: 39px;
+      z-index: $z-index-2;
+    }
+  }
+
+  .biopharma-outline__item {
+    padding: 40px;
+    width: calc(33% - #{$layout-gutter-width/2});
+  }
+
+  .biopharma-outline__item-head {
+    margin: 0 0 50px;
+  }
+
+  .biopharma-outline__item-desc {
+    font-size: 13px;
+    @include smooth;
+  }
+
+  // research
+  .biopharma-research {
+    margin-bottom: 120px;
+  }
+
+  // sidekicks
+  .biopharma-sidekicks {
+    margin-bottom: 100px;
+
+    .sidekick {
+      margin-bottom: 50px;
+    }
+  }
+
+  // commercial
+
+  .biopharma-commercial__text {
+    padding: 40px 0 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .biopharma-commercial__main {
+    @include grid-width(7);
+  }
+
+  .biopharma-commercial__sidebar {
+    @include grid-width(5);
+  }
+
+
+  // cta
+  .biopharma-cta {
+    padding: 100px 0;
+  }
+} // mq
+
+@include mq($bp--desktop) {
+
+
+  // commercial
+
+  .biopharma-commercial__text {
+    padding: 80px 0 0;
+    @include grid-width(10);
+    margin: 0 auto;
+  }
+
+  .biopharma-commercial__main {
+    @include grid-width(6, $context-col-count: 10);
+  }
+
+  .biopharma-commercial__sidebar {
+    @include grid-width(4, $context-col-count: 10);
+  }
+} // mq
+
+@include mq($bp--desktop-xl) {
+
+
+  // outline
+  .biopharma-outline {
+    padding: 100px 0;
+  }
+
+  .biopharma-outline__list {
+    margin: 0 auto;
+    @include grid-width(10);
+
+    &::before {
+      top: 47px;
+    }
+  }
+
+  .biopharma-outline__item {
+    padding: 40px !important;
+
+    &::before {
+      top: 35px !important;
+    }
+  }
+
+  .biopharma-outline__item-desc {
+    font-size: 14px;
+  }
+
+
+
+} // mq

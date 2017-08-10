@@ -1,0 +1,16 @@
+@keyframes add-dash {
+  from {stroke-dashoffset: 1000;}
+  to {stroke-dashoffset: 0;}
+}
+
+.flat-pattern {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+}
+
+.is-in-viewport .flat-pattern {
+  animation-name: add-dash;
+  animation-duration: 4s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}

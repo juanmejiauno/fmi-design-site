@@ -1,0 +1,65 @@
+// BasicPage
+
+
+.basic-page__main-col {
+  margin-bottom: 30px;
+}
+
+.basic-page__intro-group {
+  margin-bottom: 30px;
+}
+
+.page-subheader {
+  margin-bottom: 15px;
+}
+
+.basic-page__page-subhead {
+  font-style: italic;
+  margin: 0;
+}
+
+.basic-page__introduction {
+  //margin: 0 0 80px;
+}
+
+
+
+
+@include mq($bp--tablet-xl) {
+  .basic-page__main {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .basic-page__main-col {
+    order: 1;
+    @include grid-width(7);
+    margin-bottom: 0;
+  }
+
+  .basic-page__sidebar {
+    order: 2;
+    padding-top: 50px;
+    @include grid-width(4);
+    @include grid-width(0, $gutter-count: 1, $property: 'margin-left');
+  }
+
+  .basic-page__page-subhead {
+    font-size: 32px;
+  }
+}
+
+@include mq ($bp--desktop) {
+  .basic-page__intro-group {
+    margin: 0 0 60px;
+    @include grid-width(8);
+    @include grid-width(1, $gutter-count: 1, $property: 'margin-left');
+  }
+}
+
+@include mq($bp--desktop-xl) {
+  .basic-page__sidebar {
+    @include grid-width(3);
+    @include grid-width(1, $gutter-count: 1, $property: 'margin-right');
+  }
+}

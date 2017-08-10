@@ -1,0 +1,73 @@
+
+// About Topper
+
+.hero-topper__image img {
+  width: 100%;
+}
+
+.hero-topper__intro {
+  max-width: $layout-content;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+  padding: 10px 0 20px;
+}
+
+.hero-topper__intro-content {
+  padding-bottom: 20px;
+  background-color: $color-white;
+  text-align: center;
+
+  p:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.hero-topper__preface {
+  color: $color-slate;
+  @include font($font-sectra, 24px, 400, $lh: 1.1);
+  margin: 0 0 15px;
+  padding: 0;
+
+  p {
+    margin: 0;
+  }
+}
+
+// Breakpoints ------------
+
+@include mq($bp--tablet) {
+  .hero-topper__intro {
+    margin-top: -40px;
+    z-index: $z-index-5;
+    padding-top: 0;
+  }
+
+  .hero-topper__intro-content {
+    margin: 0 auto;
+    font-size: 21px;
+    @include grid-width(10);
+    padding: 40px 60px 0;
+  }
+} //mq
+
+
+@include mq($bp--tablet-xl) {
+  .hero-topper__preface {
+    font-size: 40px;
+  }
+} // mq
+
+@include mq($bp--desktop) {
+  .hero-topper__intro {
+    margin-top: -100px;
+    z-index: $z-index-4;
+  }
+} // mq
+
+
+@include mq($bp--desktop-xl) {
+  .hero-topper__intro-content {
+    padding: 60px 140px 0;
+  }
+}

@@ -1,0 +1,46 @@
+@mixin font-face (
+  $family-name,
+  $file-name,
+  $font-weight: normal,
+  $font-style: normal
+) {
+  @font-face {
+    $font-path: "../../fonts/#{$file-name}";
+    font-family: "#{$family-name}";
+
+    src: url($font-path + '.woff');
+    src: url($font-path + '.eot');
+    src: url($font-path + '.eot?iefix') format('eot'),
+         url($font-path + '.woff') format('woff'),
+         url($font-path + '.ttf') format('truetype');
+    font-weight: $font-weight;
+    font-style: $font-style;
+  }
+}
+
+// GT Sectra
+@include font-face(
+  $family-name: 'GT Sectra',
+  $file-name: 'GT-Sectra-Book',
+  $font-weight: 400
+);
+
+@include font-face(
+  $family-name: 'GT Sectra',
+  $file-name: 'GT-Sectra-Book-Italic',
+  $font-weight: 400,
+  $font-style: italic
+);
+
+@include font-face(
+  $family-name: 'GT Sectra',
+  $file-name: 'GT-Sectra-Bold',
+  $font-weight: 600
+);
+
+@include font-face(
+  $family-name: 'GT Sectra',
+  $file-name: 'GT-Sectra-Bold-Italic',
+  $font-weight: 600,
+  $font-style: italic
+);

@@ -1,0 +1,31 @@
+
+.error-page__subhead {
+  text-align: center;
+  padding-top: 3em;
+  margin: 0 0 0.5em;
+  color: $color-slate !important;
+
+  em {
+    color: $color-slate--light;
+    font-style: normal;
+  }
+}
+
+.error-page__content {
+  text-align: center;
+}
+
+@include mq($bp--tablet) {
+  .error-page__content {
+    margin: 0 auto;
+    text-align: center;
+    @include grid-width(8);
+  }
+} // mq
+
+
+@include mq($bp--desktop) {
+  .error-page__content {
+    @include grid-width(6);
+  }
+} // mq

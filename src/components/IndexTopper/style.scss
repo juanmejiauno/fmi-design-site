@@ -1,0 +1,165 @@
+
+.index-topper {
+  padding-top: 40px;
+  position: relative;
+}
+
+.index-topper__head {
+  @include font($font-sectra, 36px, 400, $lh: 1.1);
+  color: $color-fire;
+  margin: 0 0 30px;
+
+  .index-topper--data & {
+    color: $color-green--dark;
+  }
+}
+
+.index-topper__hero {
+  margin: 0 0 15px;
+}
+
+.index-topper__text {
+  @include font($font-sectra, 15px, 400, $lh: 1.625);
+  padding: 0 0 30px;
+  position: relative;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  &::after {
+    @include pseudo;
+    display: block;
+    background-color: $color-gray--d;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    @include size(100% 1px);
+  }
+}
+
+.index-topper--data .index-topper__text {
+  padding-bottom: 0;
+
+  &::after {
+    display: none;
+  }
+}
+
+
+.index-topper__jump-nav {
+  margin: 0;
+}
+
+@include mq($bp--phablet) {
+  .index-topper__text {
+    font-size: 18px;
+  }
+} // mq
+
+
+@include mq($bp--tablet) {
+
+  // intro
+  .index-topper {
+    padding-top: 60px;
+  }
+
+  .index-topper__jump-nav {
+    margin-bottom: 100px;
+  }
+
+  .index-topper__head {
+    font-size: 40px;
+  }
+
+  .index-topper__text {
+    padding-top: 30px;
+    background: $color-white;
+    z-index: $z-index-2;
+  }
+} // mq
+
+
+@include mq($bp--tablet-xl) {
+  .index-topper__header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .index-topper__head {
+    @include grid-width(4);
+    font-size: 40px;
+    position: relative;
+    align-self: flex-start;
+
+    // add line
+    &::after {
+      @include pseudo;
+      display: block;
+      position: absolute;
+      top: 100%;
+      left: 4px;
+      @include size(1px 260px);
+      background-color: $color-gray--d;
+      z-index: $z-index-1;
+    }
+  }
+
+
+  .index-topper__hero {
+    @include grid-width(8);
+    margin-bottom: 0;
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .index-topper__jump-nav,
+  .index-topper__text {
+    @include grid-width(9);
+  }
+
+  .index-topper__text {
+    font-size: 18px;
+    padding-right: 30px;
+    padding-top: 30px;
+    position: absolute;
+    bottom: 0;
+
+    &::after {
+      width: calc(100% - 30px);
+    }
+  }
+}// mq
+
+
+@include mq($bp--desktop) {
+  .index-topper__head {
+    font-size: 58px;
+  }
+
+  .index-topper__text,
+  .index-topper__jump-nav {
+    font-size: 24px;
+    @include grid-width(7);
+  }
+
+
+  .index-topper__text {
+    padding: 50px 50px 50px 0;
+
+    &::after {
+      width: calc(100% - 50px);
+    }
+  }
+} // mq
+
+
+@include mq($bp--desktop-xl) {
+  .index-topper__head {
+    font-size: 68px;
+  }
+} // mq

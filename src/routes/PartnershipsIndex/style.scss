@@ -1,0 +1,47 @@
+// Data index-topper
+.partnershipsindex-topper {
+  margin-bottom: 60px;
+}
+
+.partnershipsindex-teases {
+  margin-bottom: 60px;
+}
+
+.partnershipsindex-teases__tease-image {
+  margin-bottom: 15px;
+  display: block;
+  padding: 0;
+  border: 0;
+}
+
+.partnershipsindex-teases__tease-text {
+  // color: $color-slate--light;
+  @include secondary-text;
+
+  p:last-child a {
+    @include link-mini-caps($arrow:right);
+  }
+}
+
+.partnershipsindex-teases__tease-head {
+  padding-bottom: 10px;
+}
+
+
+
+@include mq($bp--tablet) {
+  .partnershipsindex-topper {
+    margin-bottom: 100px;
+  }
+
+  .partnershipsindex-teases {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 80px;
+  }
+
+  .partnershipsindex-teases__tease {
+    margin: 0;
+    @include grid-width(6);
+  }
+} // mq

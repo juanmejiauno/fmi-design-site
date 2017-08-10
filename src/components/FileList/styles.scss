@@ -1,0 +1,45 @@
+
+.filelist {
+  text-align: left;
+}
+
+.filelist__head {
+  @include head-ital;
+  margin: 0;
+}
+
+.filelist__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  min-width: 200px;
+}
+
+.filelist__item {
+  margin: 0;
+  border-bottom: 1px solid $color-gray--d;
+}
+
+.filelist__link {
+  color: $color-slate;
+  padding: 13px 0;
+  display: block;
+  @include font($font-gotham-ss, 11px, 400, 1.2);
+  border: 0;
+  transition: color $timing-medium;
+  background-image: svg-load('../img/icon-file.svg');
+  padding-left: 30px;
+  background-repeat: no-repeat;
+  background-position: 0 13px;
+
+  &:hover {
+    color: $color-fire;
+  }
+}
+
+
+@include mq($bp--tablet-xl) {
+  .filelist__link {
+    font-size: 12.5px;
+  }
+} //mq

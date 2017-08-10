@@ -1,0 +1,21 @@
+
+.modal-content--animated {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all $timing-medium ease-out;
+
+  &--has-entered {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+.modal-underlay--animated {
+  transition: all $timing-medium;
+  opacity: 0;
+
+  &--has-entered {
+    opacity: 1;
+  }
+}

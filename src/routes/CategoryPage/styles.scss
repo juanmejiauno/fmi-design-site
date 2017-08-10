@@ -1,0 +1,19 @@
+.blog-category-heads__micro {
+  @include mini-caps;
+  color: $color-slate--light;
+  margin: 0;
+}
+
+.blog-category-heads__category {
+  color: $color-fire;
+  @include font($font-gotham-ss, 28px, 200, $lh: 1.5, $ls: -0.5px);
+  margin: 0 0 10px;
+  padding: 0;
+  @include mq($bp--tablet) {
+    font-size: 36px;
+  }
+
+  @include mq($bp--desktop) {
+    font-size: 48px;
+  }
+}

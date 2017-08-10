@@ -1,0 +1,453 @@
+
+// Modules
+
+$flex-module-max-width: $layout-content + 4 * ($layout-col-width + $layout-gutter-width);
+
+$flex-module-colors-schemes: (
+  // default setting must come first in this list
+  default: (
+    left-background: $color-blue--medium,
+    left-text: $color-white,
+    left-line: rgba($color-white, 0.3),
+    right-background: $color-blue--dark,
+    right-text: $color-white
+  ),
+  green: (
+    left-background: $color-green--dark,
+    left-text: $color-white,
+    left-line: rgba($color-white, 0.3),
+    right-background: $color-green--dark2,
+    right-text: $color-white
+  ),
+  fire: (
+    left-background: $color-fire,
+    left-text: $color-white,
+    left-line: rgba($color-white, 0.3),
+    right-background: $color-fire--dark,
+    right-text: $color-white
+  ),
+  fire-beige: (
+    left-background: $color-fire,
+    left-text: $color-white,
+    left-line: rgba($color-white, 0.3),
+    right-background: $color-beige,
+    right-text: $color-slate
+  ),
+  light-blue: (
+    left-background: $color-blue--light,
+    left-text: $color-slate,
+    left-line:  $color-gray--d,
+    right-background: $color-blue--dark,
+    right-text: $color-white
+  ),
+  blue-rich: (
+    left-background: $color-blue--rich,
+    left-text: $color-white,
+    left-line:  rgba($color-white, 0.3),
+    right-background: mix($color-black, $color-blue--rich, 15%),
+    right-text: $color-white
+  )
+);
+
+
+
+.flex-module {
+  margin: 0 auto;
+  max-width: $flex-module-max-width;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+// generate the color schemes
+
+@each $scheme-name, $scheme-map in $flex-module-colors-schemes {
+
+  // create play button SVG for this theme
+  @svg-load video-play-button-#{$scheme-name} url('../img/video-play-btn.svg') {
+    #triangle {
+      fill: map-get($scheme-map, right-background);
+    }
+  }
+
+
+  $selector: flex-module--#{$scheme-name};
+
+  @if ($scheme-name == 'default') {
+    $selector: flex-module;
+  }
+
+  .#{$selector} {
+
+    // generate play button SVG
+    .flex-module__play-btn {
+      background-image: svg-inline(video-play-button-#{$scheme-name});
+    }
+
+    .flex-module__box--left {
+      background-color: map-get($scheme-map, left-background);
+
+      .flex-module__microhead,
+      .flex-module__head,
+      .flex-module__tease,
+      .flex-module__author,
+      a {
+        color: map-get($scheme-map, left-text);
+        border-color: rgba(map-get($scheme-map, left-text), 0.3);
+      }
+
+      .flex-module__line {
+        background-color: map-get($scheme-map, left-line);
+      }
+    }
+
+    .flex-module__box--blog-tease {
+      background-color: map-get($scheme-map, right-background);
+      color: map-get($scheme-map, right-text);
+
+      a {
+        color: map-get($scheme-map, right-text);
+        border-color: rgba(map-get($scheme-map, right-text), 0.3);
+      }
+
+      p:first-child::first-letter {
+        color: map-get($scheme-map, left-text);
+        background-color: map-get($scheme-map, left-background);
+      }
+    }
+  } //flex-module--scheme-name
+} // each
+
+
+.flex-module__box {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+
+  .flex-module--media-module & {
+    min-height: 300px;
+  }
+
+  &--left {
+    order: 2;
+    padding: 50px 30px;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  &--right {
+    order: 1;
+  }
+
+  &--right.flex-module__box--blog-tease {
+    order: 3;
+  }
+
+
+  img {
+    position: absolute;
+    top: -20%;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  // contain image setting
+  .flex-module--contain-image &--right {
+    background-color: $color-beige;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      display: block;
+      position: relative;
+      top: 0;
+      max-width: 80%;
+      height: auto;
+    }
+  }
+}
+
+.flex-module__microhead {
+  // @include font($font-gotham-ss, 11px, $lh: 1.1, $ls: 0.8px, $caps: true);
+  @include head-micro;
+  color: $color-white;
+  margin: 0 0 20px;
+}
+
+.flex-module__head {
+  color: $color-white;
+  @include font($font-sectra, 28px, 400, italic, $lh: 1);
+  margin: 0;
+  padding: 0 0 5px;
+
+  a {
+    border: 0;
+  }
+
+  &--pullquote {
+    color: $color-white;
+    margin: 0;
+    padding: 0 0 8px;
+    @include font($font-gotham-ss, 18px, 300, normal, $lh: 1.375);
+    position: relative;
+
+    &::before {
+      content: "“";
+      display: inline-block;
+      width: 0.5em;
+      margin-left: -0.5em;
+    }
+
+    &::after {
+      content: "”";
+    }
+
+    strong {
+      font-weight: 500;
+    }
+  }
+}
+
+.flex-module__line {
+  display: none;
+}
+
+
+.flex-module__tease,
+.flex-module__author {
+  padding-top: 10px;
+  margin-top: auto;
+  color: $color-white;
+  @include font($font-gotham-ss, 12px, 400, $lh: 1.625);
+}
+
+
+.flex-module__tease {
+  p:last-of-type {
+    margin-bottom: 0;
+  }
+
+  a {
+    font-weight: 600;
+  }
+}
+
+
+.flex-module__author {
+  font-weight: 600;
+
+  em {
+    font-style: normal;
+    font-weight: 400;
+  }
+}
+
+
+
+.flex-module__play-btn {
+  position: absolute;
+  bottom: 15px;
+  left: 20px;
+  z-index: $z-index-5;
+  padding: 25px 10px 25px 75px;
+  appearance: none;
+  color: $color-white;
+  display: block;
+  @include font($font-gotham-ss, 20px, 500, $lh: 1.5);
+  text-shadow: 0 0 15px rgba($color-black, 0.4);
+  background: transparent no-repeat 0 50%;
+  transition: transform $timing-standard ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+
+
+.flex-module__box--blog-tease {
+  // background color set from parent
+  background-color: rgba(0, 0, 0, 0.3);
+  @include font($font-sectra, 15px, 400, $lh: 1.75);
+  padding: 50px 30px;
+
+  p {
+    margin: 0 0 1em;
+  }
+
+  .flex-module__cta {
+    margin-top: 1.5em;
+    margin-bottom: 0 !important;
+
+    a {
+      @include font($font-gotham-ss, 14px, 500);
+    }
+  }
+
+  // drop cap
+  p:first-child::first-letter {
+    // background color set from parent
+    display: block;
+    padding: 10px 15px;
+    @include font($font-gotham-ss, 21px, 500, $lh: 1);
+    float: left;
+    margin: 0 12px -2px 0;
+  }
+}
+
+
+// video modal close button
+
+.flex-module__close-btn {
+  @include close-button;
+  z-index: $z-index-3;
+}
+
+@include mq($bp--phablet) {
+  .flex-module__box--left,
+  .flex-module__box--blog-tease {
+    padding: 50px;
+  }
+
+  .flex-module__box img {
+    top: -30%;
+  }
+} // mq
+
+@include mq($bp--tablet) {
+  .flex-module__box img {
+    top: -50%;
+  }
+} // mq
+
+
+@include mq($bp--tablet-xl) {
+  .flex-module {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .flex-module__box {
+    width: 50%;
+    overflow: hidden;
+
+    .flex-module--media-module & {
+      min-height: 400px;
+    }
+
+    img {
+      top: -10%;
+    }
+
+    &--left {
+      order: 1;
+    }
+
+    &--right {
+      order: 2;
+      transform: translateY(40px);
+    }
+  }
+
+  // modifier class disables offset
+  .flex-module--no-offset .flex-module__box.flex-module__box--right {
+    transform: translateY(0);
+  }
+
+
+  .flex-module__head {
+    font-size: 32px;
+
+    &--pullquote {
+      font-size: 24px;
+    }
+  }
+
+  // show the vertical line
+  .flex-module__line {
+    flex-grow: 1;
+    @include image-replace(1px, 10px);
+  }
+
+  .flex-module__play-btn {
+    left: 50px;
+    bottom: 35px;
+  }
+
+  // drop cap
+  .flex-module__box--blog-tease {
+    p:first-child::first-letter {
+      padding: 20px 25px;
+      font-size: 42px;
+    }
+  }
+} //mq
+
+
+@include mq($bp--desktop) {
+  .flex-module__box {
+    .flex-module--media-module & {
+      min-height: 500px;
+    }
+
+    img {
+      top: 0;
+    }
+  }
+
+  .flex-module__box--left {
+    padding: 75px;
+  }
+
+  .flex-module__head {
+    font-size: 45px;
+
+    &--pullquote {
+      font-size: 28px;
+    }
+  }
+
+  .flex-module__pullquote {
+    font-size: 32px;
+  }
+
+  .flex-module__tease,
+  .flex-module__author {
+    font-size: 14px;
+  }
+
+  .flex-module__box--blog-tease {
+    font-size: 18px;
+    padding: 75px;
+  }
+} // mq
+
+
+@include mq($bp--desktop-xl) {
+  .flex-module--media-module .flex-module__box {
+    min-height: 600px;
+  }
+
+  .flex-module__box--blog-tease {
+    padding: 100px;
+  }
+
+  .flex-module__head {
+    font-size: 55px;
+
+    &--pullquote {
+      font-size: 36px;
+    }
+  }
+}
+
+@include mq($bp--desktop-xxl) {
+  .flex-module--media-module .flex-module__box {
+    min-height: 650px;
+  }
+} // mq

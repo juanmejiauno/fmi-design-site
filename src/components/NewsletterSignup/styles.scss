@@ -1,0 +1,97 @@
+/* stylelint-disable selector-class-pattern  */
+
+// Signup component
+
+.newsletter-signup {
+  padding: 30px;
+  background-color: $color-blue--light;
+
+  .hs_email {
+    width: 100%;
+
+    input {
+      width: 100%;
+    }
+  }
+
+  input[type=submit] {
+    margin-top: 5px;
+    display: block;
+    width: 100%;
+    background-color: $color-slate;
+  }
+}
+
+.newsletter-signup__head {
+  margin: 0 0 20px;
+  padding: 14px 0 14px 75px;
+  @include font($font-gotham-ss, 21px, 500);
+  color: $color-slate;
+  text-align: left;
+  background: svg-load('../img/icon-newsletter.svg') no-repeat 0 50%;
+}
+
+
+// errors
+.hs-error-msgs {
+  list-style: none;
+  margin: 0 0 10px;
+  padding: 0;
+
+  li {
+    @include error-text;
+    margin: 0 0 3px;
+  }
+}
+
+.submitted-message {
+  @include font($font-gotham-ss, 12px, 500);
+  color: $color-slate;
+  margin: 0 0 3px;
+}
+
+@include mq(550px) {
+  .newsletter-signup {
+    form {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    $input-gap: 20px;
+    $submit-width: 180px;
+
+    .hs_email {
+      width: calc(100% - #{$submit-width + $input-gap});
+    }
+
+    input[type=submit] {
+      margin-top: 19px;
+      margin-bottom: 0;
+      width: $submit-width;
+      display: block;
+    }
+  }
+} //mq
+
+
+@include mq(850px) {
+  .newsletter-signup {
+    padding: 30px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .newsletter-signup__hgroup {
+    width: 40%;
+    max-width: 320px;
+  }
+
+  .newsletter-signup__head {
+    margin-bottom: 0;
+  }
+
+  .newsletter-signup__form-wrap {
+    width: 55%;
+  }
+} // mq

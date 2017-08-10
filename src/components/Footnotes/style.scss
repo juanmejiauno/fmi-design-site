@@ -1,0 +1,24 @@
+
+//Quote
+.page-footnotes {
+  @include footnotes;
+  padding: 0 0 30px;
+  margin: 0 auto;
+
+
+  @include mq($bp--tablet) {
+    @include grid-width(9);
+  }
+
+  @include mq($bp--desktop) {
+    padding-bottom: 80px;
+  }
+}
+
+.page-footnotes--pad-top {
+  padding-top: 30px;
+
+  @include mq($bp--desktop) {
+    padding-top: 80px;
+  }
+}

@@ -1,0 +1,454 @@
+// Functions
+
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}
+
+@function grid-cols-to-px-width($col-count, $gutter-count: $col-count - 1) {
+  $px-width: ($col-count * $layout-col-width) + ( $gutter-count * $layout-gutter-width);
+  @return $px-width;
+}
+
+//  MIXINS
+
+// Grid-width
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// FOR: Calculating percentage widths based on a column width, context, gutters
+// WHY: Let's you think in terms of grid column-count and context and not do the math
+// USE: @include grid-width(6);
+// NOTE: Uses layout variables as defaults, located in variables.scss.
+
+
+@mixin grid-width($col-count: 6, $context-col-count: $layout-col-count, $context-gutter-count: $context-col-count - 1, $gutter-count: $col-count - 1, $property: 'width', $gallery-gutters: false) {
+  $width:           grid-cols-to-px-width($col-count, $gutter-count);
+  $context-width:   grid-cols-to-px-width($context-col-count, $context-gutter-count);
+  $percentage-width: percentage($width / $context-width);
+  #{$property}: $percentage-width;
+
+
+  @if $gallery-gutters {
+    $items-per-row: $context-col-count / $col-count;
+
+    &:nth-of-type(n) {
+      @include grid-width($col-count: 0, $gutter-count: 1, $context-col-count: $context-col-count, $property: 'margin-right', $gallery-gutters: false);
+    }
+
+    &:nth-child(#{$items-per-row}n),
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+
+// https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/
+@mixin word-wrap {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-all;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+
+//http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/
+
+@mixin image-replace($w, $h: $w) {
+  display: block;
+  text-align: left;
+  // font-size: 0;
+  // text-indent: 100%;
+  // white-space: nowrap;
+  overflow: hidden;
+  width: $w;
+  color: transparent;
+  height: $h;
+}
+
+// Font smoothing
+
+@mixin smooth {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Media Query
+
+@mixin mq($bp-1, $bp-2: null) {
+  @if $bp-1 == 'max' {
+
+    @media (max-width:$bp-2 - 1) {
+      @content;
+    }
+  }
+
+  @elseif $bp-2 == 'max' {
+    @media (max-width:$bp-1 - 1) {
+      @content;
+    }
+  }
+
+  @elseif $bp-2 == null {
+    @media (min-width: $bp-1) {
+      @content;
+    }
+  }
+
+  @else {
+    @media (min-width: $bp-1) and (max-width:$bp-2 - 1) {
+      @content;
+    }
+  }
+}
+
+// clearfix
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// Nice Underline
+@mixin underline($color: $color-black, $background-color: null, $weight: 1px, $offset: 10px) {
+  text-decoration: none;
+  background-image: linear-gradient(
+  to top,
+  transparent,
+  transparent $offset,
+  $color $offset,
+  $color ($offset + $weight),
+  transparent ($offset + $weight)
+  );
+
+
+  // only apply text shadow if background color has been passed in
+  @if ($background-color != null) {
+    text-shadow: -2px -2px 0 $background-color, 2px -2px 0 $background-color, -2px 2px 0 $background-color, 2px 2px 0 $background-color;
+  }
+}
+
+
+@mixin drop-cap($bg-color:$color-fire, $fg-color: $color-white) {
+  &:first-letter {
+    color: $fg-color;
+    background-color: $bg-color;
+    display: block;
+    padding: 10px 15px;
+    @include font($font-gotham-ss, 21px, 500, $lh: 1);
+    float: left;
+    margin: 0 12px -2px 0;
+  }
+  @include mq($bp--tablet-xl) {
+    &:first-letter {
+      padding: 20px 25px;
+      font-size: 42px;
+    }
+  }
+}
+
+// ------------------------------------------------------
+// Fluid Font Sizing
+//
+// FOR:   Dynamically changing the size of type
+//        between certain screen sizes. Think of
+//        it as a CSS-only version of FitText
+// REQ:   Depends on the `mq` media query mixin from Upbase/Up Mixin Library
+//        Depends on `strip-units` function from Upbase/Up Mixin Library
+// REF:   http://www.adrenalinmedia.com.au/blog/january-2016/this-changes-everything-css-%E2%80%98fluid-properties%E2%80%99
+// USE:   @include fluid-size(
+//          40px $bp__tablet--sm,
+//          60px $bp__desktop
+//        );
+//
+// -----------------------------------------------------
+
+@mixin fluid-size(
+  $property: font-size,
+  $min-sizes: 16px 100px,
+  $max-sizes: 60px 1400px,
+  $use-mq: true
+) {
+  $min-size: nth($min-sizes, 1);
+  $min-width: nth($min-sizes, 2);
+  $max-size: nth($max-sizes, 1);
+  $max-width: nth($max-sizes, 2);
+
+  $mid-size: #{($max-size - $min-size) * .5  + strip-units($min-size)};
+  $third-width: #{($max-width - $min-width) * .333 + strip-units($min-width)};
+  $twothird-width: #{($max-width - $min-width) * .666 + strip-units($min-width)};
+
+  @if $use-mq {
+    @include mq($min-width, $max-width) {
+      #{$property}: calc(#{$min-size} + (#{strip-units($max-size)} - #{strip-units($min-size)}) * (100vw - #{$min-width}) / (#{strip-units($max-width)} - #{strip-units($min-width)}));
+    }
+    @include mq($max-width) {
+      #{$property}: $max-size;
+    }
+  } @else {
+    #{$property}: calc(#{$min-size} + (#{strip-units($max-size)} - #{strip-units($min-size)}) * (100vw - #{$min-width}) / (#{strip-units($max-width)} - #{strip-units($min-width)}));
+  }
+}
+
+// Size
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// FOR: Applying width & height in a single declaration
+// WHY: Faster. Less typing. Easier to deal with squares.
+// NOTE: If you supply a single value, the result is a square
+// REF: http://bourbon.io/docs/#size
+// USE: @include size(50px 100px);
+
+@mixin size($size) {
+  @if length($size) == 1 {
+    @if $size == auto {
+      height: $size;
+      width: $size;
+    } @else if unitless($size) {
+      height: $size + px;
+      width: $size + px;
+    } @else if not(unitless($size)) {
+      height: $size;
+      width: $size;
+    }
+  }
+
+  // Width x Height
+  @if length($size) == 2 {
+    $width:  nth($size, 1);
+    $height: nth($size, 2);
+
+    @if $width == auto {
+      width: $width;
+    } @else if not(unitless($width)) {
+      width: $width;
+    } @else if unitless($width) {
+      width: $width + px;
+    }
+
+    @if $height == auto {
+      height: $height;
+    } @else if not(unitless($height)) {
+      height: $height;
+    } @else if unitless($height) {
+      height: $height + px;
+    }
+  }
+}
+
+// Font
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// FOR: Setting type
+// WHY: Allows for auto-letter-spacing based on font size
+// HOW: Sets font attributes individually
+// USE: @include font($font-gotham-ss, 15px);
+@mixin font($family: false, $size: false, $weight: false, $style: false, $lh: false, $ls: false, $caps: false) {
+
+  @if ($family) {
+    font-family: $family;
+  }
+
+  @if ($size) {
+    font-size: $size;
+  }
+
+  @if ($lh) {
+    line-height: $lh;
+  }
+
+  @if ($weight) {
+    font-weight: $weight;
+  }
+
+  @if ($style) {
+    font-style: $style;
+  }
+
+  @if ($ls) {
+    letter-spacing: $ls;
+  // } @else if ($family == $f-family-mod and $caps == false ) {
+  //   letter-spacing: 0.01em;
+  // } @else if ($family == $f-family-mod and $caps == true) {
+  //   letter-spacing: 0.1em;
+  // } @else if ($family == $f-family-ash and $caps == true) {
+  //   letter-spacing: 0.05em;
+  }
+
+  @if $caps == true {
+    text-transform: uppercase;
+  } @else if ($caps == false) {
+    text-transform: none;
+  }
+}
+
+
+
+// Circle
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// FOR: Making circles
+// WHY: It's an obvious shorthand and
+//      hey! it does the math for you
+// HOW: Sets the size and cuts it in half
+// USE: @include circle(10px);
+@mixin circle($size: 10px) {
+  @include size($size);
+  border-radius: $size / 2;
+}
+
+
+// Hide Text
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// FOR: Visually Hiding Text
+// WHY: Says exactly what it does. Easier than remembering and writing each time.
+// The newest proper way to hide text (not the text-indent method anymore)
+// USE: @include hide-text;
+
+@mixin hide-text {
+  color: transparent;
+  font: 0/0 a;
+  text-shadow: none;
+  margin: 0;
+}
+
+
+// Absolute Positioning
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// FOR: Quickly setting the top, right, left, and bottom positions of an absolutely positioned element
+// WHY: It's verbose to write everytime in CSS
+// USE: @include absolute(0 0 10px 0);
+@mixin absolute($coordinates: n n n n) {
+
+  $top: nth($coordinates, 1);
+  $right: nth($coordinates, 2);
+  $bottom: nth($coordinates, 3);
+  $left: nth($coordinates, 4);
+
+  position: absolute;
+
+  @if $top == auto or $top == a {
+    top: auto;
+  }
+  // Print nothing if we write an "n" or "none"
+  @else if $top == n or $top == none {
+  }
+  @else {
+    top: $top;
+  }
+
+  @if $right == auto or $right == a {
+    right: auto;
+  }
+  // Print nothing if we write an "n" or "none"
+  @else if $right == n or $right == none {
+  }
+  @else {
+    right: $right;
+  }
+
+  @if $bottom == auto or $bottom == a {
+    bottom: auto;
+  }
+  // Print nothing if we write an "n" or "none"
+  @else if $bottom == n or $bottom == none{
+  }
+  @else {
+    bottom: $bottom;
+  }
+
+  @if $left == auto or $left == a {
+    left: auto;
+  }
+  // Print nothing if we write an "n" or "none"
+  @else if $left == n or $left == none {
+  }
+  @else {
+    left: $left;
+  }
+}
+
+
+
+// pseudo
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// FOR: Quickly pasting essential and commonly used properties that make psuedo classes work
+// WHY: Easier than remembering and writing each time. Should cut down on mistakes/debugging.
+// USE: @include pseudo;
+@mixin pseudo($coordinates: none) {
+  content: "";
+  display: block;
+  @if $coordinates != "none" {
+    @include absolute($coordinates);
+  }
+}
+
+
+// Hide for both screenreaders and browsers
+//   css-discuss.incutio.com/wiki/Screenreader_Visibility
+@mixin hidden {
+  display: none;
+  visibility: hidden;
+}
+
+// Hide only visually, but have it available for screenreaders
+//   www.webaim.org/techniques/css/invisiblecontent/  &  j.mp/visuallyhidden
+@mixin visuallyhidden {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+
+
+
+@mixin close-button($fill-color: $color-gray--7) {
+  cursor: pointer;
+  @include image-replace(18px);
+  position: absolute;
+  top: -30px;
+  right: 0;
+  opacity: 0.7;
+  transition: opacity $timing-medium, transform $timing-medium ease;
+  background: svg-load('../img/close-x.svg', fill=$fill-color);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+
+  &:hover {
+    opacity: 1;
+    transform: scale(1.375);
+  }
+}
+
+// Typography mixins
+// More typographic options
+@mixin basic-text {
+  color: $color-slate;
+  @include font($font-sectra, 16px, normal, $lh: 1.5);
+
+  @include mq($bp--tablet) {
+    font-size: 18px;
+  }
+
+  @include mq($bp--desktop-xxl) {
+    font-size: 21px;
+  }
+}
+
+@mixin secondary-text {
+  @include font($font-sectra, 16px, 400, $lh: 1.667);
+  color: $color-slate--light;
+
+  a {
+    color: $color-fire--dark;
+  }
+
+  // @include mq($bp--tablet-xl) {
+  //   font-size: 16px;
+  // }
+  @include mq($bp--desktop-xl) {
+    font-size: 18px;
+  }
+}
+
+@mixin caption-text {
+  @include font($font-sectra, 13px, 400, $lh: 1.5);
+  color: $color-slate--light;
+}

@@ -1,0 +1,41 @@
+.page-preheading {
+  @include font($font-gotham-ss, 10.5px, 600, $lh: 1.1, $ls: 0.8px, $caps: true);
+  margin: 0 0 20px;
+  color: $color-gray--7;
+}
+
+.page-preheading__link {
+  @include link-mini-caps($arrow: left);
+  font-weight: 600;
+  color: $color-gray--7;
+  border: 0;
+}
+
+.page-header {
+  padding: 50px 0 30px;
+
+  &--equal-padding {
+    padding-top: 30px;
+  }
+
+  &--data h1.page-title {
+    color: $color-green--dark;
+    background-image: none; // no underline
+  }
+
+  @include mq($bp--tablet-xl) {
+    padding: 80px 0 30px;
+
+    &--equal-padding {
+      padding-top: 40px;
+    }
+  }
+
+  @include mq($bp--desktop) {
+    padding: 100px 0 40px;
+
+    &--equal-padding {
+      padding-top: 60px;
+    }
+  }
+}
