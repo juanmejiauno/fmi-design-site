@@ -1,150 +1,115 @@
-[
-  {
-    "text": "Genomic Testing",
+[{
+    "text": "Strategy",
     "internal": true,
-    "href": "/genomic-testing",
-    "submenu": [
-      {
-        "heading": "Get Started",
-        "items": [
-          {
-            "text": "Testing Overview",
-            "internal": true,
-            "href": "/genomic-testing"
-          },
-          {
-            "text": "Financial Services & Support",
-            "internal": true,
-            "href": "/genomic-testing#support-services"
-          },
-          {
-            "text": "Order a Test",
-            "internal": true,
-            "href": "/genomic-testing/order"
-          }
-        ]
-      },
-      {
-        "heading": "Jump to a Test",
-        "items": [
-          {
-            "text": "FoundationOne®",
-            "internal": true,
-            "href": "/genomic-testing/foundation-one"
-          },
-          {
-            "text": "FoundationOne®Heme",
-            "internal": true,
-            "href": "/genomic-testing/foundation-one-heme"
-          },
-          {
-            "text": "FoundationACT®",
-            "internal": true,
-            "href": "/genomic-testing/foundation-act"
-          },
-          {
-            "text": "FoundationFocus™ CDx BRCA",
-            "internal": true,
-            "href": "/genomic-testing/foundation-focus"
-          }
-        ]
-      }
-    ]
+    "submenu": [{
+      "heading": "Get Started",
+      "items": [{
+          "text": "Design Principles",
+          "internal": true,
+          "href": "/strategy/design-principles"
+        },
+        {
+          "text": "Customer Insights",
+          "internal": true,
+          "href": "/strategy/customer-insights"
+        },
+        {
+          "text": "Brand Architecture",
+          "internal": true,
+          "href": "/strategy/brand-architecture"
+        }
+      ]
+    }]
   },
   {
-    "text": "Insights & Partnerships",
+    "text": "Guidance",
     "internal": true,
-    "href": "/insights-and-partnerships",
-    "submenu": [
-      {
+    "submenu": [{
         "heading": "Get Started",
-        "items": [
-          {
-            "text": "Overview",
+        "items": [{
+            "text": "Research Practices",
             "internal": true,
-            "href": "/insights-and-partnerships"
+            "href": "/guidance/research-practices"
           },
           {
-            "text": "Biopharma Partnerships",
+            "text": "Design Sprints",
             "internal": true,
-            "href": "/insights-and-partnerships/biopharma-partnerships"
+            "href": "/guidance/design-sprints"
           },
           {
-            "text": "Institutional Partnerships",
+            "text": "Corporate Logos",
             "internal": true,
-            "href": "/insights-and-partnerships/institutional-partnerships"
+            "href": "/guidance/corporate-logos"
+          },
+          {
+            "text": "Product Logos",
+            "internal": true,
+            "href": "/guidance/product-logos"
+          },
+          {
+            "text": "Type",
+            "internal": true,
+            "href": "/guidance/type"
+          },
+          {
+            "text": "Color",
+            "internal": true,
+            "href": "/guidance/color"
+          },
+          {
+            "text": "Iconography",
+            "internal": true,
+            "href": "/guidance/iconography"
+          },
+          {
+            "text": "Illustrations",
+            "internal": true,
+            "href": "/guidance/illustrations"
+          },
+          {
+            "text": "Data Visualizations",
+            "internal": true,
+            "href": "/guidance/data-visualizations"
+          },
+          {
+            "text": "Photography",
+            "internal": true,
+            "href": "/guidance/photography"
+          },
+          {
+            "text": "Grids/layouts",
+            "internal": true,
+            "href": "/guidance/grids-layouts"
+          },
+          {
+            "text": "Motion",
+            "internal": true,
+            "href": "/guidance/motion"
+          },
+          {
+            "text": "Interactions",
+            "internal": true,
+            "href": "/guidance/interactions"
+          },
+          {
+            "text": "Voice and Tone",
+            "internal": true,
+            "href": "/guidance/voice-and-tone"
           }
         ]
       },
       {
-        "heading": "Explore",
-        "items": [
-          {
-            "text": "Companion Diagnostic Development",
+        "heading": "Assets",
+        "internal": true,
+        "items": [{
+            "text": "Components",
             "internal": true,
-            "href": "/insights-and-partnerships/biopharma-partnerships#companion-diagnostics"
+            "href": "/assets/components"
           },
           {
-            "text": "Molecular Profiling",
+            "text": "Patterns",
             "internal": true,
-            "href": "/insights-and-partnerships/biopharma-partnerships#molecular-profiling"
-          },
-          {
-            "text": "FoundationSmartTrials™",
-            "internal": true,
-            "href": "/insights-and-partnerships/foundation-smarttrials"
-          },
-          {
-            "text": "FoundationInsights™",
-            "internal": true,
-            "href": "/insights-and-partnerships/foundation-insights"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "text": "About Us",
-    "internal": true,
-    "href": "/about",
-    "submenu": [
-      {
-        "heading": "Our Work & Team",
-        "items": [
-          {
-            "text": "Our Story",
-            "internal": true,
-            "href": "/about"
-          },
-          {
-            "text": "Our Culture",
-            "internal": true,
-            "href": "/about/our-culture"
-          },
-          {
-            "text": "Careers",
-            "internal": true,
-            "href": "/about/careers"
-          },
-          {
-            "text": "Blog",
-            "internal": true,
-            "href": "/blog"
-          }
-        ]
-      },
-      {
-        "heading": "Get in Touch",
-        "items": [
-          {
-            "text": "Press & Investors",
-            "internal": false,
-            "href": "http://investors.foundationmedicine.com"
-          },
-          {
-            "text": "Contact Us",
-            "internal": true,
-            "href": "/contact"
+            "href": "/assets/patterns"
           }
         ]
       }
