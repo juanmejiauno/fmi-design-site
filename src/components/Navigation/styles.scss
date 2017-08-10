@@ -12,10 +12,10 @@ $nav-pad-desktop-xxl: 38px;
 
 .navbar__menubar {
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  justify-content: space-between;
   padding: 0;
-  margin: 0;
+  margin: 0 auto auto 25%;
+  width: 65%;
 }
 
 .navbar__menubar > li {
@@ -77,11 +77,6 @@ $nav-pad-desktop-xxl: 38px;
   }
 
   // the arrow under the button needs adjusting
-  .navbar li:last-of-type & {
-    &::after {
-      top: 73px;
-    }
-  }
 
 
   &--dropdown-is-open {
@@ -107,9 +102,6 @@ $nav-pad-desktop-xxl: 38px;
   z-index: -1;
 
   // the dropdown under the button needs adjusting
-  .navbar li:last-of-type & {
-    top: 82px;
-  }
 
   &[aria-hidden="true"] {
     opacity: 0;
@@ -172,10 +164,6 @@ $nav-pad-desktop-xxl: 38px;
   .navbar__submenu-item {
     margin-bottom: 15px;
     line-height: 1;
-
-    &:last-of-type {
-      margin-bottom: 0;
-    }
   }
 
   .navbar__submenu-link {

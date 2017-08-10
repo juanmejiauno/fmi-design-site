@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Dropdown from 'components/AriaMenu/Dropdown';
-import LoginDropdown from 'components/Navigation/LoginDropdown';
+//import LoginDropdown from 'components/Navigation/LoginDropdown';
 import Menubar from 'components/AriaMenu/Menubar';
 import MenubarItem from 'components/AriaMenu/MenubarItem';
 import Submenu from 'components/AriaMenu/Submenu';
@@ -53,7 +53,7 @@ function DesktopNav({ content }) {
     <nav className="navbar" role="navigation">
       <Menubar className="navbar__menubar" role="menubar">
         { content.map(renderMenubaritem) }
-        <li><LoginDropdown /></li>
+        {/* <li><LoginDropdown /></li> */}
       </Menubar>
     </nav>
   );
