@@ -20,13 +20,13 @@ const Footer = () => (
 
               <ul className="primary-footer__nav-list">
                 <li className="primary-footer__nav-item primary-footer__nav-item--strategy">
-                  <Link className="primary-footer__nav-link" to="/strategy">Strategy</Link>
+                  <Link className="primary-footer__nav-link" to="/#">Strategy</Link>
                 </li>
                 <li className="primary-footer__nav-item primary-footer__nav-item--guidance">
-                  <Link className="primary-footer__nav-link" to="/guidance">Guidance</Link>
+                  <Link className="primary-footer__nav-link" to="/#">Guidance</Link>
                 </li>
                 <li className="primary-footer__nav-item primary-footer__nav-item--assets">
-                  <Link className="primary-footer__nav-link" to="/assets">Assets</Link>
+                  <Link className="primary-footer__nav-link" to="/#">Assets</Link>
                 </li>
               </ul>
 
@@ -36,13 +36,13 @@ const Footer = () => (
                   <h3 className="primary-footer__h">Strategy</h3>
                   <ul className="primary-footer__mini-list">
                     <li className="primary-footer__mini-item">
-                      <Link className="primary-footer__mini-link" to="/design-principles">Design Principles</Link>
+                      <Link className="primary-footer__mini-link" to="/strategy/design-principles">Design Principles</Link>
                     </li>
                     <li className="primary-footer__mini-item">
-                      <Link className="primary-footer__mini-link" to="/customer-insights">Customer Insights</Link>
+                      <Link className="primary-footer__mini-link" to="/strategy/customer-insights">Customer Insights</Link>
                     </li>
                     <li className="primary-footer__mini-item">
-                      <Link className="primary-footer__mini-link" href="/brand-architecture">Brand Architecture</Link>
+                      <Link className="primary-footer__mini-link" href="/strategy/brand-architecture">Brand Architecture</Link>
                     </li>
                   </ul>
                 </div>
@@ -51,16 +51,16 @@ const Footer = () => (
                   <h3 className="primary-footer__h">Guidance</h3>
                   <ul className="primary-footer__mini-list">
                     <li className="primary-footer__mini-item">
-                      <Link className="primary-footer__mini-link" to="/corporate-logos">Corporate Logos</Link>
+                      <Link className="primary-footer__mini-link" to="/guidance/corporate-logos">Corporate Logos</Link>
                     </li>
                     <li className="primary-footer__mini-item">
-                      <Link className="primary-footer__mini-link" to="/product-logos">Product Logos</Link>
+                      <Link className="primary-footer__mini-link" to="/guidance/product-logos">Product Logos</Link>
                     </li>
                     <li className="primary-footer__mini-item">
-                      <Link className="primary-footer__mini-link" to="/type">Type</Link>
+                      <Link className="primary-footer__mini-link" to="/guidance/type">Type</Link>
                     </li>
                     <li className="primary-footer__mini-item">
-                      <Link className="primary-footer__mini-link" to="/photography">Photography</Link>
+                      <Link className="primary-footer__mini-link" to="/guidance/photography">Photography</Link>
                     </li>
                   </ul>
                 </div>
