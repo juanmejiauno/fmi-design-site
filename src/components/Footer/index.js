@@ -19,78 +19,54 @@ const Footer = () => (
             <div className="primary-footer__nav-links">
 
               <ul className="primary-footer__nav-list">
-                <li className="primary-footer__nav-item primary-footer__nav-item--testing">
-                  <Link className="primary-footer__nav-link" to="/genomic-testing">Genomic Testing</Link>
+                <li className="primary-footer__nav-item primary-footer__nav-item--strategy">
+                  <Link className="primary-footer__nav-link" to="/#">Strategy</Link>
                 </li>
-                <li className="primary-footer__nav-item primary-footer__nav-item--insights">
-                  <Link className="primary-footer__nav-link" to="/insights-and-partnerships">Insights &amp;&nbsp;Partnerships</Link>
+                <li className="primary-footer__nav-item primary-footer__nav-item--guidance">
+                  <Link className="primary-footer__nav-link" to="/#">Guidance</Link>
                 </li>
-                <li className="primary-footer__nav-item primary-footer__nav-item--about">
-                  <Link className="primary-footer__nav-link" to={'/about'}>About Us</Link>
-                </li>
-                <li className="primary-footer__nav-item primary-footer__nav-item--blog">
-                  <Link className="primary-footer__nav-link" to={'/blog'}>Blog</Link>
-                </li>
-                <li className="primary-footer__nav-item primary-footer__nav-item--investors">
-                  <a className="primary-footer__nav-link" href="http://investors.foundationmedicine.com">Press &amp;&nbsp;Investors</a>
-                </li>
-                <li className="primary-footer__nav-item primary-footer__nav-item--careers">
-                  <Link className="primary-footer__nav-link" to={'/about/careers'}>Careers</Link>
-                </li>
-                <li className="primary-footer__nav-item primary-footer__nav-item--contact">
-                  <Link className="primary-footer__nav-link" to={'/contact'}>Contact Us</Link>
+                <li className="primary-footer__nav-item primary-footer__nav-item--assets">
+                  <Link className="primary-footer__nav-link" to="/#">Assets</Link>
                 </li>
               </ul>
 
               <div className="primary-footer__sets">
 
                 <div className="primary-footer__set">
-                  <h3 className="primary-footer__h">Genomic Testing</h3>
+                  <h3 className="primary-footer__h">Strategy</h3>
                   <ul className="primary-footer__mini-list">
                     <li className="primary-footer__mini-item">
-                      <Link className="primary-footer__mini-link" to="/genomic-testing">Testing Overview</Link>
+                      <Link className="primary-footer__mini-link" to="/strategy/design-principles">Design Principles</Link>
                     </li>
                     <li className="primary-footer__mini-item">
-                      <Link className="primary-footer__mini-link" to="/genomic-testing#support-services">Financial Services &amp;&nbsp;Support</Link>
+                      <Link className="primary-footer__mini-link" to="/strategy/customer-insights">Customer Insights</Link>
                     </li>
                     <li className="primary-footer__mini-item">
-                      <Link className="primary-footer__mini-link" href="/genomic-testing/order">Order a Test</Link>
+                      <Link className="primary-footer__mini-link" href="/strategy/brand-architecture">Brand Architecture</Link>
                     </li>
                   </ul>
                 </div>
 
                 <div className="primary-footer__set">
-                  <h3 className="primary-footer__h">Insights &amp; Partnerships</h3>
+                  <h3 className="primary-footer__h">Guidance</h3>
                   <ul className="primary-footer__mini-list">
                     <li className="primary-footer__mini-item">
-                      <Link className="primary-footer__mini-link" to="/insights-and-partnerships">Overview</Link>
+                      <Link className="primary-footer__mini-link" to="/guidance/corporate-logos">Corporate Logos</Link>
                     </li>
                     <li className="primary-footer__mini-item">
-                      <Link className="primary-footer__mini-link" to="/insights-and-partnerships/institutional-partnerships">Institutional Partnerships</Link>
+                      <Link className="primary-footer__mini-link" to="/guidance/product-logos">Product Logos</Link>
                     </li>
                     <li className="primary-footer__mini-item">
-                      <Link className="primary-footer__mini-link" to="/insights-and-partnerships/biopharma-partnerships">Biopharma Partnerships</Link>
+                      <Link className="primary-footer__mini-link" to="/guidance/type">Type</Link>
+                    </li>
+                    <li className="primary-footer__mini-item">
+                      <Link className="primary-footer__mini-link" to="/guidance/photography">Photography</Link>
                     </li>
                   </ul>
                 </div>
 
               </div>
 
-            </div>
-
-
-            <div className="primary-footer__social">
-              <ul className="primary-footer__social-list">
-                <li className="primary-footer__social-item">
-                  <a target="_blank" rel="noopener noreferrer" href="http://linkedin.com/company/foundation-medicine" className="primary-footer__social-link primary-footer__social-link--linkedin">LinkedIn</a>
-                </li>
-                <li className="primary-footer__social-item">
-                  <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/foundationatcg" className="primary-footer__social-link primary-footer__social-link--twitter">Twitter</a>
-                </li>
-                <li className="primary-footer__social-item">
-                  <a target="_blank" rel="noopener noreferrer" href="http://youtube.com/FoundationMedicine" className="primary-footer__social-link primary-footer__social-link--youtube">YouTube</a>
-                </li>
-              </ul>
             </div>
 
           </div>
