@@ -1,0 +1,49 @@
+.brand-architecture-page-header {
+  margin: 0 auto;
+  width: 58%;
+
+  h1 {
+    font-size: 84px;
+  }
+}
+
+.our-architecture {
+  height: 936px;
+  display: flex;
+
+  .our-architecture__text {
+    margin: 0;
+    width: 40.48583%;
+    left: 200px;
+    align-self: flex-start;
+    position: relative;
+
+    .our-architecture__text-inner {
+      display: block;
+      padding: 0 40px 0 0;
+      font-size: 17px;
+    }
+
+    h3 {
+      font-family: GT Sectra,georgia,serif;
+      line-height: 43px;
+      font-weight: 400;
+      text-transform: none;
+      color: #435363;
+      margin: 0 0 30px;
+      font-size: 30px;
+    }
+  }
+
+  .our-architecture__image {
+    align-self: flex-end;
+
+    img {
+      width: 669px;
+      height: 720px;
+    }
+  }
+}
+
+
+
