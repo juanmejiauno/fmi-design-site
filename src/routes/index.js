@@ -28,6 +28,7 @@ import PartnershipsInsightsProduct from 'routes/PartnershipsInsightsProduct';
 import PartnershipsInstitutions from 'routes/PartnershipsInstitutions';
 import PartnershipsTrialsProduct from 'routes/PartnershipsTrialsProduct';
 import Styleguide from 'routes/Styleguide';
+import CorporateLogos from 'routes/CorporateLogos';
 
 function shouldUpdateScroll(prev, next) {
   return (prev && prev.location.pathname !== next.location.pathname)
@@ -40,7 +41,9 @@ function Routes(client, onUpdate) {
     <Router history={browserHistory} render={applyRouterMiddleware(useScroll(shouldUpdateScroll))} onUpdate={onUpdate}>
       <Route path="/" component={App}>
         <IndexRoute component={Home} onEnter={addDataToRoute} />
+
         <Route path="style-guide" component={Styleguide} />
+
         <Route path="about">
           <IndexRoute component={AboutIndex} onEnter={addDataToRoute} />
           <Route path="careers" component={AboutCareers} onEnter={addDataToRoute} />
@@ -74,6 +77,12 @@ function Routes(client, onUpdate) {
           <IndexRoute component={PagesIndex} onEnter={addDataToRoute} />
           <Route path=":slug" component={BasicPage} onEnter={addDataToRoute} />
         </Route>
+
+        <Route path="guidance">
+          {/* <IndexRoute component={PagesIndex} onEnter={addDataToRoute} /> */}
+          <Route path="corporate-logos" component={CorporateLogos} />
+        </Route>
+
         <Route path="error" component={ErrorPage} status={400} />
         <Route path="*" component={ErrorPage} status={404} message="Page Not Found" />
       </Route>
