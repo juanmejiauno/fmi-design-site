@@ -1,5 +1,4 @@
 //  VARIABLES
-
 // Colors
 $color-white: #ffffff;
 $color-black: #000000;
@@ -25,6 +24,7 @@ $color-fire: #ff4c00;
 $color-fire--dark: #d64305;
 $color-fire--dark2: #b74414;
 $color-fire--light: #ff7135;
+$color-ronchi: #EBC959;
 $color-green: #64ccc9;
 $color-green--dark: #35a09c;
 $color-green--dark2: mix($color-black, $color-green--dark, 15%);
@@ -32,6 +32,7 @@ $color-slate: #435363;
 $color-slate--light: #7a8a98;
 $color-slate--dark: #323f4a;
 $color-slate--dark2: mix($color-black, $color-slate--dark, 15%);
+$color-regent-gray: #8B99A6;
 $color-beige: #f7f5ef;
 $color-yellow: #f7d18f;
 $color-peach: #f9d3ae;
@@ -39,20 +40,24 @@ $color-peach--light: #fffefa;
 $color-orange: #f79737;
 $color-orange--dark: mix($color-black, $color-orange, 10%);
 $color-orange--light: #f6d18f;
-
 // Fonts
-$font-gotham: 'Gotham A', 'Gotham B', arial, sans-serif;
-$font-gotham-ss: 'Gotham SSm A', 'Gotham SSm B', arial, sans-serif;
-$font-sectra: 'GT Sectra', georgia, serif;
-
+$font-gotham: 'Gotham A',
+'Gotham B',
+arial,
+sans-serif;
+$font-gotham-ss: 'Gotham SSm A',
+'Gotham SSm B',
+arial,
+sans-serif;
+$font-sectra: 'GT Sectra',
+georgia,
+serif;
 // Layout / Grid
 $layout-col-count: 12;
 $layout-col-width: 80px;
 $layout-gutter-width: 25px;
-$layout-content: ($layout-col-count * $layout-col-width) + ( ($layout-col-count - 1) * $layout-gutter-width);
+$layout-content: ($layout-col-count * $layout-col-width)+( ($layout-col-count - 1) * $layout-gutter-width);
 $layout-gutter-pct: percentage($layout-gutter-width / $layout-content);
-
-
 // Breakpoints
 $bp--mobile: 300px;
 $bp--phablet: 400px;
@@ -60,13 +65,11 @@ $bp--tablet: 600px;
 $bp--tablet-xl: 768px;
 $bp--desktop: 1070px;
 $bp--desktop-xl: 1200px;
-$bp--desktop-xxl:  1500px;
+$bp--desktop-xxl: 1500px;
 $bp--desktop-xxxl: 1700px;
-
 // breakpoint for moibile navbar
 // this must be kept in sync with JS (Navigation/index.js)
 $bp--no-mobile-nav: 1025px;
-
 // Z-index
 $z-index-0:1;
 $z-index-1: 10;
@@ -79,7 +82,6 @@ $z-index-7: 70;
 $z-index-8: 80;
 $z-index-9: 90;
 $z-index-10: 100;
-
 // Timing
 $timing: cubic-bezier(0.645, 0.045, 0.355, 1);
 $timing-butter: cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -89,7 +91,6 @@ $timing-standard: 0.3s;
 $timing-medium: 0.4s;
 $timing-long: 0.5s;
 $timing-verylong: 1s;
-
 // Shortcuts
 $all-headings: 'h1, h2, h3, h4, h5, h6';
 $all-lists: 'ul, ol, dl';
