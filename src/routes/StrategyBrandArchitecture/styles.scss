@@ -69,7 +69,7 @@
 }
 
 .separator {
-  border-bottom: 1px solid #ff4c00;
+  border-bottom: 1px solid $color-fire;
   margin-bottom: 80px;
 }
 
@@ -80,7 +80,7 @@
 }
 
 .brand-architecture__row {
-  border-top: 1px solid #8b99a6;
+  border-top: 1px solid $color-slate--light;
   margin-top: 60px;
   font-family: Gotham SSm A, Gotham SSm B, arial, sans-serif;
   font-size: 18px;
@@ -92,7 +92,7 @@
     font-size: 11px;
     font-style: italic;
     line-height: 13px;
-    color: #8b99a6;
+    color: $color-slate--light;
     text-transform: uppercase;
     margin-top: 22px;
     margin-bottom: 40px;
@@ -119,15 +119,15 @@
     }
 
     &.col-assays {
-      color: #ff4c00;
+      color: $color-fire;
     }
 
     &.col-data {
-      color: #64ccc9;
+      color: $color-green;
     }
 
     &.col-community {
-      color: #435363;
+      color: $color-slate;
     }
   }
 
