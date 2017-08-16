@@ -29,6 +29,7 @@ import PartnershipsInstitutions from 'routes/PartnershipsInstitutions';
 import PartnershipsTrialsProduct from 'routes/PartnershipsTrialsProduct';
 import Styleguide from 'routes/Styleguide';
 import BrandArchitecture from 'routes/StrategyBrandArchitecture';
+import CorporateLogos from 'routes/CorporateLogos';
 
 function shouldUpdateScroll(prev, next) {
   return (prev && prev.location.pathname !== next.location.pathname)
@@ -41,7 +42,9 @@ function Routes(client, onUpdate) {
     <Router history={browserHistory} render={applyRouterMiddleware(useScroll(shouldUpdateScroll))} onUpdate={onUpdate}>
       <Route path="/" component={App}>
         <IndexRoute component={Home} onEnter={addDataToRoute} />
+
         <Route path="style-guide" component={Styleguide} />
+
         <Route path="about">
           <IndexRoute component={AboutIndex} onEnter={addDataToRoute} />
           <Route path="careers" component={AboutCareers} onEnter={addDataToRoute} />
@@ -80,6 +83,11 @@ function Routes(client, onUpdate) {
           <Route path="design-principles" component={AboutCareers} onEnter={addDataToRoute} />
           <Route path="customer-insights" component={AboutCulture} onEnter={addDataToRoute} />
           <Route path="brand-architecture" component={BrandArchitecture} onEnter={addDataToRoute} />
+        </Route>
+
+        <Route path="guidance">
+          {/* <IndexRoute component={PagesIndex} onEnter={addDataToRoute} /> */}
+          <Route path="corporate-logos" component={CorporateLogos} />
         </Route>
 
         <Route path="error" component={ErrorPage} status={400} />
