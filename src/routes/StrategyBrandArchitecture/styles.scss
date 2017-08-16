@@ -1,0 +1,171 @@
+.base-layout {
+  &.layout-content {
+    width: 1080px;
+  }
+}
+
+.brand-architecture-page-header {
+  margin: 0 auto;
+
+  h1 {
+    font-size: 84px;
+  }
+}
+
+.our-architecture {
+  margin-bottom: 80px;
+
+  .our-architecture__text {
+    margin: 0;
+    width: 51.48583%;
+
+    .our-architecture__text-inner {
+      display: block;
+      padding: 0 40px 0 0;
+      font-size: 17px;
+
+      h3 {
+        line-height: 43px;
+        font-weight: 400;
+        margin: 0 0 30px;
+        font-size: 30px;
+      }
+    }
+  }
+
+  .our-architecture__image {
+    display: flex;
+    justify-content: flex-end;
+
+    img {
+      width: 669px;
+      height: 720px;
+    }
+  }
+}
+
+.content__text {
+  margin: 0;
+  align-self: flex-start;
+  position: relative;
+  width: 760px;
+
+  .content__text-inner {
+    display: block;
+    padding: 0 40px 0 0;
+    font-size: 17px;
+
+    h3 {
+      line-height: 43px;
+      font-weight: 400;
+      margin: 0 0 30px;
+      font-size: 30px;
+    }
+
+    em {
+      font-family: GT Sectra;
+    }
+  }
+}
+
+.separator {
+  border-bottom: 1px solid $color-fire;
+  margin-bottom: 80px;
+}
+
+.brand-architecture {
+  .ecosystem-diagram {
+    width: 1300px;
+  }
+}
+
+.brand-architecture__row {
+  border-top: 1px solid $color-slate--light;
+  margin-top: 60px;
+  font-family: Gotham SSm A, Gotham SSm B, arial, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  line-height: 30px;
+
+  .brand-architecture__row-title {
+    font-size: 11px;
+    font-style: italic;
+    line-height: 13px;
+    color: $color-slate--light;
+    text-transform: uppercase;
+    margin-top: 22px;
+    margin-bottom: 40px;
+  }
+
+  .brand-architecture__row-body {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .brand-architecture__row-col {
+    min-width: 33%;
+
+    .brand-pillar-assays,
+    .brand-pillar-data {
+      width: 170px;
+      height: 259px;
+    }
+
+    .brand-pillar-community {
+      width: 210px;
+      height: 272px;
+    }
+
+    &.col-assays {
+      color: $color-fire;
+    }
+
+    &.col-data {
+      color: $color-green;
+    }
+
+    &.col-community {
+      color: $color-slate;
+    }
+  }
+
+  &.product-logos {
+    .brand-architecture__row-body {
+      text-align: left;
+    }
+
+    img {
+      height: 43px;
+      margin-bottom: 30px;
+    }
+
+    img:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &.primary-stakeholders {
+    .brand-architecture__row-body {
+      text-transform: uppercase;
+      font-weight: 300;
+    }
+  }
+
+  &.value-prop,
+  &.brand-promise {
+    .brand-architecture__row-body {
+      font-family: GT Sectra;
+      font-weight: bold;
+      font-style: italic;
+      font-size: 20px;
+    }
+  }
+
+  &.brand-promise {
+    .brand-architecture__row-body {
+      color: #091f2f;
+    }
+  }
+}
