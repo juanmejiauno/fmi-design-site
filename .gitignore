@@ -165,3 +165,6 @@ contentful-tools/sync-tokens/*
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
+
+### IntelliJ ###
+.idea/
