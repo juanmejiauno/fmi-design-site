@@ -37,7 +37,7 @@ class BrandArchitecture extends Component {
         </div>
 
         <div className="ecosystem-diagram base-layout--pad-bottom">
-          <img src="../img/ecosystem backdrop.png" alt="" />
+          <img src="../img/ecosystem of care.png" alt="" />
         </div>
 
         <div className="base-layout layout-content">
