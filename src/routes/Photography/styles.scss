@@ -1,0 +1,253 @@
+.base-layout {
+  &.layout-content {
+    width: 1080px;
+  }
+}
+
+.photography {
+  .content-sidekick {
+    padding-bottom: 80px;
+    display: flex;
+    justify-content: space-between;
+
+    .content__text {
+      width: 475px;
+
+      .content__text-inner {
+        display: block;
+        padding: 0;
+        font-size: 17px;
+        line-height: 29px;
+
+        h3 {
+          line-height: 43px;
+          font-weight: 400;
+          margin: 0 0 30px;
+          font-size: 30px;
+        }
+
+        em {
+          font-family: GT Sectra;
+        }
+
+        .fire {
+          color: $color-fire;
+          font-family: $font-gotham-ss;
+
+          em {
+            font-family: $font-gotham-ss;
+          }
+        }
+      }
+    }
+
+    .content__image {
+      img {
+        width: 478px;
+        height: 414px;
+      }
+    }
+
+    &.photography-personality {
+      .content__text {
+        width: 475px;
+
+        .content__text-inner {
+          font-weight: 500;
+          line-height: 27px;
+
+          em {
+            font-weight: bold;
+          }
+
+          .fire {
+            color: $color-fire;
+            font-family: $font-gotham-ss;
+
+            em {
+              font-family: $font-gotham-ss;
+            }
+          }
+        }
+      }
+
+      .content__image {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-top: 120px;
+        margin-bottom: 20px;
+
+        img {
+          width: 384px;
+          height: 256px;
+        }
+      }
+    }
+  }
+
+  .portraiture {
+    .content__text {
+      width: 100%;
+    }
+
+    .content__row-title {
+      padding-bottom: 46px;
+    }
+
+    &.portraiture-primary {
+      .content__row-col {
+        border-top: 1px solid $color-regent-gray;
+        padding-top: 20px;
+        font-family: $font-gotham-ss;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 24px;
+        color: $color-regent-gray;
+
+        .list-title {
+          font-style: italic;
+          font-size: 11px;
+          font-weight: 500;
+          line-height: 13px;
+          margin-bottom: 22px;
+
+          &.fire {
+            color: $color-fire;
+          }
+        }
+
+        ul {
+          height: 120px;
+          padding-left: 15px;
+        }
+
+        img {
+          width: 387px;
+          height: 258px;
+          margin: 0 auto;
+          display: block;
+        }
+
+        &.deconstruct {
+          .fire {
+            width: 208px;
+          }
+
+          img {
+            width: 350px;
+            height: 270px;
+          }
+        }
+
+        &.overlay {
+          .fire {
+            width: 237px;
+          }
+
+          img {
+            width: 475px;
+            height: 270px;
+          }
+        }
+      }
+
+      &.steer-clear {
+        .content__text {
+          margin-top: 30px;
+          margin-bottom: 30px;
+        }
+      }
+    }
+
+    &.portraiture-pattern {
+      .content__row-title {
+        .content__text {
+          h3 {
+            width: 90%;
+          }
+        }
+      }
+
+      .content__row-body {
+        display: block;
+
+        .content-sidekick {
+          .content__text {
+            width: 339px;
+            padding-top: 20px;
+            font-family: $font-gotham-ss;
+            font-size: 17px;
+            font-weight: 300;
+            line-height: 24px;
+            color: $color-regent-gray;
+
+            .content__text-inner {
+              font-size: 12px;
+              line-height: 22px;
+              font-weight: 500;
+            }
+
+            h3 {
+              font-size: 14px;
+              text-transform: uppercase;
+              font-weight: 600;
+              margin: 0;
+            }
+          }
+
+          img {
+            width: 574px;
+            height: 451px;
+          }
+
+          &.brochure {
+            .content__text {
+              width: 348px;
+            }
+
+            img {
+              width: 401px;
+              height: 534px;
+            }
+          }
+
+          &.artwork {
+            .content__text {
+              width: 336px;
+            }
+
+            img {
+              width: 576px;
+              height: 621px;
+            }
+          }
+
+          .use-case {
+            img {
+              width: 578px;
+              height: 360px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .content__row {
+    .content__row-title {
+    }
+
+    .content__row-body {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      .content__row-col {
+        width: 49%;
+      }
+
+
+    }
+  }
+}
