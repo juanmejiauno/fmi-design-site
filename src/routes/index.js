@@ -31,6 +31,7 @@ import Styleguide from 'routes/Styleguide';
 import BrandArchitecture from 'routes/StrategyBrandArchitecture';
 import CorporateLogos from 'routes/CorporateLogos';
 import ProductLogos from 'routes/ProductLogos';
+import Photography from 'routes/Photography';
 
 function shouldUpdateScroll(prev, next) {
   return (prev && prev.location.pathname !== next.location.pathname)
@@ -90,6 +91,7 @@ function Routes(client, onUpdate) {
           {/* <IndexRoute component={PagesIndex} onEnter={addDataToRoute} /> */}
           <Route path="corporate-logos" component={CorporateLogos} />
           <Route path="product-logos" component={ProductLogos} />
+          <Route path="photography" component={Photography} />
         </Route>
 
         <Route path="error" component={ErrorPage} status={400} />
