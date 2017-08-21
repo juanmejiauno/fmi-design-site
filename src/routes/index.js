@@ -30,6 +30,7 @@ import PartnershipsTrialsProduct from 'routes/PartnershipsTrialsProduct';
 import Styleguide from 'routes/Styleguide';
 import BrandArchitecture from 'routes/StrategyBrandArchitecture';
 import CorporateLogos from 'routes/CorporateLogos';
+import ProductLogos from 'routes/ProductLogos';
 import Photography from 'routes/Photography';
 
 function shouldUpdateScroll(prev, next) {
@@ -81,14 +82,15 @@ function Routes(client, onUpdate) {
         </Route>
 
         <Route path="strategy">
-          <Route path="design-principles" component={AboutCareers} onEnter={addDataToRoute} />
-          <Route path="customer-insights" component={AboutCulture} onEnter={addDataToRoute} />
-          <Route path="brand-architecture" component={BrandArchitecture} onEnter={addDataToRoute} />
+          <Route path="design-principles" component={AboutCareers} />
+          <Route path="customer-insights" component={AboutCulture} />
+          <Route path="brand-architecture" component={BrandArchitecture} />
         </Route>
 
         <Route path="guidance">
           {/* <IndexRoute component={PagesIndex} onEnter={addDataToRoute} /> */}
           <Route path="corporate-logos" component={CorporateLogos} />
+          <Route path="product-logos" component={ProductLogos} />
           <Route path="photography" component={Photography} />
         </Route>
 

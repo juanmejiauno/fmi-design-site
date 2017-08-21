@@ -19,9 +19,9 @@ class CorporateLogos extends Component {
     const positionImagesSectionText = `<h2>Positioning, medium & context inform which lockup to use and how: vertical v. horizontal, FM Slate v. FM Fire.</h2>
 <p>The primary FMI logo is the vertical lockup; this is our go-to. The horizontal lockup expands the flexibility of the identity system, creating a horizontal solution when needed. To maintain consistency across platforms, printed materials require the logo accompanied by the registered trademark symbol; digital and swag materials use the logo without.</p>`;
     return (
-      <div className="corporate-logos">
+      <div className="corporate-logos base-section">
         <PageHelmet title="Corporate Logos" description="Corporate Logos"/>
-        <div className="introduction-section base-layout">
+        <div className="introduction-section base-layout section no-border">
           <PageHeader
             preheading="Identity system"
             heading="Corporate Logo"
@@ -35,7 +35,7 @@ class CorporateLogos extends Component {
             </div>
           </div>
         </div>
-        <div className="primary-lockup-section base-layout">
+        <div className="primary-lockup-section base-layout background-base-layout">
           <div className="basic-text">
             <h4 className="lockup-header">Primary lockup</h4>
           </div>
@@ -77,7 +77,7 @@ class CorporateLogos extends Component {
             </ul>
           </div>
         </div>
-        <div className="secondary-lockup-section base-layout">
+        <div className="secondary-lockup-section base-layout background-base-layout">
           <div className="flex-row">
             <div className="column">
               <div className="basic-text">
