@@ -4,6 +4,12 @@
   }
 }
 
+.separator-grey {
+  border-bottom: 1px solid $color-regent-gray;
+  margin-bottom: 80px;
+  width: 476px;
+}
+
 .photography {
   .content-sidekick {
     padding-bottom: 80px;
@@ -50,11 +56,15 @@
 
     &.photography-personality {
       .content__text {
-        width: 475px;
+        width: 57%;
 
         .content__text-inner {
           font-weight: 500;
           line-height: 27px;
+
+          p {
+            width: 86%;
+          }
 
           em {
             font-weight: bold;
@@ -89,6 +99,15 @@
   .portraiture {
     .content__text {
       width: 100%;
+
+      h3.content__text-inner-title {
+        width: 90%;
+      }
+
+      .content__text-inner-text {
+        width: 83%;
+        display: inline-block;
+      }
     }
 
     .content__row-title {
@@ -150,6 +169,28 @@
             height: 270px;
           }
         }
+
+        &.caption-support {
+          .list-title {
+            width: 30%;
+          }
+
+          img {
+            width: 274px;
+            height: 369px;
+          }
+        }
+
+        &.visual-treatment {
+          .list-title {
+            width: 50%;
+          }
+
+          img {
+            width: 475px;
+            height: 296px;
+          }
+        }
       }
 
       &.steer-clear {
@@ -163,8 +204,10 @@
     &.portraiture-pattern {
       .content__row-title {
         .content__text {
-          h3 {
-            width: 90%;
+          .content__text-inner-text {
+            em {
+              font-weight: 600;
+            }
           }
         }
       }
@@ -201,14 +244,39 @@
             height: 451px;
           }
 
+          .content__image {
+            position: relative;
+          }
+
+          .content__image::after {
+            content: "";
+            display: block;
+            height: 1px;
+            width: 30px;
+            background-color: $color-regent-gray;
+            position: absolute;
+            left: 589px;
+            top: 40px;
+          }
+
           &.brochure {
             .content__text {
               width: 348px;
             }
 
-            img {
-              width: 401px;
-              height: 534px;
+            .content__image {
+              position: relative;
+              left: 76px;
+
+              img {
+                width: 401px;
+                height: 534px;
+              }
+            }
+
+            .content__image::after {
+              width: 114px;
+              left: 425px;
             }
           }
 
@@ -246,8 +314,6 @@
       .content__row-col {
         width: 49%;
       }
-
-
     }
   }
 }

@@ -85,8 +85,8 @@ class Photography extends Component {
             <div className="content__row-title">
               <div className="content__text">
                 <span className="content__text-inner">
-                  <h3>Portraiture may be used in two primary ways with the triangle pattern & without: this encompasses usage for all primary work.</h3>
-                  1) Large format single photographs desaturated with color and pa ern incorporated: usage of pattern or the deconstruction of photographs requires time and iteration. Pattern should not overlay too strongly with eyes or mouths and in general no eyes should deconstructed or skewed. A connection to the subject should be maintained as a clear goal of the image.
+                  <h3 className="content__text-inner-title">Portraiture may be used in two primary ways with the triangle pattern & without: this encompasses usage for all primary work.</h3>
+                  <span className="content__text-inner-text">1) Large format single photographs desaturated with color and pa ern incorporated: usage of pattern or the deconstruction of photographs requires time and iteration. Pattern should not overlay too strongly with eyes or mouths and in general no eyes should deconstructed or skewed. A connection to the subject should be maintained as a clear goal of the image.</span>
                 </span>
               </div>
             </div>
@@ -116,11 +116,13 @@ class Photography extends Component {
             </div>
           </div>
 
+          <div className="separator-grey" />
+
           <div className="content__row portraiture portraiture-pattern">
             <div className="content__row-title">
               <div className="content__text">
                 <span className="content__text-inner">
-                  2) Smaller multiple photographs desaturated or with color overlays within pa erns. Minimal usage where pa ern may overwhelm copy or distract from key  nctions, such as product UI or other action-oriented se ings like applications or tradeshow digital.
+                  <span className="content__text-inner-text">2) Smaller multiple photographs desaturated or with color overlays within patterns. Minimal usage where pattern may overwhelm copy or distract from key functions, such as product UI or other action-oriented settings like applications or tradeshow digital.</span>
                 </span>
               </div>
             </div>
@@ -139,11 +141,13 @@ class Photography extends Component {
             </div>
           </div>
 
+          <div className="separator-grey" />
+
           <div className="content__row portraiture portraiture-pattern">
             <div className="content__row-title">
               <div className="content__text">
                 <span className="content__text-inner">
-                  2.1) For those looking for a minimal route, large format single photographs in color with extremely paired back layout or desaturated with a large color block are possible. <em>Color photographs should not be used as a primary graphic on any print or digital work.</em>
+                  <span className="content__text-inner-text">2.1) For those looking for a minimal route, large format single photographs in color with extremely paired back layout or desaturated with a large color block are possible. <em>Color photographs should not be used as a primary graphic on any print or digital work.</em></span>
                 </span>
               </div>
             </div>
@@ -180,7 +184,7 @@ class Photography extends Component {
               <div className="content__text">
                 <span className="content__text-inner">
                   <h3>Avoid misuse of patterns and over-stylization in portraiture.</h3>
-                   The triangle pattern when layered with photography should be maintained in scale as a graphic complement to the portrait: if undersized, the pattern becomes distracting and tedious; if oversized, the pattern is lost. Deconstruction of photos and implementation of graphic patterns takes time and iteration.  The deconstruction of portraits should be minimal to avoid losing the intent of portraying dynamism and knowledge aligning; overly chopped up photos could become confusing and may communicate something altogether different and misleading.
+                  <span className="content__text-inner-text">The triangle pattern when layered with photography should be maintained in scale as a graphic complement to the portrait: if undersized, the pattern becomes distracting and tedious; if oversized, the pattern is lost. Deconstruction of photos and implementation of graphic patterns takes time and iteration.  The deconstruction of portraits should be minimal to avoid losing the intent of portraying dynamism and knowledge aligning; overly chopped up photos could become confusing and may communicate something altogether different and misleading.</span>
                 </span>
               </div>
             </div>
@@ -198,22 +202,22 @@ class Photography extends Component {
 
           <div className="separator" />
 
-          <div className="content__row portraiture">
+          <div className="content__row portraiture portraiture-primary base-layout--pad-bottom">
             <div className="content__row-title">
               <div className="content__text">
                 <span className="content__text-inner">
                   <h3>For secondary photography, further options are possible.</h3>
-                   Secondary shots may contain more action-oriented content such as holding a flask in the lab, collaborating with colleagues or reviewing a report. These may be used in color, desaturated or with screened overlays with minimal type treatments as a best practice. These photographs are intended to support captions or quotes in print collateral or as visual treatment to type-based headers in digital.
+                  <span className="content__text-inner-text">Secondary shots may contain more action-oriented content such as holding a flask in the lab, collaborating with colleagues or reviewing a report. These may be used in color, desaturated or with screened overlays with minimal type treatments as a best practice. These photographs are intended to support captions or quotes in print collateral or as visual treatment to type-based headers in digital.</span>
                 </span>
               </div>
             </div>
             <div className="content__row-body">
-              <div className="content__row-col">
-                CAPTION SUPPORT IN  PRINT COLLATERAL
+              <div className="content__row-col caption-support">
+                <div className="list-title">CAPTION SUPPORT IN PRINT COLLATERAL</div>
                 <img src="../img/photography/corpbrochure_page_sm.png" alt="" />
               </div>
-              <div className="content__row-col">
-                VISUAL TREATMENT TO TYPE-BASED HEADERS IN DIGITAL
+              <div className="content__row-col visual-treatment">
+                <div className="list-title">VISUAL TREATMENT TO TYPE-BASED HEADERS IN DIGITAL</div>
                 <img src="../img/photography/Screen Shot Genomic Testing.png" alt="" />
               </div>
             </div>
@@ -225,8 +229,8 @@ class Photography extends Component {
             <div className="content__row-title">
               <div className="content__text">
                 <span className="content__text-inner">
-                  <h3>Steer clear of photo subjects, styles and treatments not indicated above.</h3>
-                   Photographs that should not be used include anything utilizing molecules or DNA; we are intentionally trying to remove ourselves from the previous brand perception of ivy tower scientists and unapproachable experts. Key learnings from research done and testing of previous campaigns indicated that physicians want to hear from physicians like themselves, and subject matter depicting molecular biology was too disconnected from on-brand messages.
+                  <h3 className="content__text-inner-title">Steer clear of photo subjects, styles and treatments not indicated above.</h3>
+                  <span className="content__text-inner-text">Photographs that should not be used include anything utilizing molecules or DNA; we are intentionally trying to remove ourselves from the previous brand perception of ivy tower scientists and unapproachable experts. Key learnings from research done and testing of previous campaigns indicated that physicians want to hear from physicians like themselves, and subject matter depicting molecular biology was too disconnected from on-brand messages.</span>
                 </span>
               </div>
             </div>
@@ -242,7 +246,7 @@ class Photography extends Component {
 
               <div className="content__text">
                 <span className="content__text-inner">
-                  Photographs depicting patients climbing mountains or doctors staring out windows should also be avoided. Eye contact is key for primary photography, and subjects should not appear distracted or with far-off gazes, as if dreaming. This is not an honest or frank portrayal of the subject and provides an overly optimistic perspective on the reality of cancer. A key learning from our brand research was that physicians want to know the truth about their results; they want to know that sometimes test results come back without actionable findings than to order the test and receive that as a result without warning. Having no actionable findings in not an ideal situation, but being up front about our product with customers proved critical. This carries into brand perception: we don’t want to mislead our customers by portraying fanciful day-dreaming removed from reality.
+                  <span className="content__text-inner-text">Photographs depicting patients climbing mountains or doctors staring out windows should also be avoided. Eye contact is key for primary photography, and subjects should not appear distracted or with far-off gazes, as if dreaming. This is not an honest or frank portrayal of the subject and provides an overly optimistic perspective on the reality of cancer. A key learning from our brand research was that physicians want to know the truth about their results; they want to know that sometimes test results come back without actionable findings than to order the test and receive that as a result without warning. Having no actionable findings in not an ideal situation, but being up front about our product with customers proved critical. This carries into brand perception: we don’t want to mislead our customers by portraying fanciful day-dreaming removed from reality.</span>
                 </span>
               </div>
 
@@ -257,7 +261,7 @@ class Photography extends Component {
 
               <div className="content__text">
                 <span className="content__text-inner">
-                  Avoid photographs of nature or objects without humans. A key goal of the brand is to demonstrate our connection and passion for what we do through our humanness: we aren’t perfect, but we won’t stop trying. The most clear antithesis of this intent is still life.
+                  <span className="content__text-inner-text">Avoid photographs of nature or objects without humans. A key goal of the brand is to demonstrate our connection and passion for what we do through our humanness: we aren’t perfect, but we won’t stop trying. The most clear antithesis of this intent is still life.</span>
                 </span>
               </div>
 
