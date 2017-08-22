@@ -1,0 +1,121 @@
+.base-section {
+    margin: 0 auto;
+    .base-layout {
+        width: 1080px;
+        max-width: 1080px;
+    }
+    .section {
+        padding-top: 75px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid $color-fire;
+        &:last-child {
+            border: none;
+        }
+        .header-text {
+            display: block;
+            margin-bottom: 80px;
+            h2 {
+                width: 65%;
+                font-weight: 400;
+                margin-bottom: 40px;
+            }
+            p {
+                width: 70%;
+            }
+        }
+    }
+}
+
+.background-base-layout {
+    width: 1300px !important;
+    max-width: 1300px !important;
+}
+
+.no-border {
+    border: none !important;
+}
+
+.no-margin {
+    margin: 0 !important;
+}
+
+.no-padding {
+    padding: 0 !important;
+}
+
+.flex-row {
+    display: flex;
+}
+
+.flex-vertical {
+    display: flex;
+    flex-direction: column;
+}
+
+.width-50 {
+    width: 50% !important;
+}
+
+.width-40 {
+    width: 40% !important;
+}
+
+.column-start {
+    margin-right: auto;
+}
+
+.column-end {
+    margin-left: auto;
+}
+
+.column-vertical-align-end {
+    align-self: flex-end;
+}
+
+.img-responsive {
+    margin: 0 auto;
+    overflow: hidden;
+    img {
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        max-height: 100%;
+    }
+}
+
+.lockup-header {
+    color: $color-orange;
+    margin: 0;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.left-border {
+    position: relative;
+    &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: -80px;
+        background-color: lighten($color-regent-gray, 15%);
+        height: 2px;
+        margin-right: 14px;
+        width: 60px;
+    }
+}
+
+.introduction-section {
+    margin-bottom: 90px;
+    .logo-header-text {
+        margin-bottom: 150px;
+    }
+    .header-logo-subsection {
+        justify-content: space-between;
+        .img-responsive {
+            width: 90%;
+            align-self: center;
+        }
+    }
+}
