@@ -1,0 +1,97 @@
+.left-nav {
+  /* The side navigation menu */
+  .sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 220px; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    left: -220px;
+    background-color: $color-gray--light;
+    font-family: $font-gotham-ss;
+    font-size: 14px;
+    color: $color-slate;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 130px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+
+    .section {
+      padding: 8px 8px 8px 32px;
+      font-weight: bold;
+    }
+
+    /* The navigation menu links */
+    a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      line-height: 16px;
+      color: $color-slate;
+      display: block;
+      transition: 0.3s;
+      border-bottom: none;
+
+      &.current {
+        color: $color-green;
+      }
+    }
+
+    /* Position and style the close button (top right corner) */
+    .closebtn {
+      position: absolute;
+      top: 125px;
+      width: 50px;
+      height: 50px;
+      right: 0;
+      font-size: 30px;
+      margin-left: 50px;
+      background-color: $color-white;
+      color: $color-slate;
+      font-weight: 100;
+    }
+  }
+
+  .openbtn {
+    height: 50px;
+    width: 50px;
+    background-color: $color-green;
+    padding: 20px 19px 19px 17px;
+    z-index: 2;
+
+    /*
+     * Just a quick hamburger
+     */
+    span {
+      display: block;
+      width: 14px;
+      height: 1px;
+      margin-bottom: 4px;
+      position: relative;
+      background: $color-white;
+      border-radius: 3px;
+      transform-origin: 4px 0;
+      transition:
+        transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+        background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+        opacity 0.55s ease;
+    }
+
+    span:first-child {
+      transform-origin: 0 0;
+    }
+
+    span:nth-last-child(2) {
+      transform-origin: 0 100%;
+    }
+  }
+
+  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    .sidenav {
+      padding-top: 15px;
+    }
+
+    .sidenav a {
+      font-size: 18px;
+    }
+  }
+}
