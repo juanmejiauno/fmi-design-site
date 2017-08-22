@@ -1,16 +1,12 @@
 import React from 'react';
 import content from 'components/LeftNav/content.json';
 
-/* Set the width of the side navigation to 250px */
 const openNav = () => {
-  //document.getElementById('mySidenav').style.width = '220px';
-  document.getElementById('mySidenav').style.left = '0';
   document.getElementById('openNav').style.visibility = 'hidden';
+  document.getElementById('mySidenav').style.left = '0';
 };
 
-/* Set the width of the side navigation to 0 */
 const closeNav = () => {
-  //document.getElementById('mySidenav').style.width = '0';
   document.getElementById('mySidenav').style.left = '-220px';
   document.getElementById('openNav').style.visibility = 'visible';
 };

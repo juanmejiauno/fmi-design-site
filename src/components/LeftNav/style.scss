@@ -1,26 +1,27 @@
 .left-nav {
-  /* The side navigation menu */
+  position: fixed;
+
   .sidenav {
-    height: 100%; /* 100% Full-height */
-    width: 220px; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
+    height: 100%;
+    width: 220px;
+    position: fixed;
+    z-index: 2;
     top: 0;
     left: -220px;
     background-color: $color-gray--light;
     font-family: $font-gotham-ss;
     font-size: 14px;
     color: $color-slate;
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 130px; /* Place content 60px from the top */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    overflow-x: hidden;
+    margin-top: 125px;
+    padding-bottom: 125px;
+    transition: 0.5s;
 
     .section {
       padding: 8px 8px 8px 32px;
       font-weight: bold;
     }
 
-    /* The navigation menu links */
     a {
       padding: 8px 8px 8px 32px;
       text-decoration: none;
@@ -35,10 +36,8 @@
       }
     }
 
-    /* Position and style the close button (top right corner) */
     .closebtn {
       position: absolute;
-      top: 125px;
       width: 50px;
       height: 50px;
       right: 0;
@@ -55,11 +54,9 @@
     width: 50px;
     background-color: $color-green;
     padding: 20px 19px 19px 17px;
-    z-index: 2;
+    z-index: 1;
+    position: absolute;
 
-    /*
-     * Just a quick hamburger
-     */
     span {
       display: block;
       width: 14px;
@@ -68,11 +65,6 @@
       position: relative;
       background: $color-white;
       border-radius: 3px;
-      transform-origin: 4px 0;
-      transition:
-        transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
-        background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
-        opacity 0.55s ease;
     }
 
     span:first-child {
@@ -83,8 +75,6 @@
       transform-origin: 0 100%;
     }
   }
-
-  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
   @media screen and (max-height: 450px) {
     .sidenav {
       padding-top: 15px;
