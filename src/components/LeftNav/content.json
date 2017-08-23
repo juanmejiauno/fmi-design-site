@@ -1,0 +1,110 @@
+[
+  {
+    "section": "Components",
+    "href": "/assets/components",
+    "menu": [
+      {
+        "text": "Badges",
+        "href": "/badges"
+      },
+      {
+        "text": "Banners",
+        "href": "/banners"
+      },
+      {
+        "text": "Buttons",
+        "href": "/buttons"
+      },
+      {
+        "text": "Cards",
+        "href": "/cards"
+      },
+      {
+        "text": "Checkbox",
+        "href": "/checkbox"
+      },
+      {
+        "text": "Chips",
+        "href": "/chips"
+      },
+      {
+        "text": "Data Table",
+        "href": "/data-table"
+      },
+      {
+        "text": "Date Picker",
+        "href": "/date-picker"
+      },
+      {
+        "text": "Dropdown",
+        "href": "/dropdown"
+      },
+      {
+        "text": "Empty/Null States",
+        "href": "/empty-null-states"
+      },
+      {
+        "text": "Expand/Collapse",
+        "href": "/expand-Collapse"
+      },
+      {
+        "text": "Forms",
+        "href": "/forms"
+      },
+      {
+        "text": "Loading/Spinner",
+        "href": "/loading-spinner"
+      },
+      {
+        "text": "Modal",
+        "href": "/modal"
+      },
+      {
+        "text": "Notifications",
+        "href": "/notifications"
+      },
+      {
+        "text": "Pagination",
+        "href": "/pagination"
+      },
+      {
+        "text": "Progress Indicator",
+        "href": "/progress-indicator"
+      },
+      {
+        "text": "Radio Button",
+        "href": "/radio-button"
+      },
+      {
+        "text": "Search",
+        "href": "/search"
+      },
+      {
+        "text": "Slider",
+        "href": "/slider"
+      },
+      {
+        "text": "Tabs",
+        "href": "/tabs"
+      },
+      {
+        "text": "Toggle",
+        "href": "/toggle"
+      },
+      {
+        "text": "Tooltip",
+        "href": "/tooltip"
+      }
+    ]
+  },
+  {
+    "section": "Patterns",
+    "href": "/assets/patterns",
+    "menu": [
+      {
+        "text": "Pattern1",
+        "href": "/pattern1"
+      }
+    ]
+  }
+]

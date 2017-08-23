@@ -1,0 +1,87 @@
+.left-nav {
+  position: fixed;
+
+  .sidenav {
+    height: 100%;
+    width: 220px;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: -220px;
+    background-color: $color-gray--light;
+    font-family: $font-gotham-ss;
+    font-size: 14px;
+    color: $color-slate;
+    overflow-x: hidden;
+    margin-top: 125px;
+    padding-bottom: 125px;
+    transition: 0.5s;
+
+    .section {
+      padding: 8px 8px 8px 32px;
+      font-weight: bold;
+    }
+
+    a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      line-height: 16px;
+      color: $color-slate;
+      display: block;
+      transition: 0.3s;
+      border-bottom: none;
+
+      &.current {
+        color: $color-green;
+      }
+    }
+
+    .closebtn {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      right: 0;
+      font-size: 30px;
+      margin-left: 50px;
+      background-color: $color-white;
+      color: $color-slate;
+      font-weight: 100;
+    }
+  }
+
+  .openbtn {
+    height: 50px;
+    width: 50px;
+    background-color: $color-green;
+    padding: 20px 19px 19px 17px;
+    z-index: 1;
+    position: absolute;
+
+    span {
+      display: block;
+      width: 14px;
+      height: 1px;
+      margin-bottom: 4px;
+      position: relative;
+      background: $color-white;
+      border-radius: 3px;
+    }
+
+    span:first-child {
+      transform-origin: 0 0;
+    }
+
+    span:nth-last-child(2) {
+      transform-origin: 0 100%;
+    }
+  }
+  @media screen and (max-height: 450px) {
+    .sidenav {
+      padding-top: 15px;
+    }
+
+    .sidenav a {
+      font-size: 18px;
+    }
+  }
+}
