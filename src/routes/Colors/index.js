@@ -3,6 +3,35 @@ import React, { Component } from 'react';
 import routeWrapper from 'lib/route-wrapper';
 
 import PageHeader from 'components/PageHeader';
+import ColorSwatch from 'components/ColorSwatch';
+import colors from 'components/ColorSwatch/content.json';
+
+const openTab = (e, tab) => {
+  let i;
+  const target = e.currentTarget;
+
+  const tabcontent = document.getElementsByClassName('tab-content');
+  for (i = 0; i < tabcontent.length; i += 1) {
+    tabcontent[i].className = tabcontent[i].className.replace(' active', '');
+  }
+
+  const tablinks = document.getElementsByClassName('tab');
+  for (i = 0; i < tablinks.length; i += 1) {
+    tablinks[i].className = tablinks[i].className.replace(' active', '');
+  }
+
+  document.getElementById(tab) ? document.getElementById(tab).className += ' active' : null;
+  target.className += ' active';
+
+  const swatches = document.querySelectorAll('.color-swatches .content-sidekick');
+  for (i = 0; i < swatches.length; i += 1) {
+    if (swatches[i].dataset.platforms.indexOf(tab) === -1 && tab !== 'all') {
+      swatches[i].className += ' hide';
+    } else {
+      swatches[i].className = swatches[i].className.replace(' hide', '');
+    }
+  }
+};
 
 class Colors extends Component {
   render() {
@@ -347,7 +376,53 @@ class Colors extends Component {
 
             <div className="separator" />
 
-            <div>Our expanded</div>
+            <div className="content-sidekick color-range">
+              <div className="content__text">
+                <div className="content__text-inner">
+                  <h3 className="content__text-inner-title">Our expanded color range allows for palette usability across platforms.</h3>
+                </div>
+              </div>
+              <div className="content__tab">
+                <div className="tab-panel">
+                  <button className="tab active" onClick={(evt) => { openTab(evt, 'all'); }}>ALL</button>
+                  <button className="tab" onClick={(evt) => { openTab(evt, 'print'); }}>PRINT</button>
+                  <button className="tab" onClick={(evt) => { openTab(evt, 'web'); }}>WEB</button>
+                  <button className="tab" onClick={(evt) => { openTab(evt, 'ui'); }}>UI</button>
+                </div>
+
+                <div className="content__row color-swatches">
+                  <div className="content__row-body">
+                    {colors.map((col) => {
+                      return (
+                        <div className="content__row-col">
+                          {col.map((color) => {
+                            return (
+                              <ColorSwatch imgSrc={color.imgSrc} colorName={color.colorName} subName={color.subName} colorClass={color.colorClass} hex={color.hex} rgb={color.rgb} pms={color.pms} platforms={color.platforms} />
+                            );
+                          })
+                          }
+                        </div>);
+                    })}
+                  </div>
+                </div>
+
+                <div id="print" className="tab-content">
+                  <h3>Print</h3>
+                  <p>Print</p>
+                </div>
+
+                <div id="web" className="tab-content">
+                  <h3>Web</h3>
+                  <p>Web</p>
+                </div>
+
+                <div id="ui" className="tab-content">
+                  <h3>UI</h3>
+                  <p>ui</p>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>

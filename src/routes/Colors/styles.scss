@@ -30,6 +30,10 @@ span {
   &.orange {
     color: $color-orange;
   }
+
+  &.gold {
+    color: $color-fm-gold;
+  }
 }
 
 
@@ -142,10 +146,10 @@ span {
           .content__text {
             font-size: 14px;
             line-height: 24px;
+            color: $color-regent-gray;
 
             .list-title {
               font-family: $font-gotham;
-              color: $color-regent-gray;
               font-size: 11px;
               font-style: italic;
               font-weight: 600;
@@ -275,6 +279,7 @@ span {
 
   .versatility {
     padding-bottom: 80px;
+
     .content__row-body {
       .content__row-col {
         border: none;
@@ -353,4 +358,103 @@ span {
       }
     }
   }
+
+  .color-range {
+    &.content-sidekick {
+      display: block;
+    }
+
+    .color-swatches {
+      border-top: 1px solid $color-lt-grey-20;
+      padding: 40px 0;
+
+      .content__row-col {
+        border: none;
+
+        .content-sidekick {
+          padding: 0;
+          height: 60px;
+
+          .content__text {
+            margin-left: 30px;
+            font-size: 12px;
+
+            .list-title {
+              font-size: 12px;
+              font-weight: normal;
+
+              &.sub {
+                display: block;
+              }
+            }
+
+            ul {
+              margin: 0;
+              width: 78%;
+
+              li {
+                line-height: 15px;
+              }
+            }
+          }
+
+          &.hide {
+            opacity: 0.1;
+
+            .content__text {
+              visibility: hidden;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /*
+   * Tabs
+   * Style the tab
+   */
+
+  .tab-panel {
+    overflow: hidden;
+    color: $color-regent-gray;
+    margin-bottom: 33px;
+  }
+
+  /* Style the buttons inside the tab */
+  .tab-panel button {
+    font-family: $font-gotham;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    line-height: 22px;
+    color: $color-regent-gray;
+    background-color: transparent;
+    float: left;
+    border-bottom: 2px solid $color-regent-gray;
+    outline: none;
+    cursor: pointer;
+    padding: 11px 0;
+    transition: 0.3s;
+    margin-right: 60px;
+  }
+
+  /* Create an active/current tablink class */
+  .tab-panel button.active {
+    color: $color-fire;
+    border-color: $color-fire;
+  }
+
+  /* Style the tab content */
+  .tab-content {
+    display: none;
+    padding: 6px 12px;
+    border-top: 1px solid $color-fire;
+
+    &.active {
+      display: block;
+    }
+  }
+
+  /* Tabs */
 }
