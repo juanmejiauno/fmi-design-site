@@ -407,8 +407,47 @@ class Colors extends Component {
                 </div>
 
                 <div id="print" className="tab-content">
-                  <h3>Print</h3>
-                  <p>Print</p>
+                  <div className="content__row">
+                    <div className="content__row-title">
+                      <div className="content__text">
+                        <div className="content__text-inner">
+                          <h3 className="content__text-inner-title">When it comes to color usage, medium and legibility  matter.</h3>
+                          <span className="content__text-inner-text">The primary, secondary, and overall expanded palettes should be used thoughtfully, with hierarchy and platform in mind. The expanded variations on our primary and secondary colors mean we can remain true to our foundational brand colors while also considering best color practices for the user experience across media.</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="content__row-body">
+                      <div className="content-sidekick print-usecase">
+                        <div className="content__image">
+                          <img src="../img/colors/print/FACT_LiquidBiopsySummit_Banner_01-00_HH-01@2x.png" alt="" />
+                        </div>
+                        <div className="content__text">
+                          <span className="content__text-inner">
+                            <h3>PRINT USE-CASE</h3>
+                            For this print piece we utilize heavily the signature palette, referencing the secondary palette for accent colors (i.e. FM Orange in the banner artwork shown here).
+                          </span>
+                          <div className="content__row">
+                            <div className="content__image slate-lt">
+                              <img src="../img/colors/print/use-case swatches/Slate LT usecase-swatch@2x.png" alt="" />
+                            </div>
+                            <div className="content__image slate">
+                              <img src="../img/colors/print/use-case swatches/Slate usecase-swatch@2x.png" alt="" />
+                            </div>
+                            <div className="content__image sea">
+                              <img src="../img/colors/print/use-case swatches/Sea usecase-swatch@2x.png" alt="" />
+                            </div>
+                            <div className="content__image orange">
+                              <img src="../img/colors/print/use-case swatches/Orange usecase-swatch@2x.png" alt="" />
+                            </div>
+                            <div className="content__image fire">
+                              <img src="../img/colors/print/use-case swatches/Fire usecase-swatch@2x.png" alt="" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
                 <div id="web" className="tab-content">
