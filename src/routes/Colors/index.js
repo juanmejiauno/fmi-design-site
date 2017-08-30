@@ -25,10 +25,9 @@ const openTab = (e, tab) => {
 
   const swatches = document.querySelectorAll('.color-swatches .content-sidekick');
   for (i = 0; i < swatches.length; i += 1) {
+    swatches[i].className = swatches[i].className.replace(' hide', '');
     if (swatches[i].dataset.platforms.indexOf(tab) === -1 && tab !== 'all') {
       swatches[i].className += ' hide';
-    } else {
-      swatches[i].className = swatches[i].className.replace(' hide', '');
     }
   }
 };
