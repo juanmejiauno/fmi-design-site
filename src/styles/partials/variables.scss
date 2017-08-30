@@ -44,7 +44,10 @@ $color-orange--dark: mix($color-black, $color-orange, 10%);
 $color-orange--light: #f6d18f;
 $color-fm-gold: #86754D;
 
+$color-lt-grey-60: #b9c1c9;
 $color-lt-grey-20: #e7eaed;
+$color-solid-orange: #f86323;
+$color-solid-teal: #43c0b1;
 // Fonts
 $font-gotham: 'Gotham A',
 'Gotham B',
@@ -57,6 +60,8 @@ sans-serif;
 $font-sectra: 'GT Sectra',
 georgia,
 serif;
+
+$font-whitney: 'Whitney SSm', 'arial', 'sans-serif';
 // Layout / Grid
 $layout-col-count: 12;
 $layout-col-width: 80px;

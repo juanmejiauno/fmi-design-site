@@ -411,14 +411,14 @@ class Colors extends Component {
                     <div className="content__row-title">
                       <div className="content__text">
                         <div className="content__text-inner">
-                          <h3 className="content__text-inner-title">When it comes to color usage, medium and legibility  matter.</h3>
+                          <h3 className="content__text-inner-title">When it comes to color usage, medium and legibility matter.</h3>
                           <span className="content__text-inner-text">The primary, secondary, and overall expanded palettes should be used thoughtfully, with hierarchy and platform in mind. The expanded variations on our primary and secondary colors mean we can remain true to our foundational brand colors while also considering best color practices for the user experience across media.</span>
                         </div>
                       </div>
                     </div>
 
                     <div className="content__row-body">
-                      <div className="content-sidekick print-usecase">
+                      <div className="content-sidekick print use-case">
                         <div className="content__image">
                           <img src="../img/colors/print/FACT_LiquidBiopsySummit_Banner_01-00_HH-01@2x.png" alt="" />
                         </div>
@@ -451,13 +451,110 @@ class Colors extends Component {
                 </div>
 
                 <div id="web" className="tab-content">
-                  <h3>Web</h3>
-                  <p>Web</p>
+                  <div className="content__row">
+                    <div className="content__row-title">
+                      <div className="content__text">
+                        <div className="content__text-inner">
+                          <h3 className="content__text-inner-title">When it comes to color usage, medium and legibility matter.</h3>
+                          <span className="content__text-inner-text">The primary, secondary, and overall expanded palettes should be used thoughtfully, with hierarchy and platform in mind. The expanded variations on our primary and secondary colors mean we can remain true to our foundational brand colors while also considering best color practices for the user experience across media.</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="content__row-body">
+                      <div className="content-sidekick web use-case">
+                        <div className="content__image">
+                          <img src="../img/colors/web/Web use-case@2x.png" alt="" />
+                        </div>
+                        <div className="content__text">
+                          <span className="content__text-inner">
+                            <h3>WEB USE-CASE</h3>
+                            The corporate site utilizes both the primary and secondary palettes in addition to the expanded color variations. It does this both to support the signature color usage on the site, as well as to optimize text and color-blocked modules (like on the homepage for example) for web legibility.
+                          </span>
+                          <div className="content__row">
+                            <div className="content__image fire">
+                              <img src="../img/colors/web/use-case swatches/Fire usecase-swatch@2x.png" alt="" />
+                            </div>
+                            <div className="content__image slate-dk">
+                              <img src="../img/colors/web/use-case swatches/Slate DK usecase-swatch@2x.png" alt="" />
+                            </div>
+                            <div className="content__image slate-lt">
+                              <img src="../img/colors/web/use-case swatches/Slate LT usecase-swatch@2x.png" alt="" />
+                            </div>
+                            <div className="content__image blue-bright">
+                              <img src="../img/colors/web/use-case swatches/color-blue--bright usecase-swatch@2x.png" alt="" />
+                            </div>
+                            <div className="content__image blue-rich">
+                              <img src="../img/colors/web/use-case swatches/color-blue--rich usecase-swatch@2x.png" alt="" />
+                            </div>
+
+                            <div className="content__image gold">
+                              <img src="../img/colors/web/use-case swatches/color-gold usecase-swatch@2x.png" alt="" />
+                            </div>
+                            <div className="content__image green-dark2">
+                              <img src="../img/colors/web/use-case swatches/color-green--dark usecase-swatch@2x.png" alt="" />
+                            </div>
+                            <div className="content__image green-dark">
+                              <img src="../img/colors/web/use-case swatches/color-green usecase-swatch@2x.png" alt="" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
                 <div id="ui" className="tab-content">
-                  <h3>UI</h3>
-                  <p>ui</p>
+                  <div className="content__row">
+                    <div className="content__row-title">
+                      <div className="content__text">
+                        <div className="content__text-inner">
+                          <h3 className="content__text-inner-title">When it comes to color usage, medium and legibility matter.</h3>
+                          <span className="content__text-inner-text">The primary, secondary, and overall expanded palettes should be used thoughtfully, with hierarchy and platform in mind. The expanded variations on our primary and secondary colors mean we can remain true to our foundational brand colors while also considering best color practices for the user experience across media.</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="content__row-body">
+                      <div className="content-sidekick ui use-case">
+                        <div className="content__image">
+                          <img src="../img/colors/ui/Reporting_1@2x.png" alt="" />
+                        </div>
+                        <div className="content__text">
+                          <span className="content__text-inner">
+                            <h3>UI USE-CASE</h3>
+                            The patient reporting portal takes advantage of the expanded color variations that reference our signature brand colors, but have been selected as functionally optimal for user interactivity in our web portals.
+                          </span>
+                          <div className="content__row">
+                            <div className="content__image slate-dk">
+                              <img src="../img/colors/ui/use-case swatches/Slate DK usecase-swatch@2x.png" alt="" />
+                            </div>
+                            <div className="content__image solid-lt-grey-20">
+                              <img src="../img/colors/ui/use-case swatches/color-solid-lt-grey-20 usecase-swatch@2x.png" alt="" />
+                            </div>
+                            <div className="content__image slate">
+                              <img src="../img/colors/ui/use-case swatches/Slate usecase-swatch@2x.png" alt="" />
+                            </div>
+                            <div className="content__image slate-lt">
+                              <img src="../img/colors/ui/use-case swatches/Slate LT usecase-swatch@2x.png" alt="" />
+                            </div>
+                            <div className="content__image solid-lt-grey-60">
+                              <img src="../img/colors/ui/use-case swatches/color-solid-lt-grey-60 usecase-swatch@2x.png" alt="" />
+                            </div>
+                            <div className="content__image solid-orange">
+                              <img src="../img/colors/ui/use-case swatches/color-solid-orange usecase-swatch@2x.png" alt="" />
+                            </div>
+                            <div className="content__image orange">
+                              <img src="../img/colors/ui/use-case swatches/Orange usecase-swatch@2x.png" alt="" />
+                            </div>
+                            <div className="content__image solid-teal">
+                              <img src="../img/colors/ui/use-case swatches/color-solid-teal usecase-swatch@2x.png" alt="" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
