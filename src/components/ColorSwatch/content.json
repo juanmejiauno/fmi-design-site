@@ -1,0 +1,237 @@
+[
+  [
+    {
+      "imgSrc": "../img/colors/swatches solid all/swatch color-solid-white@2x.png",
+      "colorName": "color/solid/white",
+      "hex": "#FFFFFF",
+      "platforms": ["web", "ui"]
+    },
+    {
+      "imgSrc": "../img/colors/swatches solid all/swatch color-black@2x.png",
+      "colorName": "color-black",
+      "hex": "#000000",
+      "platforms": ["web"]
+    },
+    {
+      "imgSrc": "../img/colors/swatches solid all/swatch color-solid-dk-navy@2x.png",
+      "colorName": "color/solid/dk-navy",
+      "hex": "#28323B",
+      "platforms": ["web", "ui"]
+    },
+    {
+      "imgSrc": "../img/colors/swatches solid all/swatch FM Slate DK @2x.png",
+      "colorName": "FM SLATE DK",
+      "colorClass": "slate-dk",
+      "hex": "#323F4A",
+      "rgb": "50/63/74",
+      "platforms": ["print", "web", "ui"]
+    },
+    {
+      "imgSrc": "../img/colors/swatches solid all/swatch color-solid-md-navy-80@2x.png",
+      "colorName": "color/solid/md-navy-80",
+      "hex": "#5B656E",
+      "platforms": ["web", "ui"]
+    },
+    {
+      "imgSrc": "../img/colors/swatches solid all/swatch color-solid-md-navy-60@2x.png",
+      "colorName": "color/solid/md-navy-60",
+      "hex": "#848B92",
+      "platforms": ["web", "ui"]
+    },
+    {
+      "imgSrc": "../img/colors/swatches solid all/swatch color-solid-md-navy-40@2x.png",
+      "colorName": "color/solid/md-navy-40",
+      "hex": "#ADB2B6",
+      "platforms": ["web", "ui"]
+    },
+    {
+      "imgSrc": "../img/colors/swatches solid all/swatch color-solid-md-navy-20@2x.png",
+      "colorName": "color/solid/md-navy-20",
+      "hex": "#D6D8DA",
+      "platforms": ["web", "ui"]
+    },
+    {
+      "imgSrc": "../img/colors/swatches solid all/swatch color-solid-md-navy-10@2x.png",
+      "colorName": "color/solid/md-navy-10",
+      "hex": "#323F4A + 90% #FFFFFF",
+      "platforms": ["web", "ui"]
+    }
+  ],
+  [
+    {
+      "imgSrc": "../img/colors/swatches solid all/swatch FM Slate@2x.png",
+      "colorName": "FM SLATE",
+      "colorClass": "slate",
+      "hex": "#435363",
+      "rgb": "67/83/99",
+      "platforms": ["print", "web", "ui"]
+    },
+    {
+      "imgSrc": "../img/colors/swatches solid all/swatch FM Slate LT@2x.png",
+      "colorName": "FM SLATE LT",
+      "colorClass": "slate-lt",
+      "hex": "#7A8A98",
+      "rgb": "122/138/152",
+      "platforms": ["print", "web", "ui"]
+    },
+    {
+      "imgSrc": "../img/colors/swatches solid all/swatch color-solid-lt-grey-80@2x.png",
+      "colorName": "color/solid/lt-grey-80",
+      "hex": "#A2ADB7",
+      "platforms": ["web", "ui"]
+    },
+    {
+      "imgSrc": "../img/colors/swatches solid all/swatch color-solid-lt-grey-60@2x.png",
+      "colorName": "color/solid/lt-grey-60",
+      "hex": "#B9C1C9",
+      "platforms": ["web", "ui"]
+    },
+    {
+      "imgSrc": "../img/colors/swatches solid all/swatch color-solid-lt-grey-40@2x.png",
+      "colorName": "color/solid/lt-grey-40",
+      "hex": "#D0D6DB",
+      "platforms": ["web", "ui"]
+    },
+    {
+      "imgSrc": "../img/colors/swatches solid all/swatch color-solid-lt-grey-20@2x.png",
+      "colorName": "color/solid/lt-grey-20",
+      "hex": "#E7EAED",
+      "platforms": ["web", "ui"]
+    },
+    {
+      "imgSrc": "../img/colors/swatches solid all/swatch color-blue@2x.png",
+      "colorName": "color-blue",
+      "hex": "#5F8EB2",
+      "platforms": ["web"]
+    },
+    {
+      "imgSrc": "../img/colors/swatches solid all/swatch color-blue--bright@2x.png",
+      "colorName": "color-blue—bright",
+      "hex": "#3370AC",
+      "platforms": ["web"]
+    },
+    {
+      "imgSrc": "../img/colors/swatches solid all/swatch color-blue--rich@2x.png",
+      "colorName": "color-blue—rich",
+      "hex": "#274E75",
+      "platforms": ["web"]
+    }
+  ],
+  [
+    {
+      "imgSrc": "../img/colors/swatches solid all/swatch color-green--dark2@2x.png",
+      "colorName": "color-green—dark2",
+      "hex": "#2D8885",
+      "platforms": ["web"]
+    },
+    {
+      "imgSrc": "../img/colors/swatches solid all/swatch color-green--dark@2x.png",
+      "colorName": "color-green—dark",
+      "hex": "#35A09C",
+      "platforms": ["web"]
+    },
+    {
+      "imgSrc": "../img/colors/swatches solid all/swatch FM Sea@2x.png",
+      "colorName": "FM SEA",
+      "colorClass": "sea",
+      "hex": "#64CCC9",
+      "rgb": "100/204/201",
+      "platforms": ["print", "web"]
+    },
+    {
+      "imgSrc": "../img/colors/swatches solid all/swatch color-solid-teal@2x.png",
+      "colorName": "color/solid/teal",
+      "hex": "#43C0B1",
+      "platforms": ["ui"]
+    },
+    {
+      "imgSrc": "../img/colors/swatches solid all/swatch color-solid-lt-teal@2x.png",
+      "colorName": "color/solid/lt-teal",
+      "hex": "#D9F2EF",
+      "platforms": ["ui"]
+    },
+    {
+      "imgSrc": "../img/colors/swatches solid all/swatch FM Mint@2x.png",
+      "colorName": "FM MINT",
+      "colorClass": "mint",
+      "hex": "#A0D8B3",
+      "rgb": "160/216/179",
+      "platforms": ["print"]
+    },
+    {
+      "imgSrc": "../img/colors/swatches solid all/swatch FM Gold@2x.png",
+      "colorName": "FM GOLD",
+      "colorClass": "gold",
+      "pms": "#871 C",
+      "platforms": ["print"]
+    },
+    {
+      "imgSrc": "../img/colors/swatches solid all/swatch color-gold@2x.png",
+      "colorName": "color-gold",
+      "hex": "#F7D18F",
+      "platforms": ["web"]
+    },
+    {
+      "imgSrc": "../img/colors/swatches solid all/swatch FM Yellow@2x.png",
+      "colorName": "FM YELLOW",
+      "colorClass": "yellow",
+      "hex": "#EBC959",
+      "rgb": "235/201/89",
+      "platforms": ["print"]
+    }
+  ],
+  [
+    {
+      "imgSrc": "../img/colors/swatches solid all/swatch color-solid-tangerine-20@2x.png",
+      "colorName": "color/solid/tangerine-20",
+      "hex": "#F86323 + 80% FFFFFF",
+      "platforms": ["ui"]
+    },
+    {
+      "imgSrc": "../img/colors/swatches solid all/swatch color-solid-tangerine-40@2x.png",
+      "colorName": "color/solid/tangerine-40",
+      "hex": "#F86323 + 60% FFFFFF",
+      "platforms": ["ui"]
+    },
+    {
+      "imgSrc": "../img/colors/swatches solid all/swatch color-solid-tangerine-60@2x.png",
+      "colorName": "color/solid/tangerine-60",
+      "hex": "#F86323 + 40% FFFFFF",
+      "platforms": ["ui"]
+    },
+    {
+      "imgSrc": "../img/colors/swatches solid all/swatch color-solid-tangerine-80@2x.png",
+      "colorName": "color/solid/tangerine-80",
+      "hex": "#F86323 + 20% FFFFFF",
+      "platforms": ["ui"]
+    },
+    {
+      "imgSrc": "../img/colors/swatches solid all/swatch FM Orange@2x.png",
+      "colorName": "FM ORANGE",
+      "subName": "color/solid/tangerine",
+      "colorClass": "orange",
+      "hex": "#F79737",
+      "platforms": ["print", "web", "ui"]
+    },
+    {
+      "imgSrc": "../img/colors/swatches solid all/swatch color-solid-orange@2x.png",
+      "colorName": "color/solid/orange",
+      "hex": "#F86323",
+      "platforms": ["ui"]
+    },
+    {
+      "imgSrc": "../img/colors/swatches solid all/swatch FM Fire@2x.png",
+      "colorName": "FM FIRE",
+      "colorClass": "fire",
+      "hex": "#FF4C00",
+      "rgb": "255/76/0",
+      "platforms": ["print", "web", "ui"]
+    },
+    {
+      "imgSrc": "../img/colors/swatches solid all/swatch color-fire--dark@2x.png",
+      "colorName": "color-fire—dark",
+      "hex": "#D64305",
+      "platforms": ["web"]
+    }
+  ]
+]

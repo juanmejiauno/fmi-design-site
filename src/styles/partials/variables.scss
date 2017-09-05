@@ -28,6 +28,7 @@ $color-fire--light: #ff7135;
 $color-ronchi: #EBC959;
 $color-green: #64ccc9;
 $color-green--dark: #35a09c;
+$color-mint: #a0d8b3;
 $color-green--dark2: mix($color-black, $color-green--dark, 15%);
 $color-slate: #435363;
 $color-slate--light: #7a8a98;
@@ -41,6 +42,12 @@ $color-peach--light: #fffefa;
 $color-orange: #f79737;
 $color-orange--dark: mix($color-black, $color-orange, 10%);
 $color-orange--light: #f6d18f;
+$color-fm-gold: #86754D;
+
+$color-lt-grey-60: #b9c1c9;
+$color-lt-grey-20: #e7eaed;
+$color-solid-orange: #f86323;
+$color-solid-teal: #43c0b1;
 // Fonts
 $font-gotham: 'Gotham A',
 'Gotham B',
@@ -53,6 +60,8 @@ sans-serif;
 $font-sectra: 'GT Sectra',
 georgia,
 serif;
+
+$font-whitney: 'Whitney SSm', 'arial', 'sans-serif';
 // Layout / Grid
 $layout-col-count: 12;
 $layout-col-width: 80px;
