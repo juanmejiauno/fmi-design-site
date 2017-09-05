@@ -1,0 +1,46 @@
+.iconography {
+    .introduction-section {
+        margin-bottom: 0;
+        padding-bottom: 95px;
+        .logo-text {
+            width: 40%;
+        }
+        .logo-container {
+            position: relative;
+            width: 40%;
+            bottom: 0;
+            max-height: 450px;
+            .img-responsive {
+                position: absolute;
+                width: 25%;
+                &:first-child {
+                    width: 30% !important;
+                    max-width: 118px;
+                    right: 0;
+                }
+                &:nth-child(2) {
+                    max-width: 98px;
+                    top: 10%;
+                }
+                &:last-child {
+                    width: 40%;
+                    max-width: 157px;
+                    bottom: 0;
+                    left: 35%;
+                }
+            }
+        }
+    }
+    .abstracted-icon-section {
+        .flex-row {
+            justify-content: space-between;
+            .column {
+                max-height: 70px;
+                .img-responsive {
+                    height: auto;
+                    max-height: 100%;
+                }
+            }
+        }
+    }
+}
