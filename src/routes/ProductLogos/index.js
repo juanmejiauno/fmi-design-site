@@ -29,7 +29,7 @@ If a piece requires two or more product logos, they must appear at the same scal
     return (
       <div className="product-logos base-section">
         <PageHelmet title="Product Logos" description="Product Logos"/>
-        <div className="introduction-section base-layout section no-border">
+        <div className="introduction-section base-layout section">
           <PageHeader
             preheading="Identity system"
             heading="Product Logos"

@@ -5,8 +5,7 @@
         max-width: 1080px;
     }
     .section {
-        padding-top: 75px;
-        padding-bottom: 20px;
+        padding: 75px 0 20px 0;
         border-bottom: 1px solid $color-fire;
         &:last-child {
             border: none;
@@ -121,11 +120,11 @@
 }
 
 .primary-header {
-  position: fixed;
-  width: 100%;
-  top: 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
 }
 
 .main {
-  margin-top: 125px;
+    margin-top: 124px;
 }
