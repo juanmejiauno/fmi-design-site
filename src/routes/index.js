@@ -34,6 +34,7 @@ import ProductLogos from 'routes/ProductLogos';
 import Photography from 'routes/Photography';
 import Color from 'routes/Colors';
 import DesignPrinciples from 'routes/StrategyDesignPrinciples';
+import Typography from 'routes/Typography';
 
 function shouldUpdateScroll(prev, next) {
   return (prev && prev.location.pathname !== next.location.pathname)
@@ -95,6 +96,7 @@ function Routes(client, onUpdate) {
           <Route path="product-logos" component={ProductLogos} />
           <Route path="photography" component={Photography} />
           <Route path="color" component={Color} />
+          <Route path="typography" component={Typography} />
         </Route>
 
         <Route path="error" component={ErrorPage} status={400} />
