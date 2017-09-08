@@ -1,0 +1,142 @@
+.typography {
+  .page-header {
+    width: 70%;
+    padding-bottom: 20px;
+
+    h1 {
+      font-size: 84px;
+    }
+  }
+
+  .content-sidekick {
+    &.overlap {
+      position: relative;
+
+      .content__text {
+        width: 61%;
+        z-index: 1;
+        background-color: $color-white;
+        padding-top: 45px;
+        margin-top: 90px;
+      }
+
+      .content__image {
+        position: absolute;
+        width: 477px;
+        height: 350px;
+        right: 0;
+        top: -150px;
+      }
+    }
+  }
+
+  .content__text {
+    width: 68%;
+
+    &.font {
+      width: 100%;
+
+      .content__text-inner-pre-title {
+        color: $color-regent-gray;
+        font-family: $font-gotham-ss;
+        font-size: 11px;
+        font-style: italic;
+        font-weight: 500;
+        letter-spacing: 1px;
+        line-height: 13px;
+      }
+
+      .content__text-inner-title {
+        font-size: 25px;
+        font-weight: 300;
+        line-height: 27px;
+        margin-bottom: 0;
+      }
+
+      .content__text-inner-sub-title {
+        color: $color-regent-gray;
+        font-size: 17px;
+        font-weight: normal;
+        margin: 0;
+      }
+
+      .content__text-inner-text {
+        font-size: 17px;
+        line-height: 27px;
+      }
+
+      .medium {
+        font-weight: 500;
+      }
+
+      .bold {
+        font-weight: bold;
+      }
+
+      .italic {
+        font-style: italic;
+      }
+
+      .semi-bold {
+        font-weight: 600;
+      }
+
+      a {
+        font-family: $font-sectra;
+        font-size: 17px;
+        font-weight: 300;
+        line-height: 27px;
+        display: inline-block;
+        margin-bottom: 38px;
+      }
+
+      &.gotham {
+        font-family: $font-gotham-ss;
+
+        .content__text-inner-pre-title {
+          width: 153px;
+        }
+      }
+
+      &.sectra {
+        font-family: $font-sectra;
+
+        .content__text-inner-pre-title {
+          width: 120px;
+        }
+      }
+
+      &.whitney {
+        font-family: $font-whitney;
+
+        .content__text-inner-pre-title {
+          width: 165px;
+        }
+      }
+
+      .content__text-inner-text {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        span {
+          display: inline-block;
+          width: 47%;
+        }
+      }
+    }
+
+    &.legibility {
+      width: 73%;
+    }
+  }
+
+  .separator {
+    margin: 80px 0;
+
+    &.slate-lt {
+      border-color: $color-regent-gray;
+      margin-bottom: 16px;
+    }
+  }
+}
