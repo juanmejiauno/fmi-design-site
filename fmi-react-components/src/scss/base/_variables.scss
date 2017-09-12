@@ -1,0 +1,65 @@
+@charset 'UTF-8';
+
+$color-white: #ffffff;
+$color-black: #000000;
+$color-brown: #2d0000;
+$color-blue: #547ba5;
+$color-blue2: #3d6c90;
+$color-blue3: #7da6c0;
+$color-blue--light: #f4f7fa;
+$color-blue--bright: #3370ac;
+$color-blue--rich: #274e75;
+$color-blue--medium: #7f98a7;
+$color-blue--dark: #3f5c6e;
+$color-blue--gray: #bac9cd;
+$color-blue--light: #eef8fd;
+$color-gold: #f7d18f;
+$color-gold--light: #fafaf7;
+$color-gray--9: #949391;
+$color-gray--7: #737271;
+$color-gray--6: #6a6a6a;
+$color-gray--a: #a9a9a9;
+$color-gray--d: #d5d5d5;
+$color-gray--e: #eaeaea;
+$color-gray--f: #f9f9f9;
+$color-gray--light: #f4f5f7;
+$color-fire: #ff4c00;
+$color-fire--dark: #d64305;
+$color-fire--dark2: #b74414;
+$color-fire--light: #ff7135;
+$color-ronchi: #EBC959;
+$color-green: #64ccc9;
+$color-green2: #63aa93;
+$color-green--dark: #35a09c;
+$color-mint: #a0d8b3;
+$color-green--dark2: mix($color-black, $color-green--dark, 15%);
+$color-slate: #435363;
+$color-slate--light: #7a8a98;
+$color-slate--dark: #323f4a;
+$color-slate--dark2: mix($color-black, $color-slate--dark, 15%);
+$color-regent-gray: #8B99A6;
+$color-beige: #f7f5ef;
+$color-yellow: #f7d18f;
+$color-peach: #f9d3ae;
+$color-peach--light: #fffefa;
+$color-orange: #f79737;
+$color-orange--dark: mix($color-black, $color-orange, 10%);
+$color-orange--light: #f6d18f;
+$color-fm-gold: #86754D;
+$color-lt-grey-80: #a2adb7;
+$color-lt-grey-60: #b9c1c9;
+$color-lt-grey-20: #e7eaed;
+$color-solid-orange: #f86323;
+$color-solid-teal: #43c0b1;
+// Fonts
+$font-gotham: 'Gotham A',
+'Gotham B',
+arial,
+sans-serif;
+$font-gotham-ss: 'Gotham SSm A',
+'Gotham SSm B',
+arial,
+sans-serif;
+$font-sectra: 'GT Sectra',
+georgia,
+serif;
