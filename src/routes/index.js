@@ -35,6 +35,7 @@ import Photography from 'routes/Photography';
 import Iconography from 'routes/Iconography';
 import Color from 'routes/Colors';
 import DesignPrinciples from 'routes/StrategyDesignPrinciples';
+import Typography from 'routes/Typography';
 
 function shouldUpdateScroll(prev, next) {
   return (prev && prev.location.pathname !== next.location.pathname)
@@ -97,6 +98,7 @@ function Routes(client, onUpdate) {
           <Route path="photography" component={Photography} />
           <Route path="iconography" component={Iconography} />
           <Route path="color" component={Color} />
+          <Route path="typography" component={Typography} />
         </Route>
 
         <Route path="error" component={ErrorPage} status={400} />
