@@ -39,7 +39,7 @@ class Typography extends Component {
                 Given the breadth of use cases that the Foundation Medicine brand needs to cover, type can be a particularly challenging aspect to master;  However whether promotional or functional, from print, digital or environmental there are three main typefaces: GT Sectra, Gotham & Whitney.              </span>
             </div>
             <div className="content__image">
-              <img src="../img/designprinciples/IMG_2154.png" alt="" />
+              <img src="../img/typography/Header Image.png" alt="" />
             </div>
           </div>
 
@@ -98,7 +98,7 @@ class Typography extends Component {
 
           <div className="separator" />
 
-          <div className="content-sidekick color-range">
+          <div className="content-sidekick">
             <div className="content__text">
               <div className="content__text-inner">
                 <h3>Legibility and consistency in treatment of brand typefaces is key to the success of our visual language.</h3>
@@ -113,7 +113,210 @@ class Typography extends Component {
               </div>
 
               <div id="promotional" className="tab-content">
-                promotional
+                <div className="print-type">
+                  <div className="content__text">
+                    <div className="content__text-inner">
+                      <h3>Print Type Styles</h3>
+                    </div>
+                  </div>
+
+                  <div className="content__row">
+                    <div className="content__row-body">
+                      <div className="content__row-col">
+                        <div className="content-sidekick">
+                          <div className="content__text">
+                            <h3 className="content__text-inner-pre-title">HEADER 1</h3>
+                            <h2 className="content__text-inner-title header1">This is a Document Header</h2>
+                            <h3 className="content__text-inner-sub-title">GTSectra-Bold Italic / 22 pt / 0 pt Kern / FM Fire</h3>
+                          </div>
+                          <div className="content__image">
+                            <img src="../img/colors/swatches solid all/swatch FM Fire@2x.png" alt="" />
+                          </div>
+                        </div>
+                      </div>
+                      <div className="content__row-col">
+                        <div className="content-sidekick">
+                          <div className="content__text">
+                            <h3 className="content__text-inner-pre-title">SUBHEAD 1</h3>
+                            <h2 className="content__text-inner-title subhead1">This is a Document SubHead</h2>
+                            <h3 className="content__text-inner-sub-title">Gotham-Bold / 12 pt / 0 pt Kern / FM Fire</h3>
+                          </div>
+                          <div className="content__image">
+                            <img src="../img/colors/swatches solid all/swatch FM Fire@2x.png" alt="" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="content__row">
+                    <div className="content__row-body">
+                      <div className="content__row-col">
+                        <div className="content-sidekick">
+                          <div className="content__text">
+                            <h3 className="content__text-inner-pre-title">HEADER 2</h3>
+                            <h2 className="content__text-inner-title header2">This is a Section Header or Header 1</h2>
+                            <h3 className="content__text-inner-sub-title">Gotham-Medium / 12 pt / 0 pt Kern / FM Slate</h3>
+                          </div>
+                          <div className="content__image">
+                            <img src="../img/colors/swatches solid all/swatch FM Slate@2x.png" alt="" />
+                          </div>
+                        </div>
+                      </div>
+                      <div className="content__row-col">
+                        <div className="content-sidekick">
+                          <div className="content__text">
+                            <h3 className="content__text-inner-pre-title">SUBHEAD 2</h3>
+                            <h2 className="content__text-inner-title subhead2">This is a Section Subhead or Subhead 2</h2>
+                            <h3 className="content__text-inner-sub-title">
+                              Gotham-Medium / 9.5 pt / 0 pt Kern / FM Slate
+                              Indented 0.125” alongside FM Mint 1 pt stroke section component
+                            </h3>
+                          </div>
+                          <div className="content__image">
+                            <img src="../img/colors/swatches solid all/swatch FM Slate@2x.png" alt="" />
+                            <img src="../img/colors/swatches solid all/swatch FM Mint@2x.png" alt="" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="content__row">
+                    <div className="content__row-body">
+                      <div className="content__row-col">
+                        <div className="content-sidekick">
+                          <div className="content__text">
+                            <h3 className="content__text-inner-pre-title">HEADER 3</h3>
+                            <h2 className="content__text-inner-title header3">This is a Closing Header or Header 3</h2>
+                            <h3 className="content__text-inner-sub-title">Gotham-Bold / 9 pt / 0 pt Kern / FM Fire </h3>
+                          </div>
+                          <div className="content__image">
+                            <img src="../img/colors/swatches solid all/swatch FM Fire@2x.png" alt="" />
+                          </div>
+                        </div>
+                      </div>
+                      <div className="content__row-col">
+                        <div className="content-sidekick">
+                          <div className="content__text">
+                            <h3 className="content__text-inner-pre-title">BODY COPY</h3>
+                            <h2 className="content__text-inner-title body-copy">
+                              Verspient. Tem quam re repererit hilluptati omnis re, evelige nihiliquo magnimi liscidest et as asit quis alitas atquia doluptat fuga. Mus quatent ionsequi quo omnimol enitis quiatiu stiberc hilitem porestrum est, quis venectendis am qui unturem abo. Et voluptatum hiliquo stioreium aliquas incider umendi nimagnis eum ipsapel estem aut aliquam eatenimos et et am, idebitat eruptatur.
+                            </h2>
+                            <h3 className="content__text-inner-sub-title">Gotham-Book / 9 pt / 0 pt Kern / 12 pt Leading / FM Slate</h3>
+                          </div>
+                          <div className="content__image">
+                            <img src="../img/colors/swatches solid all/swatch FM Slate@2x.png" alt="" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="content__row">
+                    <div className="content__row-body">
+                      <div className="content__row-col">
+                        <div className="content-sidekick">
+                          <div className="content__text">
+                            <h3 className="content__text-inner-pre-title">REFERENCE/NOTE/FOOTNOTE</h3>
+                            <h2 className="content__text-inner-title ref">
+                              Reference:<br />
+                              Verspient. Tem quam re repererit hilluptati omnis re, evelige nihiliquo magnimi liscidest et as asit quis alitas atquia doluptat fuga. Mus quatent ionsequi quo omnimol enitis quiatiu stiberc hilitem porestrum est.
+                            </h2>
+                            <h3 className="content__text-inner-sub-title">Gotham-Book / 6 pt / 0 pt Kern / 8 pt Leading / FM Slate LT</h3>
+                          </div>
+                          <div className="content__image">
+                            <img src="../img/colors/swatches solid all/swatch FM Slate LT@2x.png" alt="" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div className="separator" />
+
+                <div className="print-document">
+                  <div className="content__text">
+                    <div className="content__text-inner">
+                      <h3>Print Document Components</h3>
+                    </div>
+                  </div>
+
+                  <div className="content__row">
+                    <div className="content__row-body">
+                      <div className="content__row-col">
+                        <div className="content-sidekick">
+                          <div className="content__text">
+                            <h3 className="content__text-inner-pre-title">PATTERN USAGE</h3>
+                            <div className="content__image">
+                              <img src="../img/typography/pattern_example-03.png" alt="" />
+                            </div>
+                            <h3 className="content__text-inner-sub-title">
+                              0.5 pt line-weight / FM Slate LT / 20% opacity or tint<br />
+                              Does not rise above 8.875” line on a standard letter size document<br />
+                              Maintains consistency in size and placement across documents<br />
+                              Implemented as a page footer graphic element
+                            </h3>
+                          </div>
+                          <div className="content__image">
+                            <img src="../img/colors/swatches solid all/swatch FM Slate LT@2x.png" alt="" />
+                          </div>
+                        </div>
+                      </div>
+                      <div className="content__row-col">
+                        <div className="content-sidekick">
+                          <div className="content__text">
+                            <h3 className="content__text-inner-pre-title">STANDARD FOOTER WITH LOGO</h3>
+                            <div className="content__image">
+                              <img src="../img/typography/Group 4.png" alt="" />
+                            </div>
+                            <h3 className="content__text-inner-sub-title">
+                              Corporate logo (horizontal lockup) + Footer:
+                              Gotham-Book / 6 pt / 0 pt Kern / 8 pt leading / FM Slate
+                              Left-justified to the right of the FM Slate logomark, giving minimum clearspace between footer copy and the logomark
+                            </h3>
+                          </div>
+                          <div className="content__image">
+                            <img src="../img/colors/swatches solid all/swatch FM Slate@2x.png" alt="" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="content__row">
+                    <div className="content__row-body">
+                      <div className="content__row-col">
+                        <div className="content-sidekick">
+                          <div className="content__text">
+                            <h3 className="content__text-inner-pre-title">TO LEARN MORE / TO ORDER</h3>
+                            <div className="content__image">
+                              <img src="../img/typography/Page 1.png" alt="" />
+                            </div>
+                            <h3 className="content__text-inner-sub-title">
+                              Header text block: 0.225” height / FM Fire<br />
+                              Header: Gotham-Bold / 8 pt / 40 pt Kern / White or knock-out / All-caps<br />
+                              Text block: 20% tint FM Slate LT<br />
+                              Body: Gotham-Medium / 7.5 pt / 0 pt Kern / 9 pt Leading / FM Slate<br />
+                              Gutter: 0.125”
+                            </h3>
+                          </div>
+                          <div className="content__image">
+                            <img src="../img/colors/swatches solid all/swatch FM Fire@2x.png" alt="" />
+                            <img src="../img/colors/swatches solid all/swatch FM Slate@2x.png" alt="" />
+                            <img src="../img/colors/swatches solid all/swatch FM Slate LT@2x.png" alt="" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div className="separator" />
+
               </div>
 
               <div id="functional" className="tab-content">
