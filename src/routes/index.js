@@ -32,6 +32,7 @@ import BrandArchitecture from 'routes/StrategyBrandArchitecture';
 import CorporateLogos from 'routes/CorporateLogos';
 import ProductLogos from 'routes/ProductLogos';
 import Photography from 'routes/Photography';
+import Iconography from 'routes/Iconography';
 import Color from 'routes/Colors';
 import DesignPrinciples from 'routes/StrategyDesignPrinciples';
 import Typography from 'routes/Typography';
@@ -95,6 +96,7 @@ function Routes(client, onUpdate) {
           <Route path="corporate-logos" component={CorporateLogos} />
           <Route path="product-logos" component={ProductLogos} />
           <Route path="photography" component={Photography} />
+          <Route path="iconography" component={Iconography} />
           <Route path="color" component={Color} />
           <Route path="typography" component={Typography} />
         </Route>
